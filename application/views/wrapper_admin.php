@@ -37,8 +37,7 @@ $appSetting = $this->db->get('setting')
                     <div class="panel-heading">
                         <div class="row-fluid">
                             <div class="center">
-                                <h2 style="margin-left: 14%;" class="green"><?php echo (!empty($appSetting->title)?$appSetting->title:null) ?></h2><br>
-                                <h4 style="margin-left: 39%;" class="blue">&copy; <?php echo $this->lang->line('BD_TASK') ?></h4> 
+                                <h2 style="margin-left: 14%;" class="green"><?php echo (!empty($appSetting->title)?$appSetting->title:null) ?></h2>
                             </div>
                         </div>
                     </div>
@@ -88,7 +87,7 @@ $appSetting = $this->db->get('setting')
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn-primary pull-right">Login</button>  
+                                <button class="btn btn-primary btn-block">Login</button>  
                             </div>
                         </form>
                     </div>

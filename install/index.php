@@ -105,7 +105,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
 
-        <title>Codeigniter Application Installer</title>
+        <title>VMS Application Installer</title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!-- custom css  -->
         <link rel="stylesheet" href="assets/css/style.css"> 
@@ -130,7 +130,7 @@
                 ?>
                 <div class="row">
                     <div class="app_title"> 
-                        <h1><img src="assets/img/icon.png" alt="logo"> Codeigniter Application Installer</h1>
+                        <h1><img src="assets/img/icon.png" alt="logo"> VMS Application Installer</h1>
                     </div>
                     <div class="app_content">
                         <div class="row">
@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <div class="app_footer"> 
-                        <h3>Developed by bdtask</h3>
+                        <h3>Developed by PGDIT</h3>
                     </div>
                 </div>
                 <?php 
@@ -161,7 +161,7 @@
                 ?>
                 <div class="row">
                     <div class="app_title"> 
-                        <h1><img src="assets/img/icon.png" alt="logo"> Codeigniter Application Installer</h1>
+                        <h1><img src="assets/img/icon.png" alt="logo"> VMS Application Installer</h1>
                     </div>
                     <div class="app_content">
                         <div class="row">
@@ -203,7 +203,7 @@
                         </div>
                     </div> 
                     <div class="app_footer"> 
-                        <h3>Developed by bdtask</h3>
+                        <h3>Developed by PGDIT</h3>
                     </div>
                 </div>
                 <?php } ?>
@@ -215,7 +215,7 @@
                 <?php if (isset($_GET['complete'])) { ?>
                 <div class="row">
                     <div class="app_title"> 
-                        <h1><img src="assets/img/icon.png" alt="logo"> Codeigniter Application Installer</h1>
+                        <h1><img src="assets/img/icon.png" alt="logo"> VMS Application Installer</h1>
                     </div>
                     <div class="app_content">
                         <div class="row">
@@ -237,7 +237,7 @@
                         </div>
                     </div> 
                     <div class="app_footer"> 
-                        <h3>Developed by bdtask</h3>
+                        <h3>Developed by PGDIT</h3>
                     </div>
                 </div>
                 <?php } ?>
