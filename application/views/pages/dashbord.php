@@ -1,11 +1,11 @@
-<div class=row>
+<!-- <div class=row>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
         <div class="statistic-box statistic-filled-3"> 
             
             <h2><span id=count-trip></span><span class=slight><i class="fa fa-play fa-rotate-270 text-warning"></i></span></h2>
-            <div class=small><?php echo display('trip');?></div>
+            <div class=small><?php echo display('trip'); ?></div>
             
-            <img style="margin-left:58%;margin-top:-48%;width: 30%;" src="<?php echo base_url();?>assets/img/delivery-truck.png">
+            <img style="margin-left:58%;margin-top:-48%;width: 30%;" src="<?php echo base_url(); ?>assets/img/delivery-truck.png">
             <div class="sparkline3 text-center"></div>
             
         </div>
@@ -13,26 +13,26 @@
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
         <div class="statistic-box statistic-filled-1">
             <h2><span id=count-customer></span></h2>
-            <div class=small><?php echo display('customers');?></div>
+            <div class=small><?php echo display('customers'); ?></div>
              
-             <img style="margin-left:58%;margin-top:-48%;width: 30%;" src="<?php echo base_url();?>assets/img/specialist-use.png">
+             <img style="margin-left:58%;margin-top:-48%;width: 30%;" src="<?php echo base_url(); ?>assets/img/specialist-use.png">
             <div class="sparkline1 text-center"></div>
         </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
         <div class="statistic-box statistic-filled-2">
             <h2><span id=count-fitness></span></h2>
-            <div class=small><?php echo display('fitness');?></div>
+            <div class=small><?php echo display('fitness'); ?></div>
           
-          <img style="margin-left:58%;margin-top:-48%;width: 30%;" src="<?php echo base_url();?>assets/img/stretching-exercises.png">
+          <img style="margin-left:58%;margin-top:-48%;width: 30%;" src="<?php echo base_url(); ?>assets/img/stretching-exercises.png">
             <div class="sparkline2 text-center"></div>
         </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
         <div class="statistic-box statistic-filled-4">
             <h2><span id="count-driver">5489</span></h2>
-            <div class=small><?php echo display('driver');?></div>
-               <img style="margin-left:58%;margin-top:-48%;width: 30%;" src="<?php echo base_url();?>assets/img/accountant.png">
+            <div class=small><?php echo display('driver'); ?></div>
+               <img style="margin-left:58%;margin-top:-48%;width: 30%;" src="<?php echo base_url(); ?>assets/img/accountant.png">
             <div class="sparkline4 text-center"></div>
         </div>
     </div>
@@ -42,7 +42,7 @@
         <div class="panel panel-bd lobidisable">
             <div class="panel-heading">
                 <div class="panel-title">
-                    <h4><?php echo display('weeklytripandfarerent');?></h4>
+                    <h4><?php echo display('weeklytripandfarerent'); ?></h4>
                 </div>
             </div>
             <div class="panel-body">
@@ -54,7 +54,7 @@
         <div class="panel panel-bd lobidisable">
             <div class="panel-heading">
                 <div class="panel-title">
-                    <h4><?php echo display('businesschart');?></h4>
+                    <h4><?php echo display('businesschart'); ?></h4>
                 </div>
             </div>
             <div class="panel-body">
@@ -68,7 +68,7 @@
     $(document).ready(function () {
         $.ajax({
             dataType: "json",
-            url: "<?php echo base_url()?>chart",
+            url: "<?php echo base_url() ?>chart",
             method: "GET",
             success: function (data){
                 var weekname = [data[0], data[3], data[6], data[9], data[12], data[15], data[18]];
@@ -112,7 +112,7 @@
         });
         $.ajax({
             dataType: "json",
-            url: "<?php echo base_url()?>chart/customer",
+            url: "<?php echo base_url() ?>chart/customer",
             method: "GET",
             success: function (data) {
                
@@ -158,4 +158,4 @@
 
     });
 </script>
-
+ -->

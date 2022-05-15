@@ -1,75 +1,78 @@
 <?php
 $appSetting = $this->db->get('setting')
-        ->row();
+    ->row();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo (!empty($appSetting->title) ? $appSetting->title : null) ?></title>
-        <link rel="shortcut icon" href="assets/dist/img/ico/favicon.png" type="image/x-icon">
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script>
-            WebFont.load({
-                google: {
-                    families: ['Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i', 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', 'Open Sans']
-                }
-            });
-        </script>
-        <link href="<?php echo base_url(); ?>assets/assets/dist/css/base.css" rel="stylesheet" type="text/css"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
-        <link href="<?php echo base_url(); ?>assets/assets/plugins/jquery.sumoselect/sumoselect.min.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url(); ?>assets/assets/plugins/select2/select2.min.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url(); ?>assets/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>  
-        <link href="<?php echo base_url(); ?>assets/assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url(); ?>assets/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url(); ?>assets/assets/dist/css/component_ui.min.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url(); ?>assets/assets/dist/css/custom.css" rel="stylesheet" type="text/css"/>
 
-    </head>
-    <body>
-        <div class="login-wrapper">
-            <div class="container-center">
-                <div class="panel panel-bd">
-                    <div class="panel-heading">
-                        <div class="row-fluid">
-                            <div class="center">
-                                <h2 style="margin-left: 14%;" class="green"><?php echo (!empty($appSetting->title)?$appSetting->title:null) ?></h2>
-                            </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="shortcut icon" href="assets/dist/img/ico/favicon.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i', 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', 'Open Sans']
+            }
+        });
+    </script>
+    <link href="<?php echo base_url(); ?>assets/assets/dist/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="<?php echo base_url(); ?>assets/assets/plugins/jquery.sumoselect/sumoselect.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/assets/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/assets/dist/css/component_ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>assets/assets/dist/css/custom.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="login-wrapper">
+        <div class="container-center">
+            <div class="panel panel-bd">
+                <!-- <div class="panel-heading">
+                    <div class="row-fluid">
+                        <div class="center">
+                            <h2 style="margin-left: 14%;" class="green">Login</h2>
                         </div>
                     </div>
-                    <div class="panel-body">
-                            <?php
-                            $exception = $this->session->userdata('exception');
-                              if ($exception) {
-                                echo '<div class="alert alert-danger">' . $exception . '</div><br/>';
-                                $this->session->unset_userdata('exception');
-                            }
-                            ?>
-                        <?php
-                            
-                          
-                        ?>
-                       <form action="<?php echo base_url(); ?>admin/ck_login" method="post">
-                            <div class="form-group">
-                                <label class="control-label">Username</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input id="username" type="text" class="form-control" name="username" placeholder="Username">
-                                </div>
+                </div> -->
+                <div class="panel-body">
+                    <?php
+                    $exception = $this->session->userdata('exception');
+                    if ($exception) {
+                        echo '<div class="alert alert-danger">' . $exception . '</div><br/>';
+                        $this->session->unset_userdata('exception');
+                    }
+                    ?>
+                    <?php
+
+
+                    ?>
+                    <form action="<?php echo base_url(); ?>admin/ck_login" method="post">
+                        <div class="form-group">
+                            <label class="control-label">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="username" type="text" class="form-control" name="username" placeholder="Username">
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Password</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                    <input id="pass" type="password" class="form-control" name="password" placeholder="******">
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <input id="pass" type="password" class="form-control" name="password" placeholder="******">
+                                <input type="hidden" name="type" value="9">
                             </div>
-                            
-                           <div class="form-group">
+                        </div>
+
+                        <!-- <div class="form-group">
                                 <label>User Type</label>
                                 <div class="row">
                                  <div class="col-md-12">
@@ -85,21 +88,21 @@ $appSetting = $this->db->get('setting')
                                       </div>
                                  </div>
                                 </div>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary btn-block">Login</button>  
-                            </div>
-                        </form>
-                    </div>
+                            </div> -->
+                        <div>
+                            <button class="btn btn-primary btn-block">Login</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <script src="<?php echo base_url(); ?>assets/assets/plugins/jQuery/jquery-1.12.4.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>assets/assets/plugins/jquery.sumoselect/jquery.sumoselect.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>assets/assets/plugins/select2/select2.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>assets/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script>
-        $(document).ready(function () {
+    </div>
+    <script src="<?php echo base_url(); ?>assets/assets/plugins/jQuery/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/assets/plugins/jquery.sumoselect/jquery.sumoselect.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/assets/plugins/select2/select2.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
             //jquery.sumoselect
             $('.testselect1').SumoSelect();
 
@@ -112,8 +115,13 @@ $appSetting = $this->db->get('setting')
                 searchText: 'Enter here.'
             });
 
-            $('.select1').SumoSelect({okCancelInMulti: true, selectAll: true});
-            $('.select2').SumoSelect({selectAll: true});
+            $('.select1').SumoSelect({
+                okCancelInMulti: true,
+                selectAll: true
+            });
+            $('.select2').SumoSelect({
+                selectAll: true
+            });
 
             //select2
             $(".basic-single").select2();
@@ -133,16 +141,17 @@ $appSetting = $this->db->get('setting')
                 language: "es"
             });
 
-            $(".js-programmatic-enable").on("click", function () {
+            $(".js-programmatic-enable").on("click", function() {
                 $(".js-example-disabled").prop("disabled", false);
                 $(".js-example-disabled-multi").prop("disabled", false);
             });
 
-            $(".js-programmatic-disable").on("click", function () {
+            $(".js-programmatic-disable").on("click", function() {
                 $(".js-example-disabled").prop("disabled", true);
                 $(".js-example-disabled-multi").prop("disabled", true);
             });
         });
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
