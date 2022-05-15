@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-    <div class="panel panel-bd lobidrag">
+    <div class="panel panel-bd">
         <div class="panel-heading">
             <div class="panel-title">
                 <h4><?php echo display('editprofile') ?></h4>
@@ -9,10 +9,10 @@
         if ($this->session->flashdata('success')) {
             echo "<div class=\"alert alert-success\" role=\"alert\">" . $this->session->flashdata('success') . "</div>";
         }
-        ?> 
+        ?>
         <?php echo form_open('admin/user_edit/'); ?>
 
-        <div class="panel-body">           
+        <div class="panel-body">
             <div class="form-group row">
                 <label for="fullname" class="col-sm-3 col-form-label"><?php echo display('fullname') ?></label>
                 <div class="col-sm-9">
@@ -51,10 +51,9 @@
 
             <div class="form-group row" style="margin-left: 46%;">
                 <a class="btn btn-danger w-md m-b-5"><?php echo display('cancel'); ?></a>
-                <button type="submit"  class="btn btn-primary w-md m-b-5"><i class="fa fa-plus"></i><?php echo display('update') ?> </button>
+                <button type="submit" class="btn btn-success w-md m-b-5"><?php echo display('update') ?> </button>
             </div>
         </div>
         <?php echo form_close(); ?>
     </div>
 </div>
-
