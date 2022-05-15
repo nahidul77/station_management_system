@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="panel panel-bd lobidrag">
-            <div class="panel-body">  
+            <div class="panel-body">
                 <div class="table-header">
                     <i class="fa fa-list"></i>
-                    <?php echo display('vehicleinformation'); ?> 
-                    <div class="pull-right btn btn-info">
+                    <?php echo display('vehicleinformation'); ?>
+                    <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
                         <a style="color:white" href="<?php echo base_url(); ?>vehicle/vehicle_information_create"><?php echo display('addvehicle') ?></a>
                     </div>
@@ -41,10 +41,10 @@
                                 </th>
                                 <th>
                                     <?php echo display('vehicletype'); ?>
-                                </th>		
+                                </th>
                                 <th>
                                     <?php echo display('owner'); ?>
-                                </th>		
+                                </th>
 
                                 <th>
                                     <?php echo display('status'); ?>
@@ -52,7 +52,8 @@
 
                                 <?php if ($this->session->userdata('user_type') == 9) { ?>
                                     <th class="no-print"><?php echo display('action'); ?></th>
-                                <?php } //ends of if condition?>
+                                <?php } //ends of if condition
+                                ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,7 +63,7 @@
                                 $count = 0;
                                 foreach ($vehicle_infos as $vehicle_info) {
                                     $owner = $v_owner_arry[$vehicle_info->v_owner]
-                                    ?>
+                            ?>
                                     <tr>
                                         <td class="center"><?php echo $count + 1; ?></td>
                                         <td><?php echo $vehicle_info->v_model_no; ?></td>
@@ -78,7 +79,7 @@
                                                 echo display('inactive');
                                             ?></td>
 
-                                           <?php if ($this->session->userdata('user_type') == 9) { ?>
+                                        <?php if ($this->session->userdata('user_type') == 9) { ?>
                                             <td class="no-print">
                                                 <a class="green " data-toggle="tooltip" title="<?php echo display('edit'); ?>" href="<?php echo base_url() . "vehicle/vehicle_info_edit/" . $vehicle_info->v_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130 "></i>
@@ -87,12 +88,13 @@
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
-                                    <?php } //ends of if condition ?>
+                                        <?php } //ends of if condition 
+                                        ?>
 
                                     </tr>
-                                    <?php
+                            <?php
                                     $count++;
-                                }//foreach
+                                } //foreach
                             }
                             ?>
 

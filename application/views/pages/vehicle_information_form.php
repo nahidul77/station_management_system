@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-    <div class="panel panel-bd lobidrag">
+    <div class="panel panel-bd">
         <div class="panel-heading">
             <div class="panel-title">
                 <h4><?php
@@ -12,10 +12,10 @@
                 </h4>
             </div>
         </div>
-        
-      
-        <form name="vehicle_information_form" class="form-horizontal" id="notice-submit" action="<?php echo base_url() . 'vehicle/vehicle_information_save'; ?>" method="post"> 
-            <div class="panel-body">           
+
+
+        <form name="vehicle_information_form" class="form-horizontal" id="notice-submit" action="<?php echo base_url() . 'vehicle/vehicle_information_save'; ?>" method="post">
+            <div class="panel-body">
                 <div class="form-group row">
                     <label for="v_registration_no" class="col-sm-3 col-form-label"><?php echo display('registrationnumber'); ?></label>
                     <div class="col-sm-9">
@@ -74,16 +74,15 @@
                         </fieldset>
                     </div>
                     <div class="help-block" id="title-exists"><?php echo form_error('active'); ?></div>
-                </div> 
-                <input type="hidden" name="v_id" id="v_id" value="<?php echo set_value('v_id', $vehicle_infos->v_id); ?>"  />
+                </div>
+                <input type="hidden" name="v_id" id="v_id" value="<?php echo set_value('v_id', $vehicle_infos->v_id); ?>" />
                 <div class="form-group row">
                     <div class="col-md-offset-1 col-md-9" style="margin-left: 35%;">
                         <button class="btn btn-danger w-md m-b-5"><?php echo display('cancel'); ?></button>
-                        <button  type="submit"  class="btn btn-primary w-md m-b-5"><i class="fa fa-plus"></i> <?php echo display('save'); ?></button>
+                        <button type="submit" class="btn btn-success w-md m-b-5"><?php echo display('save'); ?></button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
