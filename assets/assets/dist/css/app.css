@@ -612,13 +612,13 @@
 .sidebar ul li.active,
 .sidebar ul li:hover {
     color: #fff;
-    border-color: #f91942;
+    border-color: #199ef9;
     background-color: rgba(255, 255, 255, 0.09);
 }
 
 .sidebar ul li.active,
 .sidebar ul li.active:hover {
-    border-color: #f91942;
+    border-color: #199ef9;
 }
 
 .sidebar ul li span.nav-tag {
@@ -669,66 +669,66 @@
 }
 
 .sidebar ul li a i {
-    color: #98a7b7;
+    color: #cfc6c6;
     font-size: 21px;
     margin-right: 7px;
     vertical-align: middle;
 }
 
 .sidebar ul li:nth-child(2) a i {
-    color: #558B2F;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(3) a i {
-    color: #cd6724;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(4) a i {
-    color: #f29824;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(5) a i {
-    color: #adb7be;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(6) a i {
-    color: #b348ae;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(8) a i {
-    color: #cd6724;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(9) a i {
-    color: #21a788;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(10) a i {
-    color: #E5343D;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(11) a i {
-    color: #EF6C00;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(12) a i {
-    color: #FFB61E;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(14) a i {
-    color: #428bca;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(15) a i {
-    color: #D4E157;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(16) a i {
-    color: #00B8D4;
+    color: #cfc6c6;
 }
 
 .sidebar ul li:nth-child(17) a i {
-    color: #64bc36;
+    color: #cfc6c6;
 }
 
 .sidebar .arrow {
