@@ -88,6 +88,7 @@
         <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-gear"></i><?php echo display('settings') ?><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li><a href="<?php echo base_url(); ?>logo"><?php echo display('logomanage') ?></a></li>
+            <li><a href="<?php echo base_url(); ?>admin/app_setting"><?php echo display('appsetting') ?></a></li>
             <?php if (false) : ?>
                 <li><a href="<?php echo base_url(); ?>language"><?php echo display('languagesetting'); ?></a></li>
                 <li><a href="<?php echo base_url(); ?>setting"><?php echo display('softwaresetting'); ?></a></li>
