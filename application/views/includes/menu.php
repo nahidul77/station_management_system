@@ -21,14 +21,14 @@
     <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user-circle"></i>
+                <i class="fa fa-user-circle"></i> <?= $this->session->userdata('fullname'); ?>
             </a>
             <ul class="dropdown-menu dropdown-user">
                 <li>
                     <?php
-                    echo "&nbsp;&nbsp;&nbsp;";
-                    echo "<i class='ti-user'></i>&nbsp;";
-                    echo $this->session->userdata('fullname');
+                    // echo "&nbsp;&nbsp;&nbsp;";
+                    // echo "<i class='ti-user'></i>&nbsp;";
+                    // echo $this->session->userdata('fullname');
                     // echo "<strong class=\"text-danger\">";
 
                     // if ($this->session->userdata('user_type') == 9)

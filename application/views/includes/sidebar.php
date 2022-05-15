@@ -95,4 +95,5 @@
             <?php endif ?>
         </ul>
     </li>
+    <li><a href="<?php echo base_url(); ?>admin/logout" class="material-ripple"><i class="glyphicon glyphicon-off"></i> <?php echo display('logout'); ?></a></li>
 </ul>
