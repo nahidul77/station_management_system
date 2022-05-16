@@ -217,9 +217,9 @@ CREATE TABLE `add_company` (
 --
 
 INSERT INTO `add_company` (`company_id`, `company_name`, `company_address`, `company_cell`, `company_email`, `company_web`, `posting_id`, `active`) VALUES
-(1, 'Megna Group', 'Dhaka Tatola', '65-75766', 'megna@gmail.com', 'megna.com', 1, 1),
+(1, 'Megna Group', 'Dhaka Tatola', '65-75766', 'megna@gmail.com', 'www.megna.com', 1, 1),
 (2, 'Amberit Group', 'Gulsha Dhaka', '78-6767', 'ambergroup@gmail.com', 'www.amber.com', 1, 1),
-(3, 'Zumuna task', 'Dhaka', '898-7897897', 'task@gmail.com', 'www.task.com', 1, 1);
+(3, 'Zumuna task', 'Dhaka Uttara', '898-7897897', 'task@gmail.com', 'www.task.com', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -853,7 +853,7 @@ CREATE TABLE `logo` (
 --
 
 INSERT INTO `logo` (`logo_id`, `d_picture`, `f_picture`) VALUES
-(10, 'logo.png', 'school-bus.png');
+(10, 'logo.png', 'fav.jpeg');
 
 -- --------------------------------------------------------
 
