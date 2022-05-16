@@ -13,7 +13,9 @@ $base_url = base_url();
             $url == $base_url . 'vehicle/vehicle_type_list' ||
             $url == $base_url . 'vehicle/vehicle_info_list' ||
             $url == $base_url . 'vehicle/vehicle_information_create' ||
-            $url == $base_url . 'vehicle/vehicle_type_create'
+            $url == $base_url . 'vehicle/vehicle_type_create' ||
+            strpos($url, 'vehicle_type_edit') ||
+            strpos($url, 'vehicle_info_edit')
         ) :  ?> class="active" <?php endif ?>>
         <a href="#" class="material-ripple"><i class="fa fa-car"></i><?php echo display('vehicle'); ?><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
@@ -47,7 +49,7 @@ $base_url = base_url();
         ) :  ?> class="active" <?php endif ?>>
         <a href="#" class="material-ripple"><i class="fa fa-user"></i><?php echo display('customers'); ?><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
-            <li><a href="<?php echo $base_url; ?>company"><?php echo display('companylist') ?></a></li>
+            <li><a href="<?php echo $base_url; ?>company">Customer List</a></li>
             <?php if (false) : ?>
                 <li><a href="<?php echo $base_url; ?>rent"><?php echo display('companyrentlist') ?></a></li>
             <?php endif ?>
