@@ -354,17 +354,9 @@ CREATE TABLE `driver_info` (
 --
 
 INSERT INTO `driver_info` (`driver_id`, `driver_name`, `d_mobile`, `v_registration_no`, `d_license_no`, `d_father_name`, `d_mother_name`, `d_nid`, `d_join_date`, `d_release_date`, `d_emergency_contact_person`, `d_emergency_cell`, `d_picture`, `d_license_expire_date`, `d_address_present`, `d_address_permanent`, `posting_id`, `active`) VALUES
-(3, 'Fadl Allah Jalal al Din Assaf', '(88) 528-135', '3', '56756555', 'Boulosgr', 'Boulos', 're56456456', '2022-03-01', '1970-01-01', 'smon', '(88) 65756756', 'Denve.jpg', '2022-03-02', '8457 Bakonypölöske\r\nIzabella u. 27.', '8457 Bakonypölöske\r\nIzabella u. 27.', '', 1),
-(4, 'Michael L. Gowans', '425-432-8861', '3', '534-26-XXXX', 'Purple', 'Purp', '129659698583888', '2022-03-02', '1970-01-01', 'Michael', '425-432-8886', '85a894.jpg', '2022-02-18', '1715 Conifer Drive\r\nMaple Valley, WA 98038', '1715 Conifer Drive\r\nMaple Valley, WA 98038', '', 1),
-(5, 'Mada Taalah Nazari', '440 9604', '5', '440 96047667', 'Madaian', 'Mada', '15744456456456', '2022-03-01', '1970-01-01', 'Aries', '657567567', '85a893.jpg', '2022-02-21', 'Heiðarbraut 18\r\n671 Kópasker', 'Heiðarbraut 18\r\n671 Kópasker', '', 1),
-(6, 'Kharon Eldarkhanov', '0483 92 33 60', '5', '0483923360', 'Dratchev', 'Dratche', '768756456456', '2022-03-01', '1970-01-01', 'Dratchev', '8756756', '85a892.jpg', '2022-03-14', 'Ringlaan 75\r\n3350 Drieslinter', 'Ringlaan 75\r\n3350 Drieslinter', '', 1),
-(7, 'Buvaysar Ibragimov', '76867867', '6', '6756756', 'Bazhaev', 'Bazhae', '56456456', '2022-03-01', '1970-01-01', 'Bazhaev', '657567567', 'bd.png', '2022-02-21', 'Vejlebæksvej 82\r\n4100 Ringsted', 'Vejlebæksvej 82\r\n4100 Ringsted', '', 1),
-(8, 'Avtorhan Sultygo', '(11) 2360-3201', '7', '675675687', 'Kadiev', 'Kadie', '786876888', '2022-03-03', '1970-01-01', 'Kadiev', '(11)67867876', 'Denve.jpg', '2022-03-28', 'Rua Sorocaba, 268\r\nMauá-SP\r\n09370-150', 'Rua Sorocaba, 268\r\nMauá-SP\r\n09370-150', '', 1),
-(9, 'Zorislav Babi?', '044 133 9601', '10', '67567566', 'Lon?ar', 'Lon?', '786876855', '2022-03-02', '1970-01-01', 'Lon?ar', '044 133 9601', '85a891.jpg', '2022-03-19', 'Kunnankuja 66\r\n92930 PYHÄNTÄ', 'Kunnankuja 66\r\n92930 PYHÄNTÄ', '', 1),
-(10, 'Miodrag Nikoli?', '458 6346', '3', '7678675', ' Dalbrautrrt', ' Dalbraut', '786876866', '2022-03-01', '1970-01-01', 'Dalbraut', '458 6347', '85a89.jpg', '2022-03-21', 'Bjarg Dalbraut 84\r\n370 Búðardalur', 'Bjarg Dalbraut 84\r\n370 Búðardalur', '', 1),
-(11, 'Sven Tkal?i?', '676576576', '7', '765756756', 'Bistricahrn', 'Bistrica', '6578567567', '2022-03-01', '1970-01-01', 'Sven', '5675765', 'men-200x200.jpg', '2022-03-21', 'Tavcarjeva 91\r\n2310 Slovenska Bistrica', 'Tavcarjeva 91\r\n2310 Slovenska Bistrica', '', 1),
-(12, 'Naji Saleem Shalhoub', '06-51600486', '3', '6756756', 'Naji ', 'Abadi', '7868768768', '2022-03-01', '1970-01-01', 'Malden', '06-51600486', 'p3-bhutan-a-20131226-200x200.jpg', '2022-03-27', 'Hatertseweg 57\r\n6581 KE  Malden', 'Hatertseweg 57\r\n6581 KE  Malden', '', 1),
-(13, 'Sulaiman Fahad Kassis', '89 63 18', '4', '5645644467', 'Nassar merd', 'Lawn Care', '6567654565456', '2022-03-07', '1970-01-01', 'jhon abrnah', '8765468', 'images1.jpg', '2022-03-19', 'North Amirica', 'North Amirica', '', 1);
+(1, 'Bob Dave', '(88) 528-135', '3', '56756555', 'Boulosgr', 'Boulos', 're56456456', '2022-03-01', '1970-01-01', 'smon', '(88) 65756756', 'driver.jpg', '2022-03-02', '8457 Bakonypölöske\r\nIzabella u. 27.', '8457 Bakonypölöske\r\nIzabella u. 27.', '', 1),
+(2, 'Michael L. Gowans', '425-432-8861', '3', '534-26-XXXX', 'Purple', 'Purp', '129659698583888', '2022-03-02', '1970-01-01', 'Michael', '425-432-8886', 'man.png', '2022-02-18', '1715 Conifer Drive\r\nMaple Valley, WA 98038', '1715 Conifer Drive\r\nMaple Valley, WA 98038', '', 1),
+(3, 'Sulaiman Fahad Kassis', '89 63 18', '4', '5645644467', 'Nassar merd', 'Lawn Care', '6567654565456', '2022-03-07', '1970-01-01', 'jhon abrnah', '8765468', 'smiling_man.jpg', '2022-03-19', 'North Amirica', 'North Amirica', '', 1);
 
 -- --------------------------------------------------------
 

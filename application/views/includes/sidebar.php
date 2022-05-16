@@ -56,6 +56,12 @@ $base_url = base_url();
             <?php endif ?>
         </ul>
     </li>
+    <li>
+        <a href="#" class="material-ripple"><i class="fa fa-map"></i><?php echo display('trip'); ?> <span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li><small>Now Working on this module</small></li>
+        </ul>
+    </li>
     <?php if (false) : ?>
         <li>
             <a href="#" class="material-ripple"> <i class="hvr-buzz-out fa fa-legal"></i><?php echo display('fitness'); ?><span class="fa arrow"></span></a>
