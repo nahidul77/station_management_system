@@ -28,7 +28,9 @@
         <a href="#" class="material-ripple"><i class="fa fa-user"></i><?php echo display('customers'); ?><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li><a href="<?php echo base_url(); ?>company"><?php echo display('companylist') ?></a></li>
-            <li><a href="<?php echo base_url(); ?>rent"><?php echo display('companyrentlist') ?></a></li>
+            <?php if (false) : ?>
+                <li><a href="<?php echo base_url(); ?>rent"><?php echo display('companyrentlist') ?></a></li>
+            <?php endif ?>
         </ul>
     </li>
     <?php if (false) : ?>
