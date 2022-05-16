@@ -613,7 +613,7 @@
 .sidebar ul li:hover {
     color: #fff;
     border-color: #199ef9;
-    background-color: rgba(255, 255, 255, 0.09);
+    background-color: rgba(206, 199, 199, 0.09);
 }
 
 .sidebar ul li.active,
