@@ -217,17 +217,9 @@ CREATE TABLE `add_company` (
 --
 
 INSERT INTO `add_company` (`company_id`, `company_name`, `company_address`, `company_cell`, `company_email`, `company_web`, `posting_id`, `active`) VALUES
-(1, 'PGDIT', '237 MacDonald Street\r\nWhataupoko\r\nGisborne 4010', '(027) 3746-722', 'JaimeBThomas@teleworm.us', 'PopBooth.co.nz', 1, 1),
-(2, 'Asiatic Solutions', '38 Link Road\r\nCAPE BARREN ISLAND TAS 7257', '01710410490', 'JosephJCortez@dayrep.com', 'GamingCloset.com.au', 1, 1),
-(3, 'Aaronson Furniture', '784 Tree Top Lane\r\nAllentown, PA 18109', '610-288-5853', 'NicholasMRoessler@teleworm.us', 'designerfences.com', 1, 1),
-(4, 'MobileCostumes', 'Vennemansweg 152\r\n7251 HX  Vorden', '06-29952405', 'TinaKProvencher@armyspy.com', 'MobileCostumes.nl', 1, 1),
-(5, 'Hills Supermarkets', '33, rue Saint Germain\r\n92230 GENNEVILLIERS', '01.15.36.32.26', 'CharlesMacvitie@rhyta.com', 'RegionalStore.fr', 1, 1),
-(6, 'abcd', 'abcd', '78678678', 'abcd@gmail.com', 'abcd.com', 1, 2),
-(7, 'abcd', 'dfghdh', '78678678', 'abcd@gmail.com', '', 1, 1),
-(8, 'Megna Group', 'Dhaka Tatola', '65-75766', 'megna@gmail.com', 'megna.com', 1, 1),
-(9, 'Amberit Group', 'Gulsha Dhaka', '78-6767', 'ambergroup@gmail.com', 'www.amber.com', 1, 1),
-(10, 'Zumuna task', 'Dhaka', '898-7897897', 'task@gmail.com', 'www.task.com', 1, 1),
-(11, 'Zumuna task', 'Dhaka', '898-7897897', 'task@gmail.com', 'www.task.com', 1, 1);
+(1, 'Megna Group', 'Dhaka Tatola', '65-75766', 'megna@gmail.com', 'megna.com', 1, 1),
+(2, 'Amberit Group', 'Gulsha Dhaka', '78-6767', 'ambergroup@gmail.com', 'www.amber.com', 1, 1),
+(3, 'Zumuna task', 'Dhaka', '898-7897897', 'task@gmail.com', 'www.task.com', 1, 1);
 
 -- --------------------------------------------------------
 
