@@ -346,9 +346,9 @@ CREATE TABLE `driver_info` (
 --
 
 INSERT INTO `driver_info` (`driver_id`, `driver_name`, `d_mobile`, `v_registration_no`, `d_license_no`, `d_father_name`, `d_mother_name`, `d_nid`, `d_join_date`, `d_release_date`, `d_emergency_contact_person`, `d_emergency_cell`, `d_picture`, `d_license_expire_date`, `d_address_present`, `d_address_permanent`, `posting_id`, `active`) VALUES
-(1, 'Bob Dave', '(88) 528-135', '3', '56756555', 'Boulosgr', 'Boulos', 're56456456', '2022-03-01', '1970-01-01', 'smon', '(88) 65756756', 'driver.jpg', '2022-03-02', '8457 Bakonypölöske\r\nIzabella u. 27.', '8457 Bakonypölöske\r\nIzabella u. 27.', '', 1),
-(2, 'Michael L. Gowans', '425-432-8861', '3', '534-26-XXXX', 'Purple', 'Purp', '129659698583888', '2022-03-02', '1970-01-01', 'Michael', '425-432-8886', 'man.png', '2022-02-18', '1715 Conifer Drive\r\nMaple Valley, WA 98038', '1715 Conifer Drive\r\nMaple Valley, WA 98038', '', 1),
-(3, 'Sulaiman Fahad Kassis', '89 63 18', '4', '5645644467', 'Nassar merd', 'Lawn Care', '6567654565456', '2022-03-07', '1970-01-01', 'jhon abrnah', '8765468', 'smiling_man.jpg', '2022-03-19', 'North Amirica', 'North Amirica', '', 1);
+(1, 'Bob Dave', '(88) 528-135', '1', '56756555', 'Boulosgr', 'Boulos', 're56456456', '2022-03-01', '1970-01-01', 'smon', '(88) 65756756', 'driver.jpg', '2026-03-02', '8457 Bakonypölöske\r\nIzabella u. 27.', '8457 Bakonypölöske\r\nIzabella u. 27.', '', 1),
+(2, 'Michael L. Gowans', '425-432-8861', '2', '534-26-XXXX', 'Purple', 'Purp', '129659698583888', '2022-03-02', '1970-01-01', 'Michael', '425-432-8886', 'man.png', '2026-02-18', '1715 Conifer Drive\r\nMaple Valley, WA 98038', '1715 Conifer Drive\r\nMaple Valley, WA 98038', '', 1),
+(3, 'Sulaiman Fahad Kassis', '899 633 188', '3', '5645644467', 'Nassar merd', 'Lawn Care', '6567654565456', '2022-03-07', '1970-01-01', 'jhon abrnah', '8765468', 'smiling_man.jpg', '2026-03-19', 'North Amirica', 'North Amirica', '', 1);
 
 -- --------------------------------------------------------
 
@@ -853,7 +853,7 @@ CREATE TABLE `logo` (
 --
 
 INSERT INTO `logo` (`logo_id`, `d_picture`, `f_picture`) VALUES
-(10, 'logo.png', 'fav.jpeg');
+(10, 'logo.png', 'favicon.png');
 
 -- --------------------------------------------------------
 
@@ -873,7 +873,7 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `title`, `address`, `footer_text`) VALUES
-(1, 'Vehicle Managements', 'dhaka', 'footer text');
+(1, 'Your Management System', 'dhaka', 'footer text');
 
 -- --------------------------------------------------------
 
@@ -1068,9 +1068,9 @@ CREATE TABLE `vehicle_info` (
 --
 
 INSERT INTO `vehicle_info` (`v_id`, `v_model_no`, `v_registration_no`, `v_chassis_no`, `v_engine_no`, `v_type`, `posting_id`, `active`, `v_owner`) VALUES
-(2, '435452345', '4235234530', '25235443', '2354234544', '10', 1, 1, 0),
-(3, '2352345', '23452342345', '25342345', '2542354', '11', 2, 1, 1),
-(12, '90909090', '90909090', '909090', '909090', '13', 3, 1, 0);
+(1, '435452345', '4235234530', '25235443', '2354234544', '1', 1, 1, 0),
+(2, '2352345', '23452342345', '25342345', '2542354', '2', 1, 1, 1),
+(3, '90909090', '90909090', '909090', '909090', '3', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1090,9 +1090,9 @@ CREATE TABLE `vehicle_type` (
 --
 
 INSERT INTO `vehicle_type` (`v_type_id`, `v_type`, `posting_id`, `active`) VALUES
-(10, 'microbus', '1', 1),
-(11, 'Truck', '1', 1),
-(12, 'Car', '1', 1);
+(1, 'microbus', '1', 1),
+(2, 'Truck', '1', 1),
+(3, 'Car', '1', 1);
 
 -- --------------------------------------------------------
 
