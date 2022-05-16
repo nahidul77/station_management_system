@@ -2,7 +2,9 @@
     <div class="panel panel-bd">
         <div class="panel-heading">
             <div class="panel-title">
-                <h4><?php
+                <h4>
+                    <i class="fa fa-edit"></i>
+                    <?php
                     if (!empty($vehicle_infos->v_id)) {
                         echo display('vehicleinformationupdate');
                     } else {
@@ -10,6 +12,10 @@
                     }
                     ?>
                 </h4>
+                <div class="pull-right btn btn-info">
+                    <i class="fa fa-sign-out "></i>
+                    <a style="color:white" href="<?php echo base_url(); ?>vehicle/vehicle_info_list">Back</a>
+                </div>
             </div>
         </div>
 

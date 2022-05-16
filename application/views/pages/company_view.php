@@ -3,11 +3,10 @@
         <div class="panel panel-bd lobidrag">
             <div class="panel-body">
                 <div class="table-header">
-                    <i class="fa fa-list"></i>
-                    <?php echo display('companylist'); ?>
-                    <div class="pull-right btn btn-info">
+                    <i class="fa fa-list"></i> Customer List
+                    <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
-                        <a style="color:white" href="<?php echo base_url(); ?>company/create"><?php echo display('addcompany') ?></a>
+                        <a style="color:white" href="<?php echo base_url(); ?>company/create">Add Customer</a>
                     </div>
                 </div>
                 <hr>

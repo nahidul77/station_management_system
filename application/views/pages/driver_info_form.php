@@ -3,6 +3,7 @@
         <div class="panel-heading">
             <div class="panel-title">
                 <h4>
+                    <i class="fa fa-edit"></i>
                     <?php
                     if (!empty($informations->driver_id)) {
                         echo display('driverinformationupdate');
@@ -11,6 +12,10 @@
                     }
                     ?>
                 </h4>
+                <div class="pull-right btn btn-info">
+                    <i class="fa fa-sign-out "></i>
+                    <a style="color:white" href="<?php echo base_url(); ?>driver_info">Back</a>
+                </div>
             </div>
         </div>
 

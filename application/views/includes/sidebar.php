@@ -25,7 +25,8 @@ $base_url = base_url();
     </li>
     <li <?php if (
             $url == $base_url . 'driver_info' ||
-            $url == $base_url . 'driver_info/create'
+            $url == $base_url . 'driver_info/create' ||
+            strpos($url, 'driver_info/edit/')
         ) :  ?> class="active" <?php endif ?>>
         <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-drivers-license"></i><?php echo display('driver'); ?><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">

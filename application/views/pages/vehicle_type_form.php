@@ -3,6 +3,7 @@
         <div class="panel-heading">
             <div class="panel-title">
                 <h4>
+                    <i class="fa fa-edit"></i>
                     <?php
                     if (!empty($vehicle_types->v_type_id)) {
                         echo display('addvehicletype');
@@ -11,6 +12,10 @@
                     }
                     ?>
                 </h4>
+                <div class="pull-right btn btn-info">
+                    <i class="fa fa-sign-out "></i>
+                    <a style="color:white" href="<?php echo base_url(); ?>vehicle/vehicle_type_list">Back</a>
+                </div>
             </div>
         </div>
         <form name="notice" class="form-horizontal" id="notice-submit" action="<?php echo base_url() . 'vehicle/vehicle_type_save'; ?>" method="post">

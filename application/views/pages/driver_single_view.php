@@ -7,7 +7,7 @@
                         <i class="fa fa-list"></i>
                         <?php echo display('driverinformation'); ?>
                         <div class="pull-right btn btn-info">
-                            <i class="fa fa-exit "></i>
+                            <i class="fa fa-sign-out "></i>
                             <a style="color:white" href="<?php echo base_url(); ?>driver_info">Back</a>
                         </div>
                     </h4>
