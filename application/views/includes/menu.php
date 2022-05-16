@@ -23,6 +23,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-user-circle"></i> <?= $this->session->userdata('fullname'); ?>
             </a>
+            <span id="fullscreen"></span>
             <ul class="dropdown-menu dropdown-user">
                 <li>
                     <?php
