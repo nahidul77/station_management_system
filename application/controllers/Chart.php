@@ -24,7 +24,7 @@ class Chart extends CI_Controller {
     public function customer(){
        $trip = $this->chart_model->trip();
        $customer = $this->chart_model->customer();
-       $vehile = $this->chart_model->vehile();
+       $vehicle = $this->chart_model->vehile();
        $driver = $this->chart_model->driver();
        $fitness = $this->chart_model->fitness();
        
@@ -32,16 +32,10 @@ class Chart extends CI_Controller {
        $customer=array(   
            'trip'=>$trip,
            'customer'=>$customer,
-           'vehile'=>$vehile,  
+           'vehicle'=>$vehicle,  
            'driver'=>$driver,  
            'fitness'=>$fitness,  
        );
         echo json_encode($customer);
     } 
 }
-
-    
-    
-
-           
- ?>
