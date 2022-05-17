@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </div>
                         </div>
                         <div class="app_footer">
-                            <h3>Developed by Student of PGDIT-IIT, JU </h3>
+                            <h3>Developed by The Student of PGDIT-IIT, JU </h3>
                         </div>
                     </div>
                 <?php
@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </div>
                         </div>
                         <div class="app_footer">
-                            <h3>Developed by Student of PGDIT-IIT, JU </h3>
+                            <h3>Developed by The Student of PGDIT-IIT, JU </h3>
                         </div>
                     </div>
                 <?php } ?>
@@ -237,7 +237,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </div>
                         </div>
                         <div class="app_footer">
-                            <h3>Developed by Student of PGDIT-IIT, JU </h3>
+                            <h3>Developed by The Student of PGDIT-IIT, JU </h3>
                         </div>
                     </div>
                 <?php } ?>
