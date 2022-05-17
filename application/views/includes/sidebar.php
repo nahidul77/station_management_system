@@ -33,17 +33,7 @@ $base_url = base_url();
             <li><a href="<?php echo $base_url; ?>driver_info"><?php echo display('driverlist'); ?></a></li>
         </ul>
     </li>
-    <?php if (false) : ?>
-        <li>
-            <a href="#" class="material-ripple"> <i class="hvr-buzz-out fa fa-tripadvisor"></i><?php echo display('trip'); ?><span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li><a href="<?php echo $base_url; ?>trip_information/view"><?php echo display('triplist'); ?></a></li>
-                <li><a href="<?php echo $base_url; ?>trip_local/view"><?php echo display('localtriplist'); ?></a></li>
-                <li><a href="<?php echo $base_url; ?>trip_information/add_trip"><?php echo display('tripentry'); ?></a></li>
-                <li><a href="<?php echo $base_url; ?>trip_local/create"><?php echo display('localtripentry'); ?></a></li>
-            </ul>
-        </li>
-    <?php endif ?>
+
     <li <?php if (
             $url == $base_url . 'company' ||
             $url == $base_url . 'company/create'
@@ -54,6 +44,18 @@ $base_url = base_url();
             <?php if (false) : ?>
                 <li><a href="<?php echo $base_url; ?>rent"><?php echo display('companyrentlist') ?></a></li>
             <?php endif ?>
+        </ul>
+    </li>
+
+    <li <?php if (
+            $url == $base_url . 'trip_local/view' ||
+            $url == $base_url . 'trip_local/create'
+        ) :  ?> class="active" <?php endif ?>>
+
+        <a href="#" class="material-ripple"><i class="fa fa-map"></i><?php echo display('trip'); ?> <span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li><a href="<?php echo $base_url; ?>trip_local/view">Trip List</a></li>
+            <li><a href="<?php echo $base_url; ?>trip_local/create">Trip Entry</a></li>
         </ul>
     </li>
     <?php if (false) : ?>
