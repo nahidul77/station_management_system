@@ -56,6 +56,18 @@ $base_url = base_url();
             <?php endif ?>
         </ul>
     </li>
+    <li <?php if (
+            $url == $base_url . 'expense_entry/view' ||
+            $url == $base_url . 'expense_list' ||
+            $url == $base_url . 'expense_list/create' ||
+            $url == $base_url . 'expense_entry/create'
+        ) :  ?> class="active" <?php endif ?>>
+        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-plus"></i><?php echo display('expense'); ?><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li><a href="<?php echo $base_url; ?>expense_entry/view"><?php echo display('expenselist') ?></a></li>
+            <li><a href="<?php echo $base_url; ?>expense_list"><?php echo display('expensetypelist'); ?></a></li>
+        </ul>
+    </li>
     <?php if (false) : ?>
         <li>
             <a href="#" class="material-ripple"> <i class="hvr-buzz-out fa fa-legal"></i><?php echo display('fitness'); ?><span class="fa arrow"></span></a>
@@ -69,13 +81,6 @@ $base_url = base_url();
                 <li><a href="<?php echo $base_url; ?>fule_rate"><?php echo display('fuelratelist'); ?></a></li>
 
 
-            </ul>
-        </li>
-        <li>
-            <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-plus"></i><?php echo display('expense'); ?><span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li><a href="<?php echo $base_url; ?>expense_entry/view"><?php echo display('expenselist') ?></a></li>
-                <li><a href="<?php echo $base_url; ?>expense_list"><?php echo display('expensetypelist'); ?></a></li>
             </ul>
         </li>
         <li>
