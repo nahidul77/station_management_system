@@ -923,6 +923,8 @@ CREATE TABLE `trip` (
   `start_station_id` int(11) DEFAULT NULL,
   `end_dist_id` int(11) DEFAULT NULL,
   `end_station_id` int(11) DEFAULT NULL,
+  `start_point` varchar(255) DEFAULT NULL,
+  `end_point` varchar(255) DEFAULT NULL,
   `company_id` int(11) DEFAULT NULL,
   `others_company` varchar(255) DEFAULT NULL,
   `date` date NOT NULL,
@@ -938,16 +940,8 @@ CREATE TABLE `trip` (
 -- Dumping data for table `trip`
 --
 
-INSERT INTO `trip` (`id`, `trip_id`, `trip_type`, `import_export`, `driver_id`, `v_id`, `hire_v_id`, `v_type_id`, `start_dist_id`, `start_station_id`, `end_dist_id`, `end_station_id`, `company_id`, `others_company`, `date`, `rent`, `fare_rent`, `advance`, `trip_link_id`, `posting_id`, `active`) VALUES
-(424, '5IFZND8BOS', 3, 0, 14, 0, '56756756', NULL, 12, 15, 10, 12, 10, NULL, '2022-03-06', 12000, 10000, 1000, 'N6RXGHSAFK', '1', 1),
-(423, '3BB2IIV5YN', 1, 0, 18, 15, NULL, NULL, 10, 13, 10, 12, 8, NULL, '2022-03-06', 8000, 6000, 700, 'XFAMERXV9K', '1', 1),
-(422, '1EMMBWAFRE', 3, 1, 16, 0, '6757567567', NULL, 10, 12, 11, 10, 0, '', '2022-03-07', 7000, 5000, 500, 'TRV8C6MI4E', '1', 1),
-(421, 'BIUHMUSEN4', 1, 2, 14, 13, NULL, 22, 11, 11, 10, 12, 8, '', '2022-03-06', 4000, 3000, 200, '7J4U13HLDT', '1', 1),
-(425, 'MXUDCB0Y1E', 3, 1, 7, 0, '675756756745', NULL, 7, 6, 6, 9, 5, '', '2022-03-07', 5000, 4000, 600, 'KIPT1XWI8F', '1', 1),
-(426, 'JDZBULSKGF', 1, 0, 7, 5, NULL, NULL, 6, 8, 6, 9, 5, NULL, '2022-03-07', 8000, 6000, 4000, 'EMVONL6G89', '1', 1),
-(427, 'VPWFWOJAM0', 5, 0, 7, 3, NULL, NULL, 7, 7, 6, 4, 2, NULL, '2022-03-07', 6000, 5500, 3000, 'WUVCVYT3FQ', '1', 1),
-(428, 'O6JGFOCS2I', 3, 0, 7, 0, '675756754544', NULL, 5, 5, 6, 4, NULL, 'bstask', '2022-03-07', 10000, 9000, 3000, 'DP3IKQDAYU', '1', 1),
-(429, 'P1DDVF7QSY', 2, 1, 3, 3, NULL, 11, 5, 5, 6, 9, 0, 'Megna Group', '2022-03-07', 30000, 29000, 20000, 'ZPEEIVK06S', '1', 1);
+INSERT INTO `trip` (`id`, `trip_id`, `trip_type`, `import_export`, `driver_id`, `v_id`, `hire_v_id`, `v_type_id`, `start_dist_id`, `start_station_id`, `end_dist_id`, `end_station_id`, `start_point`, `end_point`, `company_id`, `others_company`, `date`, `rent`, `fare_rent`, `advance`, `trip_link_id`, `posting_id`, `active`) VALUES
+(1, 'O6JGFOCS2I', 3, 0, 7, 0, '675756754544', NULL, NULL, NULL, NULL, NULL,'Gazipur', 'Dhaka', NULL, 'Megna', '2022-03-07', 10000, 9000, 3000, 'DP3IKQDAYU', '1', 1);
 
 -- --------------------------------------------------------
 
