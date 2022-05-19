@@ -60,7 +60,9 @@ $base_url = base_url();
             $url == $base_url . 'expense_entry/view' ||
             $url == $base_url . 'expense_list' ||
             $url == $base_url . 'expense_list/create' ||
-            $url == $base_url . 'expense_entry/create'
+            $url == $base_url . 'expense_entry/create' ||
+            strpos($url, 'expense_entry_edit') ||
+            strpos($url, 'expense_list_edit')
         ) :  ?> class="active" <?php endif ?>>
         <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-plus"></i><?php echo display('expense'); ?><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
