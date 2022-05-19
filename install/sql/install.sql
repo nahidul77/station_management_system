@@ -401,13 +401,11 @@ CREATE TABLE `expense_list` (
 --
 
 INSERT INTO `expense_list` (`expense_id`, `expense_name`, `expense_group`, `posting_id`, `active`) VALUES
-(1, 'Landscape architect', 2, 1, 1),
-(2, 'Tips', 3, 1, 1),
-(3, 'Comission', 3, 1, 1),
-(4, 'Tips', 4, 1, 1),
-(5, 'Comission', 5, 1, 1),
-(6, 'Police Chanda', 1, 1, 1),
-(7, 'Accident', 1, 1, 1);
+(1, 'Machine Repair', 2, 1, 1),
+(2, 'Comission', 3, 1, 1),
+(3, 'Tips', 4, 1, 1),
+(4, 'Tax', 1, 1, 1),
+(5, 'Development', 1, 1, 1);
 
 -- --------------------------------------------------------
 
