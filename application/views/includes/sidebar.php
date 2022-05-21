@@ -56,12 +56,14 @@ $base_url = base_url();
             <?php endif ?>
         </ul>
     </li>
-    <li>
-        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-fire-extinguisher"></i><?php echo display('fuel'); ?><span class="fa arrow"></span></a>
+    <li <?php if (
+            $url == $base_url . 'fule_rate' ||
+            $url == $base_url . 'fule_rate/create' ||
+            strpos($url, 'fule_rate/rate_edit')
+        ) :  ?> class="active" <?php endif ?>>
+        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-fire-extinguisher"></i>Fuel<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
-            <li><a href="<?php echo $base_url; ?>fule_rate"><?php echo display('fuelratelist'); ?></a></li>
-
-
+            <li><a href="<?php echo $base_url; ?>fule_rate">Fuel Rate List</a></li>
         </ul>
     </li>
     <li <?php if (
