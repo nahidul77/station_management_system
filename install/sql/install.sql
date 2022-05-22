@@ -1019,8 +1019,7 @@ INSERT INTO `vehicle_fitness` (`v_fitness_id`, `v_id`, `reg_issue`, `reg_expire`
 
 CREATE TABLE `vehicle_fuel_rate` (
   `v_fuel_id` int(10) UNSIGNED NOT NULL,
-  `v_id` int(100) NOT NULL COMMENT 'vehicle id',
-  `v_fuel_per_kilo_litter` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `v_fuel_name` varchar(255) CHARACTER SET latin1 NOT NULL,
   `v_fuel_rate` varchar(255) CHARACTER SET latin1 NOT NULL,
   `v_fuel_last_update_dat` datetime NOT NULL,
   `posting_id` int(10) NOT NULL,
@@ -1031,17 +1030,11 @@ CREATE TABLE `vehicle_fuel_rate` (
 -- Dumping data for table `vehicle_fuel_rate`
 --
 
-INSERT INTO `vehicle_fuel_rate` (`v_fuel_id`, `v_id`, `v_fuel_per_kilo_litter`, `v_fuel_rate`, `v_fuel_last_update_dat`, `posting_id`, `active`) VALUES
-(1, 5, '130', '3000', '2022-03-03 04:18:51', 1, 1),
-(2, 5, '100', '6000', '2022-03-03 04:16:34', 1, 1),
-(3, 3, '500', '5000', '2022-03-03 04:16:51', 1, 1),
-(4, 7, '500', '6000', '2022-03-03 04:19:11', 1, 1),
-(5, 5, '140', '7000', '2022-03-03 04:19:27', 1, 1),
-(6, 2, '333', '36000', '2022-03-04 07:01:24', 1, 1),
-(7, 3, '90', '9000', '2022-03-07 10:55:13', 1, 1),
-(8, 5, '300', '2000', '2022-03-07 10:55:35', 1, 1),
-(9, 7, '401', '12000', '2022-03-07 10:55:52', 1, 1),
-(10, 10, '40', '12000', '2022-03-07 10:56:09', 1, 1);
+INSERT INTO `vehicle_fuel_rate` (`v_fuel_id`, `v_fuel_name`, `v_fuel_rate`, `v_fuel_last_update_dat`, `posting_id`, `active`) VALUES
+(1, 'Petrol', '120', '3000', '2022-03-03 04:18:51', 1, 1),
+(2, 'Diesel', '100', '6000', '2022-03-03 04:16:34', 1, 1),
+(3, 'CNG', '90', '2022-03-03 04:16:51', 1, 1),
+(4, 'AutoGas', '80', '2022-03-07 10:56:09', 1, 1);
 
 -- --------------------------------------------------------
 
