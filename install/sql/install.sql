@@ -1031,8 +1031,8 @@ CREATE TABLE `vehicle_fuel_rate` (
 --
 
 INSERT INTO `vehicle_fuel_rate` (`v_fuel_id`, `v_fuel_name`, `v_fuel_rate`, `v_fuel_last_update_dat`, `posting_id`, `active`) VALUES
-(1, 'Petrol', '120', '3000', '2022-03-03 04:18:51', 1, 1),
-(2, 'Diesel', '100', '6000', '2022-03-03 04:16:34', 1, 1),
+(1, 'Petrol', '120', '2022-03-03 04:18:51', 1, 1),
+(2, 'Diesel', '100', '2022-03-03 04:16:34', 1, 1),
 (3, 'CNG', '90', '2022-03-03 04:16:51', 1, 1),
 (4, 'AutoGas', '80', '2022-03-07 10:56:09', 1, 1);
 

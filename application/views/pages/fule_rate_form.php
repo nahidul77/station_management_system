@@ -26,10 +26,10 @@
                     </div>
                 <?php endif ?>
                 <div class="form-group row">
-                    <label for="v_fuel_per_kilo_litter" class="col-sm-3 col-form-label">Fuel Name</label>
+                    <label for="v_fuel_name" class="col-sm-3 col-form-label">Fuel Name</label>
                     <div class="col-sm-9">
-                        <input type="text" name="v_fuel_per_kilo_litter" class="form-control" id="v_fuel_per_kilo_litter" required="required" placeholder="Fuel Name" value="<?php echo set_value('v_fuel_per_kilo_litter', $rates->v_fuel_per_kilo_litter); ?>">
-                        <div class="help-block" id="title-exists"><?php echo form_error('v_fuel_per_kilo_litter'); ?></div>
+                        <input type="text" name="v_fuel_name" class="form-control" id="v_fuel_name" required="required" placeholder="Fuel Name" value="<?php echo set_value('v_fuel_name', $rates->v_fuel_name); ?>">
+                        <div class="help-block" id="title-exists"><?php echo form_error('v_fuel_name'); ?></div>
                     </div>
                 </div>
 

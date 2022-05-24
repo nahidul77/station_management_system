@@ -44,11 +44,12 @@
                             <?php
                             if (!empty($rates)) {
                                 $count = 0;
+                                print_r($rates);
                                 foreach ($rates as $rate) {
                             ?>
                                     <tr>
                                         <td class="center"><?php echo $count + 1; ?></td>
-                                        <td><?php echo $rate->v_fuel_per_kilo_litter; ?></td>
+                                        <td><?php echo $rate->v_fuel_name; ?></td>
                                         <td><?php echo $rate->v_fuel_rate; ?></td>
                                         <td><?php if ($rate->active == 1)
                                                 echo "Active";

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -72,14 +72,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
-$active_record = TRUE; //ci version 2.x
+$active_record = TRUE;//ci version 2.x
 
 $db['default'] = array(
     'dsn'   => '',
     'hostname' => 'localhost',
     'username' => 'root',
     'password' => '',
-    'database' => 'codec',
+    'database' => 'codec_vms',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
@@ -91,8 +91,9 @@ $db['default'] = array(
     'swap_pre' => '',
     'encrypt'  => FALSE,
     'compress' => FALSE,
-    'autoinit' => TRUE, //ci version 2.x
+    'autoinit' => TRUE,//ci version 2.x
     'stricton' => FALSE,
     'failover' => array(),
     'save_queries' => TRUE
 );
+ 
