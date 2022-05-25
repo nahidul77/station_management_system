@@ -82,12 +82,6 @@ $base_url = base_url();
     </li>
     <?php if (false) : ?>
         <li>
-            <a href="#" class="material-ripple"> <i class="hvr-buzz-out fa fa-legal"></i><?php echo display('fitness'); ?><span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li><a href="<?php echo $base_url; ?>vehicle/vehicle_fitness_list"><?php echo display('fitnesslist') ?></a></li>
-            </ul>
-        </li>
-        <li>
             <a href="#" class="material-ripple"><i class="material-icons">business</i><?php echo display('stationsetup'); ?><span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li><a href="<?php echo $base_url; ?>district/district_list"><?php echo display('statelist'); ?></a></li>
