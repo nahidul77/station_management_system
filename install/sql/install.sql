@@ -225,42 +225,6 @@ INSERT INTO `add_company` (`company_id`, `company_name`, `company_address`, `com
 -- --------------------------------------------------------
 
 --
--- Table structure for table `company_rent`
---
-
-CREATE TABLE `company_rent` (
-  `company_rent_id` int(10) UNSIGNED NOT NULL,
-  `company_id` int(100) NOT NULL,
-  `v_type_id` int(100) NOT NULL,
-  `starting_station_id` int(100) NOT NULL,
-  `ending_station_id` int(100) NOT NULL,
-  `rent_type` int(10) NOT NULL,
-  `rent` float NOT NULL,
-  `vat` int(11) NOT NULL,
-  `vat_status` tinyint(1) NOT NULL DEFAULT '0',
-  `posting_id` int(100) NOT NULL,
-  `active` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `company_rent`
---
-
-INSERT INTO `company_rent` (`company_rent_id`, `company_id`, `v_type_id`, `starting_station_id`, `ending_station_id`, `rent_type`, `rent`, `vat`, `vat_status`, `posting_id`, `active`) VALUES
-(1, 3, 8, 4, 4, 2, 2000, 200, 0, 1, 1),
-(2, 2, 14, 4, 4, 0, 30000, 300, 1, 1, 1),
-(3, 5, 8, 4, 4, 2, 3000, 0, 2, 1, 1),
-(4, 2, 13, 4, 4, 0, 2000, 500, 1, 1, 1),
-(5, 4, 10, 4, 4, 2, 3000, 200, 1, 1, 1),
-(6, 2, 20, 7, 7, 2, 9000, 4, 1, 1, 1),
-(7, 3, 19, 7, 7, 0, 7000, 0, 0, 1, 1),
-(8, 9, 13, 6, 7, 1, 8000, 7, 1, 1, 1),
-(9, 11, 19, 6, 7, 2, 6000, 7, 1, 1, 1),
-(10, 2, 19, 7, 9, 0, 4000, 5, 1, 1, 1);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `driver_info`
 --
 
@@ -1027,12 +991,6 @@ ALTER TABLE `add_company`
   ADD PRIMARY KEY (`company_id`);
 
 --
--- Indexes for table `company_rent`
---
-ALTER TABLE `company_rent`
-  ADD PRIMARY KEY (`company_rent_id`);
-
---
 -- Indexes for table `driver_info`
 --
 ALTER TABLE `driver_info`
@@ -1156,12 +1114,6 @@ ALTER TABLE `acc_outflow`
 --
 ALTER TABLE `add_company`
   MODIFY `company_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `company_rent`
---
-ALTER TABLE `company_rent`
-  MODIFY `company_rent_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `driver_info`
