@@ -17,10 +17,10 @@ $base_url = base_url();
             strpos($url, 'vehicle_type_edit') ||
             strpos($url, 'vehicle_info_edit')
         ) :  ?> class="active" <?php endif ?>>
-        <a href="#" class="material-ripple"><i class="fa fa-car"></i><?php echo display('vehicle'); ?><span class="fa arrow"></span></a>
+        <a href="#" class="material-ripple"><i class="fa fa-car"></i>Vehicle<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
-            <li><a href="<?php echo $base_url; ?>vehicle/vehicle_type_list"><?php echo display('vehicletypelist'); ?></a></li>
-            <li><a href="<?php echo $base_url; ?>vehicle/vehicle_info_list"><?php echo display('vehiclelist'); ?></a></li>
+            <li><a href="<?php echo $base_url; ?>vehicle/vehicle_type_list">Vehicle Type List</a></li>
+            <li><a href="<?php echo $base_url; ?>vehicle/vehicle_info_list">Vehicle List</a></li>
         </ul>
     </li>
     <li <?php if (
@@ -28,9 +28,9 @@ $base_url = base_url();
             $url == $base_url . 'driver_info/create' ||
             strpos($url, 'driver_info/edit/')
         ) :  ?> class="active" <?php endif ?>>
-        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-drivers-license"></i><?php echo display('driver'); ?><span class="fa arrow"></span></a>
+        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-drivers-license"></i>Driver<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
-            <li><a href="<?php echo $base_url; ?>driver_info"><?php echo display('driverlist'); ?></a></li>
+            <li><a href="<?php echo $base_url; ?>driver_info">Driver List</a></li>
         </ul>
     </li>
     <?php if (false) : ?>
@@ -48,7 +48,7 @@ $base_url = base_url();
             $url == $base_url . 'company' ||
             $url == $base_url . 'company/create'
         ) :  ?> class="active" <?php endif ?>>
-        <a href="#" class="material-ripple"><i class="fa fa-user"></i><?php echo display('customers'); ?><span class="fa arrow"></span></a>
+        <a href="#" class="material-ripple"><i class="fa fa-user"></i>Customers<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li><a href="<?php echo $base_url; ?>company">Customer List</a></li>
             <?php if (false) : ?>
@@ -74,25 +74,27 @@ $base_url = base_url();
             strpos($url, 'expense_entry_edit') ||
             strpos($url, 'expense_list_edit')
         ) :  ?> class="active" <?php endif ?>>
-        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-plus"></i><?php echo display('expense'); ?><span class="fa arrow"></span></a>
+        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-plus"></i>Expense<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
-            <li><a href="<?php echo $base_url; ?>expense_entry/view"><?php echo display('expenselist') ?></a></li>
-            <li><a href="<?php echo $base_url; ?>expense_list"><?php echo display('expensetypelist'); ?></a></li>
+            <li><a href="<?php echo $base_url; ?>expense_entry/view">Expense List</a></li>
+            <li><a href="<?php echo $base_url; ?>expense_list">Expense Type List</a></li>
         </ul>
     </li>
-    <?php if (false) : ?>
-        <li>
-            <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-user-circle"></i><?php echo display('accounting'); ?><span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li><a href="<?php echo $base_url; ?>accounting/bank/"><?php echo display('bankinformation') ?></a></li>
-                <li><a href="<?php echo $base_url; ?>accounting/account/"><?php echo display('accountinformation') ?></a></li>
 
-                <li><a href="<?php echo $base_url; ?>accounting/company/"><?php echo display('companyinformation') ?></a></li>
-                <li><a href="<?php echo $base_url; ?>accounting/inflow/"><?php echo display('inflow') ?></a></li>
-                <li><a href="<?php echo $base_url; ?>accounting/outflow/"><?php echo display('outflow') ?></a></li>
-                <li><a href="<?php echo $base_url; ?>accounting/report/"><?php echo display('accountreports') ?></a></li>
-            </ul>
-        </li>
+    <li>
+        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-user-circle"></i><?php echo display('accounting'); ?><span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li><a href="<?php echo $base_url; ?>accounting/bank/"><?php echo display('bankinformation') ?></a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/account/"><?php echo display('accountinformation') ?></a></li>
+
+            <li><a href="<?php echo $base_url; ?>accounting/company/"><?php echo display('companyinformation') ?></a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/inflow/"><?php echo display('inflow') ?></a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/outflow/"><?php echo display('outflow') ?></a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/report/"><?php echo display('accountreports') ?></a></li>
+        </ul>
+    </li>
+
+    <?php if (false) : ?>
         <li>
             <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-leanpub"></i><?php echo display('reports'); ?><span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
