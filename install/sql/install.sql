@@ -221,62 +221,6 @@ INSERT INTO `add_company` (`company_id`, `company_name`, `company_address`, `com
 (2, 'Amberit Group', 'Gulsha Dhaka', '78-6767', 'ambergroup@gmail.com', 'www.amber.com', 1, 1),
 (3, 'Zumuna task', 'Dhaka Uttara', '898-7897897', 'task@gmail.com', 'www.task.com', 1, 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `city`
---
-
-CREATE TABLE `city` (
-  `city_id` int(10) UNSIGNED NOT NULL,
-  `state_id` int(11) NOT NULL,
-  `city_name` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `posting_id` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='city wise station';
-
---
--- Dumping data for table `city`
---
-
-INSERT INTO `city` (`city_id`, `state_id`, `city_name`, `posting_id`, `active`) VALUES
-(4, 6, 'maxco', 1, 1),
-(5, 5, 'Kukuri', 1, 1),
-(6, 7, 'Abbesses', 1, 1),
-(7, 7, 'Alexandre Dumas', 1, 1),
-(8, 6, 'Eastern Cape', 1, 1),
-(9, 6, 'Free State', 1, 1),
-(10, 12, 'Koltakata stand', 1, 1),
-(11, 11, 'Tim Johne', 1, 1),
-(12, 12, 'Koltakata stand 2', 1, 1),
-(13, 14, 'Samjal Tor', 1, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `city_city_distance`
---
-
-CREATE TABLE `city_city_distance` (
-  `distance_id` int(10) UNSIGNED NOT NULL,
-  `city_id_one` int(10) NOT NULL,
-  `city_id_two` int(10) NOT NULL,
-  `distance` int(100) NOT NULL,
-  `measurement_scale` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `posting_id` int(10) NOT NULL,
-  `active` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `city_city_distance`
---
-
-INSERT INTO `city_city_distance` (`distance_id`, `city_id_one`, `city_id_two`, `distance`, `measurement_scale`, `posting_id`, `active`) VALUES
-(3, 4, 4, 30, '1', 1, 1),
-(4, 5, 4, 50, '1', 1, 1),
-(5, 5, 4, 50, '2', 1, 1),
-(6, 9, 5, 1000, '1', 1, 1),
-(7, 7, 5, 30, '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -873,34 +817,7 @@ CREATE TABLE `setting` (
 INSERT INTO `setting` (`id`, `title`, `address`, `footer_text`) VALUES
 (1, 'Your Management System', 'dhaka', 'footer text');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `state`
---
-
-CREATE TABLE `state` (
-  `state_id` int(10) UNSIGNED NOT NULL,
-  `state_name` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `posting_id` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `active` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `state`
---
-
-INSERT INTO `state` (`state_id`, `state_name`, `posting_id`, `active`) VALUES
-(5, 'Newyork', '1', 1),
-(6, 'South Africa', '1', 1),
-(7, 'Paris', '1', 1),
-(8, 'Marseille', '1', 1),
-(9, 'Strasbourg', '1', 1),
-(10, 'Rangpur', '1', 1),
-(11, 'England', '1', 1),
-(12, 'Kolkata', '1', 1),
-(13, 'Barisal', '1', 1),
-(14, 'Dinajpur', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -1110,18 +1027,6 @@ ALTER TABLE `add_company`
   ADD PRIMARY KEY (`company_id`);
 
 --
--- Indexes for table `city`
---
-ALTER TABLE `city`
-  ADD PRIMARY KEY (`city_id`);
-
---
--- Indexes for table `city_city_distance`
---
-ALTER TABLE `city_city_distance`
-  ADD PRIMARY KEY (`distance_id`);
-
---
 -- Indexes for table `company_rent`
 --
 ALTER TABLE `company_rent`
@@ -1170,12 +1075,6 @@ ALTER TABLE `setting`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `state`
---
-ALTER TABLE `state`
-  ADD PRIMARY KEY (`state_id`);
-
---
 -- Indexes for table `trip`
 --
 ALTER TABLE `trip`
@@ -1187,11 +1086,6 @@ ALTER TABLE `trip`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `vehicle_fitness`
---
-ALTER TABLE `vehicle_fitness`
-  ADD PRIMARY KEY (`v_fitness_id`);
 
 --
 -- Indexes for table `vehicle_fuel_rate`
@@ -1264,18 +1158,6 @@ ALTER TABLE `add_company`
   MODIFY `company_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `city`
---
-ALTER TABLE `city`
-  MODIFY `city_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `city_city_distance`
---
-ALTER TABLE `city_city_distance`
-  MODIFY `distance_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT for table `company_rent`
 --
 ALTER TABLE `company_rent`
@@ -1322,12 +1204,6 @@ ALTER TABLE `logo`
 --
 ALTER TABLE `setting`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `state`
---
-ALTER TABLE `state`
-  MODIFY `state_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `trip`
