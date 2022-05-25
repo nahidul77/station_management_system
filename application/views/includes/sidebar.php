@@ -51,9 +51,6 @@ $base_url = base_url();
         <a href="#" class="material-ripple"><i class="fa fa-user"></i>Customers<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li><a href="<?php echo $base_url; ?>company">Customer List</a></li>
-            <?php if (false) : ?>
-                <li><a href="<?php echo $base_url; ?>rent"><?php echo display('companyrentlist') ?></a></li>
-            <?php endif ?>
         </ul>
     </li>
     <li <?php if (
