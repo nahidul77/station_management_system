@@ -82,15 +82,6 @@ $base_url = base_url();
     </li>
     <?php if (false) : ?>
         <li>
-            <a href="#" class="material-ripple"><i class="material-icons">business</i><?php echo display('stationsetup'); ?><span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li><a href="<?php echo $base_url; ?>district/district_list"><?php echo display('statelist'); ?></a></li>
-                <li><a href="<?php echo $base_url; ?>city/city_list"><?php echo display('stationlist'); ?></a></li>
-                <li><a href="<?php echo $base_url; ?>station_distence/station_distence_list"><?php echo display('stationdistancelist') ?></a></li>
-            </ul>
-        </li>
-
-        <li>
             <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-user-circle"></i><?php echo display('accounting'); ?><span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li><a href="<?php echo $base_url; ?>accounting/bank/"><?php echo display('bankinformation') ?></a></li>
