@@ -78,12 +78,30 @@ $base_url = base_url();
         </ul>
     </li>
 
-    <li>
+    <li <?php if (
+            $url == $base_url . 'accounting/bank/' ||
+            $url == $base_url . 'accounting/account/' ||
+            $url == $base_url . 'accounting/company/' ||
+            $url == $base_url . 'accounting/inflow/' ||
+            $url == $base_url . 'accounting/outflow/' ||
+            $url == $base_url . 'accounting/report/' ||
+            $url == $base_url . 'accounting/bank/create/' ||
+            $url == $base_url . 'accounting/account/create/' ||
+            $url == $base_url . 'accounting/inflow/create/' ||
+            $url == $base_url . 'accounting/outflow/create/' ||
+            $url == $base_url . 'accounting/report/generate/' ||
+            strpos($url, 'accounting/bank/edit/') ||
+            strpos($url, 'accounting/company/edit/') ||
+            strpos($url, 'accounting/inflow/edit/') ||
+            strpos($url, 'accounting/inflow/single_view/') ||
+            strpos($url, 'accounting/outflow/edit/') ||
+            strpos($url, 'accounting/outflow/single_view/') ||
+            strpos($url, 'accounting/account/edit/')
+        ) :  ?> class="active" <?php endif ?>>
         <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-user-circle"></i><?php echo display('accounting'); ?><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
-            <li><a href="<?php echo $base_url; ?>accounting/bank/"><?php echo display('bankinformation') ?></a></li>
-            <li><a href="<?php echo $base_url; ?>accounting/account/"><?php echo display('accountinformation') ?></a></li>
-
+            <li><a href="<?php echo $base_url; ?>accounting/bank/"> Bank Information </a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/account/"> Account Information </a></li>
             <li><a href="<?php echo $base_url; ?>accounting/company/"><?php echo display('companyinformation') ?></a></li>
             <li><a href="<?php echo $base_url; ?>accounting/inflow/"><?php echo display('inflow') ?></a></li>
             <li><a href="<?php echo $base_url; ?>accounting/outflow/"><?php echo display('outflow') ?></a></li>
