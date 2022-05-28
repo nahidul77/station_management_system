@@ -10,22 +10,22 @@
             <div class="row-fluid" id="PrintArea">
                 <div class="span10 offset1">
                     <div class="widget-box transparent invoice-box">
-                        <div class="panel-body">  
+                        <div class="panel-body">
                             <div class="table-header">
 
-                                <i class="fa fa-list"></i> <?php echo display('voucher'); ?>
+                                <i class="fa fa-list"></i> Voucher
                                 <div class="pull-right">
-                                    <a class="white" href="<?php echo base_url(); ?>trip_information/view_all">
-                                        <?php echo display('serialno'); ?>:
+                                    <a class="blue" href="<?php echo base_url(); ?>trip_information/view_all">
+                                        Serial No:
                                         <?php echo $outflow->outflow_id; ?>
                                         <br />
-                                        <?php echo display('date') ?>
+                                        Date
                                         <span class="blue"><?php echo date("d-m-Y"); ?></span>
                                     </a>
                                 </div>
                             </div>
                             <hr>
-                        </div>    
+                        </div>
 
                         <div class="widget-body">
                             <div class="widget-main padding-24">
@@ -33,96 +33,97 @@
 
 
                                     <table width="100%">
-                                        <tr> 
+                                        <tr>
                                             <td>
                                                 <h3 style="margin-left: 1%;"><?php echo $company->name; ?></h3>
-                                                <p  style="margin-left: 1%;"><?php echo $company->address; ?></p>
-                                            </td> 
+                                                <p style="margin-left: 1%;"><?php echo $company->address; ?></p>
+                                            </td>
                                             <td width="200">
                                                 <ul class="list-unstyled" style="padding: 10%;">
-                                                    <li><?php echo display('mobileno'); ?>  : <?php echo $company->mobile_no; ?></li> 
-                                                    <li><?php echo display('phone'); ?>   : <?php echo $company->phone_no; ?></li> 
-                                                    <li><?php echo display('fax'); ?>     : <?php echo $company->fax_no; ?></li> 
-                                                    <li><?php echo display('email'); ?>  : <?php echo $company->email; ?></li> 
-                                                    <li><?php echo display('website'); ?> : <?php echo $company->website; ?></li> 
+                                                    <li>Mobile : <?php echo $company->mobile_no; ?></li>
+                                                    <li>Phone : <?php echo $company->phone_no; ?></li>
+                                                    <li>Fax : <?php echo $company->fax_no; ?></li>
+                                                    <li>E-mail : <?php echo $company->email; ?></li>
+                                                    <li>Website : <?php echo $company->website; ?></li>
                                                 </ul>
-                                            </td> 
+                                            </td>
                                         </tr>
-                                    </table> 
+                                    </table>
 
                                     <div class="space"></div>
 
                                     <table class="table">
-                                        <tr> 
-                                            <th width="200"><?php echo display('paymentdate'); ?></th>
+                                        <tr>
+                                            <th width="200">Payment Date</th>
                                             <td><?php echo date("d-m-Y", strtotime($outflow->payment_date)); ?></td>
-                                            <th width="200"><?php echo display('paymenttype'); ?></th>
+                                            <th width="200">Payment Type</th>
                                             <td><?php echo $outflow->payment_to; ?></td>
                                         </tr>
                                         <tr>
-                                            <th width="200"><?php echo display('accountname'); ?></th>
-                                            <td colspan="3"> 
+                                            <th width="200">Account Name</th>
+                                            <td colspan="3">
                                                 <?php
                                                 $pay_type = array(
-                                                    '1' => display('cash'),
-                                                    '2' => display('cheque'),
-                                                    '3' => display('payorder'),
-                                                    '4' => display('lc'),
+                                                    '1' =>  'CASH',
+                                                    '2' =>  'CHEQUE',
+                                                    '3' =>  'PAY_ORDER',
+                                                    '4' =>  'TxID',
                                                 );
                                                 echo @$pay_type[$outflow->payment_type];
-                                                ?>  
+                                                ?>
                                             </td>
                                         </tr>
 
-                                        <?php if ($outflow->payment_type == 2 || $outflow->payment_type == 3 || $outflow->payment_type == 4): ?>
+                                        <?php if ($outflow->payment_type == 2 || $outflow->payment_type == 3 || $outflow->payment_type == 4) : ?>
                                             <tr>
-                                                <th width="200"><?php echo display('bankname'); ?></th>
+                                                <th width="200">BANK NAME</th>
                                                 <td><?php echo $outflow->bank_name; ?></td>
-                                                <th width="200"><?php echo display('branchname'); ?></th>
+                                                <th width="200">BRANCH NAME</th>
                                                 <td><?php echo $outflow->branch_name; ?></td>
                                             </tr>
                                             <tr>
-                                                <?php if ($outflow->payment_type == 2): ?>
-                                                    <th width="200"><?php echo display('accountnumber'); ?></th>
+                                                <?php if ($outflow->payment_type == 2) : ?>
+                                                    <th width="200">Account Number</th>
                                                     <td><?php echo $outflow->account_number; ?></td>
-                                                <?php elseif ($outflow->payment_type == 3): ?>
-                                                    <th width="200"><?php echo display('payordernumber'); ?></th>
+                                                <?php elseif ($outflow->payment_type == 3) : ?>
+                                                    <th width="200">Pay Order Number</th>
                                                     <td><?php echo $outflow->pay_order_number; ?></td>
-                                                <?php elseif ($outflow->payment_type == 4): ?>
-                                                    <th width="200"><?php echo display('lc'); ?></th>
+                                                <?php elseif ($outflow->payment_type == 4) : ?>
+                                                    <th width="200">TxID</th>
                                                     <td><?php echo $outflow->letter_of_credit; ?></td>
-                                                <?php endif; ?>     
-                                                <th width="200"><?php echo display('depositbankname'); ?></th>
+                                                <?php endif; ?>
+                                                <th width="200">Deposit Bank Name</th>
                                                 <td><?php echo $outflow->deposit_bank; ?></td>
                                             </tr>
-                                        <?php endif; ?>                            
+                                        <?php endif; ?>
 
                                         <tr>
-                                            <th width="200"><?php echo display('accountname'); ?></th>
+                                            <th width="200">Account Name</th>
                                             <td><?php echo $outflow->account_name; ?></td>
-                                            <th width="200"><?php echo display('amount'); ?></th>
+                                            <th width="200">Amount</th>
                                             <td><?php echo $outflow->amount; ?></td>
                                         </tr>
                                         <tr>
-                                            <th width="200"><?php echo display('description'); ?></th>
+                                            <th width="200">Description</th>
                                             <td colspan="3"><?php echo $outflow->description; ?></td>
-                                        </tr> 
-                                    </table> 
+                                        </tr>
+                                    </table>
 
                                     <div class="hr hr8 hr-double hr-dotted"></div>
 
                                     <table width="100%" height="98px">
-                                        <tr> 
+                                        <tr>
                                             <td>
-                                                <p style="margin-left: 3%;">(<?php echo display('signatureofpaymentgiver'); ?>)<br/>
-                                                    <?php echo display('date'); ?>:  </p>
-                                            </td> 
+                                                <p style="margin-left: 1%;">(Signature of Payment Giver)<br />
+                                                    Date:
+                                                </p>
+                                            </td>
                                             <td style="width:200px" class="text-left">
-                                                <?php echo display('accountname'); ?><br/>
-                                                <?php echo display('date'); ?>:
+                                                Account Name<br />
+                                                Date:
                                             </td>
                                         </tr>
-                                    </table> 
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -131,17 +132,20 @@
             </div>
 
             <!--PAGE CONTENT ENDS-->
-        </div><!--/.span-->
-    </div><!--/.row-fluid-->
+        </div>
+        <!--/.span-->
+    </div>
+    <!--/.row-fluid-->
 
     <div class="col-xs-12 no-print">
-        <br/> 
+        <br />
         <a class="btn btn-sm btn-primary pull-right" onclick="printContent('PrintArea')">
-            <span class="fa fa-print" ></span>&nbsp;&nbsp;<?php echo display('print'); ?>
-        </a>  
+            <span class="fa fa-print"></span>&nbsp;&nbsp;<?php echo display('print'); ?>
+        </a>
     </div>
 
-</div><!--/.page-content-->
+</div>
+<!--/.page-content-->
 
 <script>
     // if (navigator.appName == "Microsoft Internet Explorer"){ 
@@ -151,12 +155,12 @@
     // }  
 </script>
 <script language="javascript">
-// function Print(){
+    // function Print(){
     // if (document.all){
     //   WebBrowser1.ExecWB(6,6); //use 6, 1 to prompt the print dialog or 6, 6 to omit it;
     //   WebBrowser1.outerHTML = "";
     // } else{
     //   window.print();
     // }
-// }
+    // }
 </script>

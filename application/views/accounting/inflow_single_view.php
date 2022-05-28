@@ -116,6 +116,7 @@
                     <td>
                       <p style="margin-left: 1%;">(Signature of Payment Giver)<br />
                         Date:
+                      </p>
                     </td>
                     <td style="width:200px" class="text-left">
                       (Signature of Receipient)<br />
