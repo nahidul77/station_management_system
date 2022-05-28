@@ -38,7 +38,7 @@
                                 <th>Description</th>
                                 <th>Status</th>
                                 <?php if ($this->session->userdata('user_type') == 9) : ?>
-                                    <th class="no-print">Action</th>
+                                    <th class="no-print" width="8%">Action</th>
                                 <?php endif; //ends of if condition 
                                 ?>
                             </tr>
