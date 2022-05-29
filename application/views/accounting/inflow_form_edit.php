@@ -130,8 +130,8 @@
                     <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="active">Is Active &nbsp;&nbsp;</label>
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
-                            <?php echo display('yes'); ?> <input type="radio" name="active" id="active" value="1" <?php echo set_radio('active', '1', TRUE); ?>>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <?php echo display('no'); ?> <input type="radio" name="active" id="active" value="0" <?php echo set_radio('active', '0'); ?>>
+                            Yes <input type="radio" name="active" id="active" value="1" <?php echo set_radio('active', '1', TRUE); ?>>&nbsp;&nbsp;&nbsp;&nbsp;
+                            No <input type="radio" name="active" id="active" value="0" <?php echo set_radio('active', '0'); ?>>
                         </div>
                     </div>
                 </div>
