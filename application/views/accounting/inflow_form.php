@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="active">Is Active&nbsp;&nbsp;</label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="active">Is Active &nbsp;&nbsp;</label>
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
                             Yes <input type="radio" name="active" id="active" value="1" <?php echo set_radio('active', '1', TRUE); ?>>&nbsp;&nbsp;&nbsp;&nbsp;
