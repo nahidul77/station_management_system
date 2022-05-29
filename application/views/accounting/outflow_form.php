@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="account_name"><?php echo display('accountname'); ?></label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="account_name">Account Name</label>
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
                             <?php echo form_dropdown('account_name', $dropdown, $outflow->account_name, 'class="col-xs-12 col-sm-4 testselect1" id="account_name"'); ?>
@@ -134,10 +134,10 @@
                         <fieldset>
                             <div class="checkbox-circle">
                                 <input name="active" type="radio" value="1" <?php echo set_radio('active', '1', TRUE); ?>>
-                                <label for="checkbox7"><?php echo display('yes'); ?></label>
+                                <label for="checkbox7">Yes</label>
 
                                 <input name="active" type="radio" value="0" <?php echo set_radio('active', '0'); ?>>
-                                <label for="checkbox8"><?php echo display('no'); ?></label>
+                                <label for="checkbox8">No</label>
                             </div>
 
                         </fieldset>
