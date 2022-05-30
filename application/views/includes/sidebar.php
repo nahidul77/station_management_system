@@ -98,14 +98,14 @@ $base_url = base_url();
             strpos($url, 'accounting/outflow/single_view/') ||
             strpos($url, 'accounting/account/edit/')
         ) :  ?> class="active" <?php endif ?>>
-        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-user-circle"></i><?php echo display('accounting'); ?><span class="fa arrow"></span></a>
+        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-user-circle"></i> Accounting<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li><a href="<?php echo $base_url; ?>accounting/bank/"> Bank Information </a></li>
             <li><a href="<?php echo $base_url; ?>accounting/account/"> Account Information </a></li>
-            <li><a href="<?php echo $base_url; ?>accounting/company/"><?php echo display('companyinformation') ?></a></li>
-            <li><a href="<?php echo $base_url; ?>accounting/inflow/"><?php echo display('inflow') ?></a></li>
-            <li><a href="<?php echo $base_url; ?>accounting/outflow/"><?php echo display('outflow') ?></a></li>
-            <li><a href="<?php echo $base_url; ?>accounting/report/"><?php echo display('accountreports') ?></a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/company/"> Company Information</a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/inflow/"> Rececipt Information</a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/outflow/"> Payment Information</a></li>
+            <li><a href="<?php echo $base_url; ?>accounting/report/"> Account Reports</a></li>
         </ul>
     </li>
 
@@ -126,13 +126,13 @@ $base_url = base_url();
         ) :  ?> class="active" <?php endif ?>>
         <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-gear"></i><?php echo display('settings') ?><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
-            <li><a href="<?php echo $base_url; ?>logo"><?php echo display('logomanage') ?></a></li>
-            <li><a href="<?php echo $base_url; ?>admin/app_setting"><?php echo display('appsetting') ?></a></li>
+            <li><a href="<?php echo $base_url; ?>logo">Logo Manage</a></li>
+            <li><a href="<?php echo $base_url; ?>admin/app_setting">App Setting</a></li>
             <?php if (false) : ?>
                 <li><a href="<?php echo $base_url; ?>language"><?php echo display('languagesetting'); ?></a></li>
                 <li><a href="<?php echo $base_url; ?>setting"><?php echo display('softwaresetting'); ?></a></li>
             <?php endif ?>
         </ul>
     </li>
-    <li><a href="<?php echo $base_url; ?>admin/logout" class="material-ripple"><i class="glyphicon glyphicon-off"></i> <?php echo display('logout'); ?></a></li>
+    <li><a href="<?php echo $base_url; ?>admin/logout" class="material-ripple"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
 </ul>
