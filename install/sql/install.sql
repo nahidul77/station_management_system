@@ -222,6 +222,34 @@ INSERT INTO `add_company` (`company_id`, `company_name`, `company_address`, `com
 (3, 'Zumuna task', 'Dhaka Uttara', '898-7897897', 'task@gmail.com', 'www.task.com', 1, 1);
 
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_vendor`
+--
+
+CREATE TABLE `add_vendor` (
+  `vendor_id` int(11) UNSIGNED NOT NULL,
+  `vendor_name` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `vendor_address` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `vendor_cell` varchar(100) DEFAULT NULL,
+  `vendor_email` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `vendor_web` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `posting_id` int(10) NOT NULL,
+  `active` int(10) NOT NULL COMMENT '0 = inactive, 1 = active, 2 = delete'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `add_vendor`
+--
+
+INSERT INTO `add_vendor` (`vendor_id`, `vendor_name`, `vendor_address`, `vendor_cell`, `vendor_email`, `vendor_web`, `posting_id`, `active`) VALUES
+(1, 'Trust Filling', 'Dhaka Tatola', '65-75766', 'trustff@gmail.com', 'www.trustff.com', 1, 1),
+(2, 'BOF CNG', 'Gulsha Dhaka', '78-6767', 'bofcng@gmail.com', 'www.bofcng.com', 1, 1),
+(3, 'Petro Bangla', 'Dhaka Uttara', '898-7897897', 'petrobangla@gmail.com', 'www.petrobangla.com', 1, 1);
+
+
 -- --------------------------------------------------------
 
 --
