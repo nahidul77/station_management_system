@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="panel panel-bd lobidrag">
+        <div class="panel panel-bd">
             <div class="panel-body">
                 <div class="table-header">
                     <i class="fa fa-list"></i> Customer List
