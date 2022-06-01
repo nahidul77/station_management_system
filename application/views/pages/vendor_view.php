@@ -6,7 +6,7 @@
                     <i class="fa fa-list"></i> Vendor List
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
-                        <a style="color:white" href="<?php echo base_url(); ?>company/create">Add Vendor</a>
+                        <a style="color:white" href="<?php echo base_url(); ?>vendor/create">Add Vendor</a>
                     </div>
                 </div>
                 <hr>
@@ -52,18 +52,18 @@
                         </thead>
                         <tbody>
                             <?php
-                            if (!empty($companys)) {
+                            if (!empty($vendors)) {
                                 $count = 0;
-                                foreach ($companys as $company) {
+                                foreach ($vendors as $vendor) {
                             ?>
                                     <tr>
                                         <td class="center"><?php echo $count + 1; ?></td>
-                                        <td><?php echo $company->company_name; ?></td>
-                                        <td><?php echo $company->company_address; ?></td>
-                                        <td><?php echo $company->company_cell; ?></td>
-                                        <td><?php echo $company->company_email; ?></td>
-                                        <td><?php echo $company->company_web; ?></td>
-                                        <td><?php if ($company->active == 1)
+                                        <td><?php echo $vendor->vendor_name; ?></td>
+                                        <td><?php echo $vendor->vendor_address; ?></td>
+                                        <td><?php echo $vendor->vendor_cell; ?></td>
+                                        <td><?php echo $vendor->vendor_email; ?></td>
+                                        <td><?php echo $vendor->vendor_web; ?></td>
+                                        <td><?php if ($vendor->active == 1)
                                                 echo 'Active';
                                             else
                                                 echo 'Inactive';
@@ -71,10 +71,10 @@
 
                                         <?php if ($this->session->userdata('user_type') == 9) { ?>
                                             <td class="no-print">
-                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "company/edit_company/" . $company->company_id; ?>">
+                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "vendor/edit_vendor/" . $vendor->vendor_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "company/delete_company/" . $company->company_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "vendor/delete_vendor/" . $vendor->vendor_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
