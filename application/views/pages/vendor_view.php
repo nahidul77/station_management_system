@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="panel panel-bd lobidrag">
+        <div class="panel panel-bd">
             <div class="panel-body">
                 <div class="table-header">
-                    <i class="fa fa-list"></i> Customer List
+                    <i class="fa fa-list"></i> Vendor List
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
-                        <a style="color:white" href="<?php echo base_url(); ?>company/create">Add Customer</a>
+                        <a style="color:white" href="<?php echo base_url(); ?>company/create">Add Vendor</a>
                     </div>
                 </div>
                 <hr>
@@ -26,7 +26,7 @@
                                 </th>
 
                                 <th>
-                                    Customer Name
+                                    Vendor Name
                                 </th>
                                 <th>
                                     Address
