@@ -974,6 +974,13 @@ ALTER TABLE `acc_outflow`
 ALTER TABLE `add_company`
   ADD PRIMARY KEY (`company_id`);
 
+
+--
+-- Indexes for table `add_vendor`
+--
+ALTER TABLE `add_vendor`
+  ADD PRIMARY KEY (`vendor_id`);
+
 --
 -- Indexes for table `driver_info`
 --
@@ -1092,6 +1099,12 @@ ALTER TABLE `acc_outflow`
 --
 ALTER TABLE `add_company`
   MODIFY `company_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `add_vendor`
+--
+ALTER TABLE `add_vendor`
+  MODIFY `vendor_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `driver_info`

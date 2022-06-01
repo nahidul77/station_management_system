@@ -45,6 +45,15 @@ $base_url = base_url();
         </li>
     <?php endif ?>
     <li <?php if (
+            $url == $base_url . 'vendor' ||
+            $url == $base_url . 'vendor/create'
+        ) :  ?> class="active" <?php endif ?>>
+        <a href="#" class="material-ripple"><i class="fa fa-users"></i>Vendors<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li><a href="<?php echo $base_url; ?>vendor">Vendor List</a></li>
+        </ul>
+    </li>
+    <li <?php if (
             $url == $base_url . 'company' ||
             $url == $base_url . 'company/create'
         ) :  ?> class="active" <?php endif ?>>
