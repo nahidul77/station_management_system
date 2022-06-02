@@ -66,6 +66,7 @@ $base_url = base_url();
             $url == $base_url . 'fule_rate' ||
             $url == $base_url . 'fule_unit' ||
             $url == $base_url . 'fule_rate/create' ||
+            $url == $base_url . 'fule_unit/create' ||
             strpos($url, 'fule_rate/rate_edit')
         ) :  ?> class="active" <?php endif ?>>
         <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-fire-extinguisher"></i>Fuels<span class="fa arrow"></span></a>

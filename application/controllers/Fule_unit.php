@@ -23,22 +23,21 @@ class Fule_unit extends CI_Controller
 	}
 	//=================this fubction for view fule rate list(End) ===================//
 
-	//=============== This function for create/insert fule rate (Start) =============================//
+	//=============== This function for create/insert fule unit (Start) =============================//
 
 
 	public function create()
 	{
 		$data['m_fuel'] = "active";
-		// $data['v_id'] = $this->fule_rate_model->get_vehicle_model();
-		$data['rates'] = (object) array('v_fuel_id' => '', 'v_fuel_name' => '', 'v_fuel_rate' => '');
-		$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
+		$data['units'] = (object) array('unit_id' => '', 'unit_name' => '');
+		$data['content'] = $this->load->view('pages/fule_unit_form', $data, TRUE);
 		$this->load->view('wrapper_main', $data);
 	}
-	//=============== This function for create/insert fule rate (Start) =============================//
+	//=============== This function for create/insert fule unit (Start) =============================//
 
 
 
-	//=============== This function for Save fule rate (Start) =============================//
+	//=============== This function for Save fule unit (Start) =============================//
 
 
 	public function save()
