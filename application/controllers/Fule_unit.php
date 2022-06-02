@@ -43,37 +43,32 @@ class Fule_unit extends CI_Controller
 	public function save()
 	{
 		$data['m_fuel'] = "active";
-		$v_fuel_id = $this->input->post('v_fuel_id'); //this id for get fule rate id
-		// $v_id = trim($this->input->post('v_id'));//this name for get vehicle registration no
-		$v_fuel_name = trim($this->input->post('v_fuel_name')); //this name for get fule
-		$v_fuel_rate = trim($this->input->post('v_fuel_rate')); //this name for get fule
+		$unit_id = $this->input->post('unit_id');
+		$unit_name = trim($this->input->post('unit_name')); //this name for get fule
 		$is_active = trim($this->input->post('active')); //this name for get fule
 
 		// $data['v_id'] = $this->fule_rate_model->get_vehicle_model();
-		$data['rates'] = (object) array('v_fuel_id' => $v_fuel_id, 'v_fuel_name' => $v_fuel_name, 'v_fuel_rate' => $v_fuel_rate);
+		$data['units'] = (object) array('unit_id' => $unit_id, 'unit_name' => $unit_name);
 		//============================ for form validation (start) ====================//
-		$this->form_validation->set_rules('v_fuel_rate', 'Fuel Rate', 'trim|required');
-		$this->form_validation->set_rules('v_fuel_name', 'Fuel Name', 'required');
+		$this->form_validation->set_rules('unit_name', 'Unit Name', 'required');
 		$this->form_validation->set_rules('active', 'Is Active', 'required');
 		if ($this->form_validation->run() == FALSE) {
-			$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
+			$data['content'] = $this->load->view('pages/fule_unit_form', $data, TRUE);
 			$this->load->view('wrapper_main', $data);
 		} else {
 			$saveData = array(
-				'v_fuel_id' => $v_fuel_id,
-				'v_fuel_name' => $v_fuel_name,
-				'v_fuel_rate' => $v_fuel_rate,
-				'posting_id' => $this->session->userdata('user_id'),
+				'unit_id' => $unit_id,
+				'unit_name' => $unit_name,
 				'active' => $is_active
 			);
-			$this->fule_rate_model->save($saveData);
-			if (!empty($v_fuel_id)) {
+			$this->fule_unit_model->save($saveData);
+			if (!empty($unit_id)) {
 				$this->session->set_flashdata('success', display('updatesuccessfully'));
 			} else {
 				$this->session->set_flashdata('success', display('savesuccessfully'));
 			}
 
-			redirect('fule_rate');
+			redirect('fule_unit');
 		}
 	}
 	//=============== This function for Save Fuel Rate (End) =============================//
