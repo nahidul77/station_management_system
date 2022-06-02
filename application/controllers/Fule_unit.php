@@ -76,7 +76,7 @@ class Fule_unit extends CI_Controller
 	//================this Function for edit Fuel Rate(Start) ============================//
 
 
-	public function rate_edit($v_fuel_id = '')
+	public function unit_edit($unit_id = '')
 	{
 		if (
 			$this->session->userdata('isLogin') == FALSE
@@ -86,10 +86,9 @@ class Fule_unit extends CI_Controller
 		}
 		#
 		$data['m_fuel'] = "active";
-		// $data['v_id'] = $this->fule_rate_model->get_vehicle_model();
-		$rateList = $this->fule_rate_model->edit_rate($v_fuel_id);
-		$data['rates'] = $rateList[0];
-		$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
+		$unitList = $this->fule_unit_model->edit_unit($unit_id);
+		$data['units'] = $unitList[0];
+		$data['content'] = $this->load->view('pages/fule_unit_form', $data, TRUE);
 		$this->load->view('wrapper_main', $data);
 	}
 	//================this Function for edit Fuel Rate(End) ============================//

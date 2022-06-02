@@ -54,10 +54,10 @@
 
                                         <?php if ($this->session->userdata('user_type') == 9) { ?>
                                             <td class="no-print">
-                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "fule_rate/rate_edit/" . $unit->unit_id; ?>">
+                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "fule_unit/unit_edit/" . $unit->unit_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "fule_rate/delete_rate/" . $unit->unit_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "fule_unit/delete_unit/" . $unit->unit_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
