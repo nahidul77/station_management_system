@@ -875,7 +875,7 @@ CREATE TABLE `fuel_unit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `vehicle_fuel_rate`
+-- Dumping data for table `fuel_unit`
 --
 
 INSERT INTO `fuel_unit` (`unit_id`, `unit_name`, `active`) VALUES
