@@ -8,7 +8,7 @@ $base_url = base_url();
 
 ?>
 <ul class="nav" id="side-menu">
-    <li <?php if ($url == $base_url . "dashboard") : ?> class="active" <?php endif ?>><a href="<?php echo $base_url . "dashboard"; ?>" class="material-ripple"><i class="material-icons">home</i> Dashboard</a></li>
+    <li <?php if ($url == $base_url . "dashboard") : ?> class="active" <?php endif ?>><a href="<?php echo $base_url . "dashboard"; ?>" class="material-ripple"><i class="fa fa-home"></i> Dashboard</a></li>
     <li <?php if (
             $url == $base_url . 'vehicle/vehicle_type_list' ||
             $url == $base_url . 'vehicle/vehicle_info_list' ||
@@ -67,8 +67,9 @@ $base_url = base_url();
             $url == $base_url . 'fule_rate/create' ||
             strpos($url, 'fule_rate/rate_edit')
         ) :  ?> class="active" <?php endif ?>>
-        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-fire-extinguisher"></i>Fuel<span class="fa arrow"></span></a>
+        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-fire-extinguisher"></i>Fuels<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
+            <li><a href="<?php echo $base_url; ?>fule_unit">Manage Unit</a></li>
             <li><a href="<?php echo $base_url; ?>fule_rate">Fuel Rate List</a></li>
         </ul>
     </li>

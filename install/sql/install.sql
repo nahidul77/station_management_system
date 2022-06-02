@@ -861,6 +861,28 @@ INSERT INTO `vehicle_fuel_rate` (`v_fuel_id`, `v_fuel_name`, `v_fuel_rate`, `v_f
 (3, 'CNG', '90', '2022-03-03 04:16:51', 1, 1),
 (4, 'AutoGas', '80', '2022-03-07 10:56:09', 1, 1);
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fuel_unit`
+--
+
+CREATE TABLE `fuel_unit` (
+  `unit_id` int(10) UNSIGNED NOT NULL,
+  `unit_name` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `vehicle_fuel_rate`
+--
+
+INSERT INTO `fuel_unit` (`unit_id`, `unit_name`, `active`) VALUES
+(1, 'Ltr',  1),
+(2, 'KG',  1),
+(3, 'Meter', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -1035,6 +1057,11 @@ ALTER TABLE `user`
 --
 ALTER TABLE `vehicle_fuel_rate`
   ADD PRIMARY KEY (`v_fuel_id`);
+--
+-- Indexes for table `fuel_unit`
+--
+ALTER TABLE `fuel_unit`
+  ADD PRIMARY KEY (`unit_id`);
 
 --
 -- Indexes for table `vehicle_info`
@@ -1165,6 +1192,11 @@ ALTER TABLE `vehicle_fitness`
 --
 ALTER TABLE `vehicle_fuel_rate`
   MODIFY `v_fuel_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `fuel_unit`
+--
+ALTER TABLE `fuel_unit`
+  MODIFY `unit_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `vehicle_info`
