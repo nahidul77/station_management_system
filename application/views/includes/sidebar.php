@@ -64,6 +64,7 @@ $base_url = base_url();
     </li>
     <li <?php if (
             $url == $base_url . 'fule_rate' ||
+            $url == $base_url . 'fule_unit' ||
             $url == $base_url . 'fule_rate/create' ||
             strpos($url, 'fule_rate/rate_edit')
         ) :  ?> class="active" <?php endif ?>>
