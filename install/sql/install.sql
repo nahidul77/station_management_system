@@ -729,12 +729,6 @@ ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `vehicle_fitness`
---
-ALTER TABLE `vehicle_fitness`
-  MODIFY `v_fitness_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
 -- AUTO_INCREMENT for table `vehicle_fuel_rate`
 --
 ALTER TABLE `vehicle_fuel_rate`
