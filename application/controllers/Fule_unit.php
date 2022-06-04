@@ -63,9 +63,9 @@ class Fule_unit extends CI_Controller
 			);
 			$this->fule_unit_model->save($saveData);
 			if (!empty($unit_id)) {
-				$this->session->set_flashdata('success', display('updatesuccessfully'));
+				$this->session->set_flashdata('success', 'Update Successfully');
 			} else {
-				$this->session->set_flashdata('success', display('savesuccessfully'));
+				$this->session->set_flashdata('success', 'Save Successfully');
 			}
 
 			redirect('fule_unit');
@@ -94,7 +94,7 @@ class Fule_unit extends CI_Controller
 	//================this Function for edit Fuel Rate(End) ============================//
 	//================this Function for Delete Fuel Rate(Start) ============================//
 
-	public function delete_rate($v_fuel_id = '')
+	public function delete_unit($v_fuel_id = '')
 	{
 		if (
 			$this->session->userdata('isLogin') == FALSE
@@ -102,9 +102,9 @@ class Fule_unit extends CI_Controller
 		) {
 			redirect('admin');
 		} else {
-			$this->fule_rate_model->delete_rate($v_fuel_id);
-			$this->session->set_flashdata('success', display('deletesuccessfully'));
-			redirect('fule_rate');
+			$this->fule_unit_model->delete_unit($v_fuel_id);
+			$this->session->set_flashdata('success', 'Delete Successfully');
+			redirect('fule_unit');
 		}
 		#
 
