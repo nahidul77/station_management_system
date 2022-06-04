@@ -49,11 +49,11 @@
                     <?php
                     }
                     ?>
-                    <li><a href="<?php echo base_url(); ?>admin/user_view"><i class="hvr-buzz-out fa fa-user-circle"></i>&nbsp; <?php echo display('viewuser'); ?></a></li>
+                    <li><a href="<?php echo base_url(); ?>admin/user_view"><i class="hvr-buzz-out fa fa-user-circle"></i>&nbsp; View User</a></li>
                 <?php endif ?>
 
-                <li><a href="<?php echo base_url(); ?>admin/user_edit"><i class="hvr-buzz-out fa fa-user-circle"></i>&nbsp; <?php echo display('editprofile'); ?></a></li>
-                <li><a href="<?php echo base_url(); ?>admin/logout"> <i class="glyphicon glyphicon-off"></i>&nbsp; <?php echo display('logout'); ?></a></li>
+                <li><a href="<?php echo base_url(); ?>admin/user_edit"><i class="hvr-buzz-out fa fa-user-circle"></i>&nbsp; Edit Profile</a></li>
+                <li><a href="<?php echo base_url(); ?>admin/logout"> <i class="glyphicon glyphicon-off"></i>&nbsp; Logout</a></li>
             </ul>
         </li>
     </ul>

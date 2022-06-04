@@ -136,14 +136,10 @@ $base_url = base_url();
             $url == $base_url . 'logo' ||
             $url == $base_url . 'admin/app_setting'
         ) :  ?> class="active" <?php endif ?>>
-        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-gear"></i><?php echo display('settings') ?><span class="fa arrow"></span></a>
+        <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-gear"></i> Settings<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li><a href="<?php echo $base_url; ?>logo">Logo Manage</a></li>
             <li><a href="<?php echo $base_url; ?>admin/app_setting">App Setting</a></li>
-            <?php if (false) : ?>
-                <li><a href="<?php echo $base_url; ?>language"><?php echo display('languagesetting'); ?></a></li>
-                <li><a href="<?php echo $base_url; ?>setting"><?php echo display('softwaresetting'); ?></a></li>
-            <?php endif ?>
         </ul>
     </li>
     <li><a href="<?php echo $base_url; ?>admin/logout" class="material-ripple"><i class="glyphicon glyphicon-off"></i> Logout</a></li>

@@ -1,58 +1,58 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-if (!function_exists('display')) {
+if (false) {
 
-    function display($text = null)
-    {
-        $ci =& get_instance();
-        $ci->load->database();
-        $table  = 'language';
-        $phrase = 'phrase';
-        $setting_table = 'lg_setting';
-        $default_lang  = 'english';
+    if (!function_exists('display')) {
 
-        //set language  
-        $data = $ci->db->get($setting_table)->row();
-        if (!empty($data->language)) {
-            $language = $data->language; 
-        } else {
-            $language = $default_lang; 
-        } 
- 
-        if (!empty($text)) {
+        function display($text = null)
+        {
+            $ci = &get_instance();
+            $ci->load->database();
+            $table  = 'language';
+            $phrase = 'phrase';
+            $setting_table = 'lg_setting';
+            $default_lang  = 'english';
 
-            if ($ci->db->table_exists($table)) { 
+            //set language  
+            $data = $ci->db->get($setting_table)->row();
+            if (!empty($data->language)) {
+                $language = $data->language;
+            } else {
+                $language = $default_lang;
+            }
 
-                if ($ci->db->field_exists($phrase, $table)) { 
+            if (!empty($text)) {
 
-                    if ($ci->db->field_exists($language, $table)) {
+                if ($ci->db->table_exists($table)) {
 
-                        $row = $ci->db->select($language)
-                              ->from($table)
-                              ->where($phrase, $text)
-                              ->get()
-                              ->row(); 
+                    if ($ci->db->field_exists($phrase, $table)) {
 
-                        if (!empty($row->$language)) {
-                            return $row->$language;
+                        if ($ci->db->field_exists($language, $table)) {
+
+                            $row = $ci->db->select($language)
+                                ->from($table)
+                                ->where($phrase, $text)
+                                ->get()
+                                ->row();
+
+                            if (!empty($row->$language)) {
+                                return $row->$language;
+                            } else {
+                                return false;
+                            }
                         } else {
                             return false;
                         }
-
                     } else {
                         return false;
                     }
-
                 } else {
                     return false;
                 }
-
             } else {
                 return false;
-            }            
-        } else {
-            return false;
-       }  
+            }
+        }
     }
 }
