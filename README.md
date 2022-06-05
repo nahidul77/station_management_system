@@ -143,7 +143,8 @@ Trip Expense
 
 
 
-# Expense Management Module (⚠ Pending)
+# Expense Management Module (✅Completed)
+
 
 Expense Type & Name  (Create, Read, Update, Delete)
 User Input
