@@ -130,19 +130,6 @@ Website
 Is Active
 
 
-# Trip Management Module (⚠ Pending)
-	
-Trip  (Create, Read, Update, Delete)
-User Input
-Customer Name
-Driver Name 
-Trip Date
-Fare Rent
-Advance
-Trip Expense
-
-
-
 # Expense Management Module (✅Completed)
 
 
