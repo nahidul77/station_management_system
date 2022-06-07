@@ -82,7 +82,7 @@
                 </div>
                 <br />
 
-                <input type="text" name="vendor_id" id="vendor_id" value="<?php echo set_value('vendor_id', $vendors->vendor_id); ?>" />
+                <input type="hidden" name="vendor_id" id="vendor_id" value="<?php echo set_value('vendor_id', $vendors->vendor_id); ?>" />
                 <div class="form-group row">
                     <div class="col-md-offset-1 col-md-9" style="margin-left: 40%;">
                         <a class="btn btn-danger w-md m-b-5" href="<?php echo base_url(); ?>vendor">Cancel</a>
