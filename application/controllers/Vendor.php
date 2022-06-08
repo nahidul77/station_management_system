@@ -76,10 +76,11 @@ class Vendor extends CI_Controller
 			$this->vendor_model->save($saveData);
 
 			if (!empty($vendor_id)) {
-				$this->session->set_flashdata('success', display('updatesuccessfully'));
+				$this->session->set_flashdata('success', 'Update Successfully');
 			} else {
-				$this->session->set_flashdata('success', display('savesuccessfully'));
+				$this->session->set_flashdata('success', 'Save Successfully');
 			}
+
 			redirect('vendor');
 		}
 	}
@@ -116,7 +117,7 @@ class Vendor extends CI_Controller
 			redirect('admin');
 		} else {
 			$this->vendor_model->delete_vendor($vendor_id);
-			$this->session->set_flashdata('success', display('deletesuccessfully'));
+			$this->session->set_flashdata('success', 'Delete Successfully');
 			redirect('vendor');
 		}
 		#

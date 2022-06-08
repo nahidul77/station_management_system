@@ -57,9 +57,9 @@ class Vehicle extends CI_Controller
 			);
 			$this->vehicle_model->save($saveData);
 			if (!empty($v_type_id)) {
-				$this->session->set_flashdata('success', display('updatesuccessfully'));
+				$this->session->set_flashdata('success', 'Update Successfully');
 			} else {
-				$this->session->set_flashdata('success', display('savesuccessfully'));
+				$this->session->set_flashdata('success', 'Save Successfully');
 			}
 
 			redirect('vehicle/vehicle_type_list');
@@ -97,7 +97,7 @@ class Vehicle extends CI_Controller
 			redirect('admin');
 		} else {
 			$this->vehicle_model->delete_vehicle($v_type_id);
-			$this->session->set_flashdata('success', display('deletesuccessfully'));
+			$this->session->set_flashdata('success', 'Delete Successfully');
 			redirect('vehicle/vehicle_type_list');
 		}
 		#
@@ -163,10 +163,11 @@ class Vehicle extends CI_Controller
 
 			$this->vehicle_model->vehicle_info_save($saveData);
 			if (!empty($v_id)) {
-				$this->session->set_flashdata('success', display('updatesuccessfully'));
+				$this->session->set_flashdata('success', 'Update Successfully');
 			} else {
-				$this->session->set_flashdata('success', display('savesuccessfully'));
+				$this->session->set_flashdata('success', 'Save Successfully');
 			}
+
 			redirect('vehicle/vehicle_info_list');
 		}
 	}
@@ -217,7 +218,7 @@ class Vehicle extends CI_Controller
 			redirect('admin');
 		} else {
 			$this->vehicle_model->vehicle_info_delete($v_id);
-			$this->session->set_flashdata('success', display('deletesuccessfully'));
+			$this->session->set_flashdata('success', 'Delete Successfully');
 			redirect('vehicle/vehicle_info_list');
 		}
 		#
