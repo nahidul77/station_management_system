@@ -111,7 +111,7 @@ class Driver_info extends CI_Controller
 
                 if (!$this->upload->do_upload('d_picture')) {
                     $this->form_validation->set_message('image_upload', $this->upload->display_errors());
-                    $this->session->set_flashdata('error', display('onlypngjpgjpegfileselected'));
+                    $this->session->set_flashdata('error', 'error occured');
                     redirect('driver_info/create');
                 } else {
                     $upload_data    = $this->upload->data();
