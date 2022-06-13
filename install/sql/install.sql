@@ -456,6 +456,25 @@ INSERT INTO `fuel_unit` (`unit_id`, `unit_name`, `active`) VALUES
 (1, 'Ltr',  1),
 (2, 'KG',  1),
 (3, 'Meter', 1);
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fuel_type`
+--
+
+CREATE TABLE `fuel_type` (
+  `fuel_type_id` int(10) UNSIGNED NOT NULL,
+  `fuel_type_name` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `fuel_type`
+--
+
+INSERT INTO `fuel_type` (`fuel_type_id`, `fuel_type_name`, `active`) VALUES
+(1, 'Oil',  1),
+(2, 'Gas',  1);
 
 -- --------------------------------------------------------
 
@@ -621,6 +640,11 @@ ALTER TABLE `vehicle_fuel_rate`
 --
 ALTER TABLE `fuel_unit`
   ADD PRIMARY KEY (`unit_id`);
+--
+-- Indexes for table `fuel_type`
+--
+ALTER TABLE `fuel_type`
+  ADD PRIMARY KEY (`fuel_type_id`);
 
 --
 -- Indexes for table `vehicle_info`
@@ -738,6 +762,11 @@ ALTER TABLE `vehicle_fuel_rate`
 --
 ALTER TABLE `fuel_unit`
   MODIFY `unit_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `fuel_type`
+--
+ALTER TABLE `fuel_type`
+  MODIFY `fuel_type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `vehicle_info`
