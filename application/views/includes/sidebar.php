@@ -65,13 +65,18 @@ $base_url = base_url();
     <li <?php if (
             $url == $base_url . 'fule_rate' ||
             $url == $base_url . 'fule_unit' ||
+            $url == $base_url . 'fule_type' ||
             $url == $base_url . 'fule_rate/create' ||
             $url == $base_url . 'fule_unit/create' ||
-            strpos($url, 'fule_rate/rate_edit')
+            $url == $base_url . 'fule_type/create' ||
+            strpos($url, 'fule_rate/rate_edit') ||
+            strpos($url, 'fule_type/type_edit') ||
+            strpos($url, 'fule_unit/unit_edit')
         ) :  ?> class="active" <?php endif ?>>
         <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-fire-extinguisher"></i>Fuels<span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
             <li><a href="<?php echo $base_url; ?>fule_unit">Manage Unit</a></li>
+            <li><a href="<?php echo $base_url; ?>fule_type">Manage Type</a></li>
             <li><a href="<?php echo $base_url; ?>fule_rate">Fuel Rate List</a></li>
         </ul>
     </li>
