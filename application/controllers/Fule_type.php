@@ -106,8 +106,6 @@ class Fule_type extends CI_Controller
 			$this->session->set_flashdata('success', 'Delete Successfully');
 			redirect('fule_type');
 		}
-		#
-
 	}
 	//================this Function for Delete Fuel Rate(End) ============================//
 
