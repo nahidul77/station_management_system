@@ -77,7 +77,7 @@ $base_url = base_url();
         <ul class="nav nav-second-level">
             <li><a href="<?php echo $base_url; ?>fule_unit">Manage Unit</a></li>
             <li><a href="<?php echo $base_url; ?>fule_type">Manage Type</a></li>
-            <li><a href="<?php echo $base_url; ?>fule_rate">Fuel Rate List</a></li>
+            <li><a href="<?php echo $base_url; ?>fule_rate">Fuel Management</a></li>
         </ul>
     </li>
     <li <?php if (

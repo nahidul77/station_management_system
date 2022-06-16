@@ -416,12 +416,14 @@ INSERT INTO `user` (`id`, `fullname`, `username`, `password`, `type`, `last_log_
 -- Table structure for table `vehicle_fuel_rate`
 --
 
-CREATE TABLE `vehicle_fuel_rate` (
-  `v_fuel_id` int(10) UNSIGNED NOT NULL,
-  `v_fuel_name` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `v_fuel_rate` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `v_fuel_last_update_dat` datetime NOT NULL,
-  `posting_id` int(10) NOT NULL,
+CREATE TABLE `fuel_rate` (
+  `fuel_id` int(10) UNSIGNED NOT NULL,
+  `fuel_name` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `fuel_type_id` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `unit_id` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `stock` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `buy_price` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `sell_price` varchar(255) CHARACTER SET latin1 NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -429,11 +431,9 @@ CREATE TABLE `vehicle_fuel_rate` (
 -- Dumping data for table `vehicle_fuel_rate`
 --
 
-INSERT INTO `vehicle_fuel_rate` (`v_fuel_id`, `v_fuel_name`, `v_fuel_rate`, `v_fuel_last_update_dat`, `posting_id`, `active`) VALUES
-(1, 'Petrol', '120', '2022-03-03 04:18:51', 1, 1),
-(2, 'Diesel', '100', '2022-03-03 04:16:34', 1, 1),
-(3, 'CNG', '90', '2022-03-03 04:16:51', 1, 1),
-(4, 'AutoGas', '80', '2022-03-07 10:56:09', 1, 1);
+INSERT INTO `fuel_rate` (`fuel_id`, `fuel_name`, `fuel_type_id`, `unit_id`, `stock`, `buy_price`, `sell_price`, `active`) VALUES
+(1, 'Petrol', 1, 1, '1000','110', '120', 1),
+(2, 'Diesel', 1, 1, '500','95', '100', 1);
 
 
 -- --------------------------------------------------------
@@ -631,10 +631,10 @@ ALTER TABLE `user`
 
 
 --
--- Indexes for table `vehicle_fuel_rate`
+-- Indexes for table `fuel_rate`
 --
-ALTER TABLE `vehicle_fuel_rate`
-  ADD PRIMARY KEY (`v_fuel_id`);
+ALTER TABLE `fuel_rate`
+  ADD PRIMARY KEY (`fuel_id`);
 --
 -- Indexes for table `fuel_unit`
 --
@@ -753,10 +753,10 @@ ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `vehicle_fuel_rate`
+-- AUTO_INCREMENT for table `fuel_rate`
 --
-ALTER TABLE `vehicle_fuel_rate`
-  MODIFY `v_fuel_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `fuel_rate`
+  MODIFY `fuel_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `fuel_unit`
 --
