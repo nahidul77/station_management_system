@@ -6,50 +6,60 @@ class Fule_rate_model extends CI_Model
 	public function fule_rate()
 	{
 		$query = "SELECT *
-				FROM `vehicle_fuel_rate` 
-				WHERE active NOT LIKE '2' order by v_fuel_id desc";
+				FROM `fuel_rate` 
+				WHERE active NOT LIKE '2' order by fuel_id desc";
 		return $this->db->query($query)
 			->result();
 	}
 
-	public function edit_rate($v_fuel_id = '')
+	public function edit_rate($fuel_id = '')
 	{
 		return $this->db->select('*')
-			->from('vehicle_fuel_rate')
-			->where('v_fuel_id', $v_fuel_id)
+			->from('fuel_rate')
+			->where('fuel_id', $fuel_id)
 			->get()
 			->result();
 	}
 
-	public function delete_rate($v_fuel_id)
+	public function delete_rate($fuel_id)
 	{
 		return $this->db->set('active', 2)
-			->where('v_fuel_id', $v_fuel_id)
-			->update('vehicle_fuel_rate');
+			->where('fuel_id', $fuel_id)
+			->update('fuel_rate');
 	}
 
 	public function save($data)
 	{
-		$data['v_fuel_last_update_dat'] = date("Y-m-d h:i:s");
-		if (!empty($data['v_fuel_id'])) {
-			$this->db->where('v_fuel_id', $data['v_fuel_id']);
-			$this->db->update('vehicle_fuel_rate', $data);
+		if (!empty($data['fuel_id'])) {
+			$this->db->where('fuel_id', $data['fuel_id']);
+			$this->db->update('fuel_rate', $data);
 		} else {
-			$this->db->insert('vehicle_fuel_rate', $data);
+			$this->db->insert('fuel_rate', $data);
 		}
 	}
 
 
-	public function get_vehicle_model()
+	public function get_fuel_unit_model()
 	{
-		$query = $this->db->where('active', 1)->get('vehicle_info');
-		$reglist = $query->result();
-		$regs[''] = lang("SELECT_VEHICLE_REGISTRATION_NO");
-		if (!empty($reglist)) {
-			foreach ($reglist as $reg) {
-				$regs[$reg->v_id] = $reg->v_registration_no;
+		$query = $this->db->where('active', 1)->get('fuel_unit');
+		$results = $query->result();
+		if (!empty($results)) {
+			foreach ($results as $unit) {
+				$units[$unit->unit_id] = $unit->unit_id;
 			}
 		}
-		return $regs;
+		return $units;
+	}
+
+	public function get_fuel_type_model()
+	{
+		$query = $this->db->where('active', 1)->get('fuel_type');
+		$results = $query->result();
+		if (!empty($results)) {
+			foreach ($results as $type) {
+				$types[$type->fuel_type_id] = $type->fuel_type_id;
+			}
+		}
+		return $types;
 	}
 }
