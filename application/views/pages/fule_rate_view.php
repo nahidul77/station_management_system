@@ -23,19 +23,31 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <?php echo display('slno'); ?>
+                                    SL No
                                 </th>
                                 <th>
-                                    Vehicle Fuel Name
+                                    Fuel Name
                                 </th>
                                 <th>
-                                    Vehicle Fuel Rate
+                                    Fuel Type
+                                </th>
+                                <th>
+                                    Fuel Unit
+                                </th>
+                                <th>
+                                    Stock
+                                </th>
+                                <th>
+                                    Buying Price
+                                </th>
+                                <th>
+                                    Selling Price
                                 </th>
                                 <th>
                                     Status
                                 </th>
                                 <?php if ($this->session->userdata('user_type') == 9) { ?>
-                                    <th class="no-print"><?php echo display('action'); ?></th>
+                                    <th class="no-print">Action</th>
                                 <?php } //ends of if condition
                                 ?>
                             </tr>
@@ -44,13 +56,16 @@
                             <?php
                             if (!empty($rates)) {
                                 $count = 0;
-                                print_r($rates);
                                 foreach ($rates as $rate) {
                             ?>
                                     <tr>
                                         <td class="center"><?php echo $count + 1; ?></td>
-                                        <td><?php echo $rate->v_fuel_name; ?></td>
-                                        <td><?php echo $rate->v_fuel_rate; ?></td>
+                                        <td><?php echo $rate->fuel_name; ?></td>
+                                        <td><?php echo $rate->fuel_type_name; ?></td>
+                                        <td><?php echo $rate->unit_name; ?></td>
+                                        <td><?php echo $rate->stock; ?></td>
+                                        <td><?php echo $rate->buy_price; ?></td>
+                                        <td><?php echo $rate->sell_price; ?></td>
                                         <td><?php if ($rate->active == 1)
                                                 echo "Active";
                                             else
@@ -59,10 +74,10 @@
 
                                         <?php if ($this->session->userdata('user_type') == 9) { ?>
                                             <td class="no-print">
-                                                <a class="green" data-toggle="tooltip" title="<?php echo display('edit'); ?>" href="<?php echo base_url() . "fule_rate/rate_edit/" . $rate->v_fuel_id; ?>">
+                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "fule_rate/rate_edit/" . $rate->fuel_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="<?php echo display('delete'); ?>" href="<?php echo base_url() . "fule_rate/delete_rate/" . $rate->v_fuel_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "fule_rate/delete_rate/" . $rate->fuel_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>

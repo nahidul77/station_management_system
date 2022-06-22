@@ -5,11 +5,19 @@ class Fule_rate_model extends CI_Model
 
 	public function fule_rate()
 	{
-		$query = "SELECT *
-				FROM `fuel_rate` 
-				WHERE active NOT LIKE '2' order by fuel_id desc";
-		return $this->db->query($query)
+		return $this->db->select("fuel_rate.*, fuel_type.fuel_type_name, fuel_unit.unit_name")
+			->from("fuel_rate")
+			->join('fuel_type', 'fuel_type.fuel_type_id = fuel_rate.fuel_type_id', 'left')
+			->join('fuel_unit', 'fuel_unit.unit_id = fuel_rate.unit_id', 'left')
+			->where_not_in('fuel_rate.active', 2)
+			->order_by('fuel_rate.fuel_id', 'desc')
+			->get()
 			->result();
+		// $query = "SELECT *
+		// 		FROM `fuel_rate` 
+		// 		WHERE active NOT LIKE '2' order by fuel_id desc";
+		// return $this->db->query($query)
+		// 	->result();
 	}
 
 	public function edit_rate($fuel_id = '')
