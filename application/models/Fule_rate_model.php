@@ -46,6 +46,20 @@ class Fule_rate_model extends CI_Model
 		}
 	}
 
+	public function fuel_type_dropdown()
+	{
+		return $this->db->select("fuel_type_id, fuel_type_name")
+			->from('fuel_type')
+			->where('active', 1)
+			->get()
+			->result();
+		// $credit[''] = $this->lang->line("SELECT_CATEGORY");
+		// foreach ($result as $value) { 
+		// 	$credit[$value->sector_name] = $value->sector_name;
+		// } 
+		// if(!empty($credit)) return $credit; 
+	}
+
 
 	public function get_fuel_unit_model()
 	{

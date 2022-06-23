@@ -4,10 +4,10 @@
             <div class="panel-body">
                 <div class="table-header">
                     <i class="fa fa-list"></i>
-                    <?php echo display('vehicletypelist'); ?>
+                    Vehicle Type List
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
-                        <a style="color:white" href="<?php echo base_url(); ?>vehicle/vehicle_type_create"><?php echo display('addvehicletype') ?></a>
+                        <a style="color:white" href="<?php echo base_url(); ?>vehicle/vehicle_type_create">Add Vehicle Type</a>
                     </div>
                 </div>
                 <hr>
@@ -23,16 +23,16 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <?php echo display('slno'); ?>
+                                    Sl No
                                 </th>
                                 <th>
-                                    <?php echo display('vehicletype'); ?>
+                                    Vehicle Type
                                 </th>
                                 <th>
-                                    <?php echo display('status'); ?>
+                                    Status
                                 </th>
                                 <?php if ($this->session->userdata('user_type') == 9) { ?>
-                                    <th class="no-print"><?php echo display('action'); ?></th>
+                                    <th class="no-print">Action</th>
                                 <?php } //ends of if condition 
                                 ?>
                             </tr>
@@ -48,19 +48,19 @@
                                         <td><?php echo $vehicle_type->v_type; ?></td>
                                         <td><?php
                                             if ($vehicle_type->active == 1)
-                                                echo display('active');
+                                                echo 'Active';
                                             else
-                                                echo display('inactive');
+                                                echo 'Inactive';
                                             ?></td>
 
                                         <?php
                                         if ($this->session->userdata('user_type') == 9) {
                                         ?>
                                             <td class="no-print">
-                                                <a class="green" data-toggle="tooltip" title="<?php echo display('edit'); ?>" href="<?php echo base_url() . "vehicle/vehicle_type_edit/" . $vehicle_type->v_type_id; ?>">
+                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "vehicle/vehicle_type_edit/" . $vehicle_type->v_type_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="<?php echo display('delete'); ?>" href="<?php echo base_url() . "vehicle/vehicle_type_delete/" . $vehicle_type->v_type_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "vehicle/vehicle_type_delete/" . $vehicle_type->v_type_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
