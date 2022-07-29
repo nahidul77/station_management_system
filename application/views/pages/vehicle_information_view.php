@@ -4,10 +4,10 @@
             <div class="panel-body">
                 <div class="table-header">
                     <i class="fa fa-list"></i>
-                    <?php echo display('vehicleinformation'); ?>
+                    Vehicle Information
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
-                        <a style="color:white" href="<?php echo base_url(); ?>vehicle/vehicle_information_create"><?php echo display('addvehicle') ?></a>
+                        <a style="color:white" href="<?php echo base_url(); ?>vehicle/vehicle_information_create">Add Vehicle</a>
                     </div>
                 </div>
                 <hr>
@@ -23,35 +23,35 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <?php echo display('slno'); ?>
+                                    SL No
                                 </th>
 
                                 <th>
-                                    <?php echo display('modelno'); ?>
+                                    Model No
                                 </th>
                                 <th>
-                                    <?php echo display('registrationnumber'); ?>
-                                </th>
-
-                                <th>
-                                    <?php echo display('chassisno'); ?>
-                                </th>
-                                <th>
-                                    <?php echo display('engineno'); ?>
-                                </th>
-                                <th>
-                                    <?php echo display('vehicletype'); ?>
-                                </th>
-                                <th>
-                                    <?php echo display('owner'); ?>
+                                    Registration No
                                 </th>
 
                                 <th>
-                                    <?php echo display('status'); ?>
+                                    Chassis No
+                                </th>
+                                <th>
+                                    Engine No
+                                </th>
+                                <th>
+                                    Vehicle Type
+                                </th>
+                                <th>
+                                    Owner
+                                </th>
+
+                                <th>
+                                    Status
                                 </th>
 
                                 <?php if ($this->session->userdata('user_type') == 9) { ?>
-                                    <th class="no-print"><?php echo display('action'); ?></th>
+                                    <th class="no-print">Action</th>
                                 <?php } //ends of if condition
                                 ?>
                             </tr>
@@ -74,17 +74,17 @@
                                         <td><?php echo $owner; ?></td>
                                         <td><?php
                                             if ($vehicle_info->active == 1)
-                                                echo display('active');
+                                                echo 'Active';
                                             else
-                                                echo display('inactive');
+                                                echo 'Inactive';
                                             ?></td>
 
                                         <?php if ($this->session->userdata('user_type') == 9) { ?>
                                             <td class="no-print">
-                                                <a class="green " data-toggle="tooltip" title="<?php echo display('edit'); ?>" href="<?php echo base_url() . "vehicle/vehicle_info_edit/" . $vehicle_info->v_id; ?>">
+                                                <a class="green " data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "vehicle/vehicle_info_edit/" . $vehicle_info->v_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130 "></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="<?php echo display('delete'); ?>" href="<?php echo base_url() . "vehicle/vehicle_info_delete/" . $vehicle_info->v_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "vehicle/vehicle_info_delete/" . $vehicle_info->v_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
