@@ -3,11 +3,10 @@
         <div class="panel panel-bd">
             <div class="panel-body">
                 <div class="table-header">
-                    <i class="fa fa-list"></i>
-                    <?php echo display('driverinformation'); ?>
+                    <i class="fa fa-list"></i> Driver Information
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
-                        <a style="color:white" href="<?php echo base_url(); ?>driver_info/create"><?php echo display('adddriver') ?></a>
+                        <a style="color:white" href="<?php echo base_url(); ?>driver_info/create">Add Driver</a>
                     </div>
                 </div>
                 <hr>
@@ -24,16 +23,16 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <?php echo display('sl'); ?>
+                                    SL
                                 </th>
                                 <th>
-                                    <?php echo display('drivername'); ?>
+                                    Driver Name
                                 </th>
                                 <th>
-                                    <?php echo display('mobilenumber'); ?>
+                                    Mobile Number
                                 </th>
                                 <th>
-                                    <?php echo display('vehicleregistrationno'); ?>
+                                    Vehicle Registration No
                                 </th>
                                 <th>
                                     <?php echo display('licensenumber'); ?>
