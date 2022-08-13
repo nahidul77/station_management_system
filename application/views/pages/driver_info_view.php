@@ -35,32 +35,32 @@
                                     Vehicle Registration No
                                 </th>
                                 <th>
-                                    <?php echo display('licensenumber'); ?>
+                                    License No
                                 </th>
                                 <th>
-                                    <?php echo display('licenseexpiredate'); ?>
+                                    License Expire Date
                                 </th>
                                 <th>
-                                    <?php echo display('nid'); ?>
+                                    NID
                                 </th>
                                 <th>
-                                    <?php echo display('presentaddress'); ?>
+                                    Present Address
                                 </th>
                                 <th>
-                                    <?php echo display('permanentaddress'); ?>
+                                    Permanent Address
                                 </th>
 
                                 <th>
-                                    <?php echo display('joiningdate'); ?>
+                                    Joining Date
                                 </th>
                                 <th>
-                                    <?php echo display('driverpicture'); ?>
+                                    Driver Picture
                                 </th>
                                 <th>
-                                    <?php echo display('status'); ?>
+                                    Status
                                 </th>
 
-                                <th class="no-print"><?php echo display('action'); ?></th>
+                                <th class="no-print">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -83,20 +83,20 @@
                                         <td><img src="<?php echo base_url() . '/assets/driver/' . $information->d_picture; ?>" width="80" height="80" /></td>
                                         <td><?php
                                             if ($information->active == 1)
-                                                echo display('active');
+                                                echo 'Active';
                                             else
-                                                echo display('inactive');;
+                                                echo 'Inactive';
                                             ?></td>
 
                                         <td class="no-print">
-                                            <a class="green" data-toggle="tooltip" title="<?php echo display('view'); ?>" href="<?php echo base_url() . "driver_info/driver_by_id/" . $information->driver_id; ?>">
+                                            <a class="green" data-toggle="tooltip" title="View" href="<?php echo base_url() . "driver_info/driver_by_id/" . $information->driver_id; ?>">
                                                 <i class="ace-icon fa fa-eye bigger-130"></i>
                                             </a>&nbsp;&nbsp;
                                             <?php if ($this->session->userdata('user_type') == 9) { ?>
-                                                <a class="green" data-toggle="tooltip" title="<?php echo display('view'); ?>" href="<?php echo base_url() . "driver_info/edit/" . $information->driver_id; ?>">
+                                                <a class="green" data-toggle="tooltip" title="view" href="<?php echo base_url() . "driver_info/edit/" . $information->driver_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="<?php echo display('delete'); ?>" href="<?php echo base_url() . "driver_info/delete_info/" . $information->driver_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "driver_info/delete_info/" . $information->driver_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             <?php } ?>
