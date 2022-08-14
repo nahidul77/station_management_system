@@ -44,6 +44,20 @@ class Vehicle_model extends CI_Model
 
 
 	//******************************************  VEHICLE INFORMATION ********************************************************//
+
+	public function get_vehicle_model()
+	{
+		$query = $this->db->where('active', 1)->get('vehicle_info');
+		$reglist = $query->result();
+		$regs[''] = "Select Vehicle Registration No";
+		if (!empty($reglist)) {
+			foreach ($reglist as $reg) {
+				$regs[$reg->v_id] = $reg->v_registration_no;
+			}
+		}
+		return $regs;
+	}
+
 	public function get_vehicle_type()
 	{
 		$this->db->where('active', '1');
