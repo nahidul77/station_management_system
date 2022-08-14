@@ -44,13 +44,6 @@
                                     NID
                                 </th>
                                 <th>
-                                    Present Address
-                                </th>
-                                <th>
-                                    Permanent Address
-                                </th>
-
-                                <th>
                                     Joining Date
                                 </th>
                                 <th>
@@ -60,7 +53,7 @@
                                     Status
                                 </th>
 
-                                <th class="no-print">Action</th>
+                                <th class="no-print" width="8%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -77,8 +70,6 @@
                                         <td><?php echo $information->d_license_no; ?></td>
                                         <td><?php echo date('d-m-Y', strtotime($information->d_license_expire_date)); ?></td>
                                         <td><?php echo $information->d_nid; ?></td>
-                                        <td><?php echo $information->d_address_present; ?></td>
-                                        <td><?php echo $information->d_address_permanent; ?></td>
                                         <td><?php echo date('d-m-Y', strtotime($information->d_join_date)); ?></td>
                                         <td><img src="<?php echo base_url() . '/assets/driver/' . $information->d_picture; ?>" width="80" height="80" /></td>
                                         <td><?php
