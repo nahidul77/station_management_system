@@ -16,7 +16,7 @@
             <div class="panel-body">
 
                 <div class="form-group">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="expense_group"><?php echo display('expensetype'); ?>&nbsp;&nbsp;<span class="fa fa-asterisk red" style="color:red;"></span></label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="expense_group">Expense Type&nbsp;&nbsp;<span class="fa fa-asterisk red" style="color:red;"></span></label>
                     <div class="col-xs-12 col-sm-9">
                         <div class="col-md-12">
                             <?php echo form_dropdown('expense_group', $expense_group, set_value('expense_group', $expenses->expense_group), 'id="expense_group" required="required"  class="col-xs-12 col-sm-4 testselect1"'); ?>
@@ -25,20 +25,20 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="expense_name"><?php echo display('expensename'); ?>&nbsp;&nbsp;<span class="fa fa-asterisk red" style="color:red;"></span></label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="expense_name">Expense Name&nbsp;&nbsp;<span class="fa fa-asterisk red" style="color:red;"></span></label>
                     <div class="col-xs-12 col-sm-9">
                         <div class="col-md-12">
-                            <input type="text" name="expense_name" id="company_name" class="col-xs-12 col-sm-4 form-control" placeholder="<?php echo display('expensename'); ?>" value="<?php echo set_value('expense_name', $expenses->expense_name); ?>" />
+                            <input type="text" name="expense_name" id="company_name" class="col-xs-12 col-sm-4 form-control" placeholder="Expense Name" value="<?php echo set_value('expense_name', $expenses->expense_name); ?>" />
                         </div>
                         <div class="help-block" id="title-exists"><?php echo form_error('expense_name'); ?></div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="active"><?php echo display('inactive'); ?>&nbsp;&nbsp;</label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="active">Inactive&nbsp;&nbsp;</label>
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
-                            <?php echo display('yes'); ?> <input type="radio" name="active" id="active" value="1" <?php echo set_radio('active', '1', TRUE); ?>>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <?php display('no'); ?> <input type="radio" name="active" id="active" value="0" <?php echo set_radio('active', '0'); ?>>
+                            Yes <input type="radio" name="active" id="active" value="1" <?php echo set_radio('active', '1', TRUE); ?>>&nbsp;&nbsp;&nbsp;&nbsp;
+                            No <input type="radio" name="active" id="active" value="0" <?php echo set_radio('active', '0'); ?>>
                         </div>
                         <div class="help-block" id="title-exists"><?php echo form_error('active'); ?></div>
                     </div>
