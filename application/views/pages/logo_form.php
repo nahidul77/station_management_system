@@ -41,7 +41,7 @@
             <input name="logo_id" type="hidden" id="logo_id" value="<?php echo $logo[0]->logo_id; ?>" />
             <div class="form-group row">
                 <div class="col-md-offset-1 col-md-9" style="margin-left: 35%;">
-                    <button class="btn btn-danger w-md m-b-5">Cancel</button>
+                    <button class="btn btn-danger w-md m-b-5" onclick="window.location.reload()">Cancel</button>
                     <button type="submit" class="btn btn-success w-md m-b-5">Save</button>
                 </div>
             </div>
