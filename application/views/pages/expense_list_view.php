@@ -4,7 +4,7 @@
             <div class="panel-body">
                 <div class="table-header">
                     <i class="fa fa-list"></i>
-                    <?php echo display('expensetype'); ?>
+                    Expense Type
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
                         <a style="color:white" href="<?php echo base_url(); ?>expense_list/create">Add Expense Type</a>
@@ -23,27 +23,27 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <?php echo display('slno'); ?>
+                                    SL No
                                 </th>
                                 <th>
-                                    <?php echo display('expensegroup'); ?>
+                                    Expense Group
                                 </th>
                                 <th>
-                                    <?php echo display('expensename'); ?>
+                                    Expense Name
                                 </th>
 
                                 <th>
-                                    <?php echo display('status'); ?>
+                                    Status
                                 </th>
                                 <?php if ($this->session->userdata('user_type') == 9) { ?>
-                                    <th class="no-print"><?php echo display('action'); ?></th>
+                                    <th class="no-print">Action</th>
                                 <?php } //ends of if condition
                                 ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $v_owner_arry = array(1 => display('regular'), 2 => display('maintenance'), 3 => display('others'), 4 => display('office'), 5 => display('garage'));
+                            $v_owner_arry = array(1 => 'regular', 2 => 'maintenance', 3 => 'others', 4 => 'office', 5 => 'garage');
                             if (!empty($expenses)) {
                                 $count = 0;
                                 foreach ($expenses as $expense) {
@@ -56,17 +56,17 @@
                                         <td>
                                             <?php
                                             if ($expense->active == 1)
-                                                echo display('active');
+                                                echo 'active';
                                             else
-                                                echo display('inactive');
+                                                echo 'inactive';
                                             ?>
                                         </td>
                                         <?php if ($this->session->userdata('user_type') == 9) { ?>
                                             <td class="no-print">
-                                                <a class="green " data-toggle="tooltip" title="<?php echo display('edit'); ?>" href="<?php echo base_url() . "expense_list/expense_list_edit/" . $expense->expense_id; ?>">
+                                                <a class="green " data-toggle="tooltip" title="edit" href="<?php echo base_url() . "expense_list/expense_list_edit/" . $expense->expense_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130 "></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="<?php echo display('delete'); ?>" href="<?php echo base_url() . "expense_list/expense_list_delete/" . $expense->expense_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="delete" href="<?php echo base_url() . "expense_list/expense_list_delete/" . $expense->expense_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
