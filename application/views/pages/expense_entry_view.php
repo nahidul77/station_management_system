@@ -3,8 +3,7 @@
         <div class="panel panel-bd lobidrag">
             <div class="panel-body">
                 <div class="table-header">
-                    <i class="fa fa-list"></i>
-                    <?php echo display('expenselist'); ?>
+                    <i class="fa fa-list"></i> Expense List
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
                         <a style="color:white" href="<?php echo base_url(); ?>expense_entry/create">Expense Entry</a>
@@ -23,33 +22,33 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <?php echo display('slno'); ?>
+                                    SL No
                                 </th>
 
                                 <th>
-                                    <?php echo display('date'); ?>
+                                    Date
                                 </th>
                                 <th>
-                                    <?php echo display('expensegroup'); ?>
+                                    Expense Name
                                 </th>
                                 <th>
-                                    <?php echo display('expensename'); ?>
+                                    Expense Group
                                 </th>
                                 <th>
-                                    <?php echo display('expenseserial'); ?>
+                                    Expense Serial
                                 </th>
                                 <th>
-                                    <?php echo display('quantity'); ?>
+                                    Quantity
                                 </th>
                                 <th>
-                                    <?php echo display('amount'); ?>
+                                    Amount
                                 </th>
                                 <th>
-                                    <?php echo display('total'); ?>
+                                    Total
                                 </th>
 
                                 <?php if ($this->session->userdata('user_type') == 9) { ?>
-                                    <th class="no-print"><?php echo display('action'); ?></th>
+                                    <th class="no-print">Action</th>
                                 <?php } //ends of if condition
                                 ?>
                             </tr>
@@ -74,10 +73,10 @@
 
                                         <?php if ($this->session->userdata('user_type') == 9) { ?>
                                             <td class="no-print">
-                                                <a class="green " data-toggle="tooltip" title="<?php echo display('edit'); ?>" href="<?php echo base_url() . "expense_entry/expense_entry_edit/" . $expense->transection_id; ?>">
+                                                <a class="green " data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "expense_entry/expense_entry_edit/" . $expense->transection_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130 "></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="<?php echo display('delete'); ?>" href="<?php echo base_url() . "expense_entry/delete/" . $expense->transection_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "expense_entry/delete/" . $expense->transection_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
