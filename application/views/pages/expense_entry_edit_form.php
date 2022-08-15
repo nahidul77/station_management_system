@@ -19,7 +19,7 @@
                                 <div class="panel-body">
 
                                     <div class="form-group">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="date"><?php echo display('date'); ?> <span class="fa fa-asterisk red" style="color:red;"></span></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="date">Date <span class="fa fa-asterisk red" style="color:red;"></span></label>
                                         <div class="col-xs-12 col-sm-9">
                                             <div class="clearfix">
                                                 <input type="text" name="date" value="<?php echo date('d-m-Y', strtotime($expense_data->date)); ?>" class="datepicker  form-control">
@@ -29,7 +29,7 @@
 
 
                                     <div class="form-group ">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="company_id"><?php echo display('expensegroup'); ?> <span class="fa fa-asterisk red" style="color:red;"></span></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="company_id">Expense Group <span class="fa fa-asterisk red" style="color:red;"></span></label>
 
                                         <div class="col-xs-12 col-sm-9">
                                             <div class="clearfix">
@@ -43,7 +43,7 @@
                                     </div>
                                     <?php if (false) :  ?>
                                         <div class="form-group" id="vehicle">
-                                            <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id"><?php echo display('vehicleregistrationno'); ?></label>
+                                            <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id">Vehicle Registration No</label>
                                             <div class="col-xs-12 col-sm-9">
                                                 <div class="clearfix">
                                                     <?php echo form_dropdown('v_id', $v_info, $expense_data->v_id, 'class="testselect1" '); ?>
@@ -54,7 +54,7 @@
                                     <?php endif ?>
 
                                     <div class="form-group" id="vehicle">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id"><?php echo display('expensename'); ?></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id">Expense Name</label>
                                         <div class="col-xs-12 col-sm-9">
                                             <div class="clearfix" style="border: 1px solid gainsboro;width: 25%;height: 37px;text-align: center;">
                                                 <p style="margin-top: 4%;"><?php echo $expense_data->expense_name; ?></p>
@@ -63,7 +63,7 @@
                                     </div>
 
                                     <div class="form-group" id="vehicle">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id"><?php echo display('expenseserial'); ?></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id">Expense Serial</label>
                                         <div class="col-xs-12 col-sm-9">
                                             <div class="clearfix">
                                                 <input type="text" name="expense_serial" value="<?php echo $expense_data->expense_serial; ?>" class=" form-control" />
@@ -73,7 +73,7 @@
 
 
                                     <div class="form-group" id="vehicle">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id"><?php echo display('quantity'); ?></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id">Quantity</label>
                                         <div class="col-xs-12 col-sm-9">
                                             <div class="clearfix">
                                                 <input type="text" value="<?php echo $expense_data->quantity; ?>" name="qty" placeholder="Quantity" class="amount_edit form-control" id="quantity_1">
@@ -83,7 +83,7 @@
 
 
                                     <div class="form-group" id="vehicle">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id"><?php echo display('amount'); ?></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id">Amount</label>
                                         <div class="col-xs-12 col-sm-9">
                                             <div class="clearfix">
                                                 <input type="text" value="<?php echo $expense_data->amount; ?>" name="price" placeholder="Amount" class="amount_edit form-control" id="amount_1">
@@ -92,7 +92,7 @@
                                     </div>
 
                                     <div class="form-group" id="vehicle">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id"><?php echo display('total'); ?></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id">Total</label>
                                         <div class="col-xs-12 col-sm-9">
                                             <div class="clearfix" style="border: 1px solid gainsboro;width: 16%;height: 37px;text-align: center;">
                                                 <p style="margin-top: 5%;"><?php echo round($expense_data->quantity * $expense_data->amount, 2); ?></p>
