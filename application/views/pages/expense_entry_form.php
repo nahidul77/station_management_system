@@ -14,7 +14,7 @@
         <form name="expense_entry" class="form-horizontal" id="notice-submit" action="<?php echo base_url() . 'expense_entry/save/'; ?>" method="post">
             <div class="panel-body">
                 <div class="form-group">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="date"><?php echo display('date'); ?> <span class="fa fa-asterisk red" style="color:red;"></span></label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="date">Date<span class="fa fa-asterisk red" style="color:red;"></span></label>
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
                             <input type="text" name="date" class="form-control  datepicker" value="<?php echo date("d-m-Y"); ?>">
@@ -23,7 +23,7 @@
                 </div>
                 <?php $e_group = array('' => 'Select an Option', 2 => 'Maintenance', 3 => 'Others', 4 => 'Office', 5 => 'Garage'); ?>
                 <div class="form-group ">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="company_id"><?php echo display('expensegroup'); ?> <span class="fa fa-asterisk red" style="color:red;"></span></label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="company_id">Expense Group<span class="fa fa-asterisk red" style="color:red;"></span></label>
 
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
@@ -34,7 +34,7 @@
                 </div>
                 <?php if (false) : ?>
                     <div class="form-group" id="vehicle">
-                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id"><?php echo display('vehicleregistrationno'); ?></label>
+                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_id">Vehicle Registration No</label>
                         <div class="col-xs-12 col-sm-9">
                             <div class="clearfix">
                                 <?php echo form_dropdown('v_id', $v_info, '', 'class="col-xs-12 col-sm-4 testselect1"'); ?>
