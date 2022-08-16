@@ -75,7 +75,7 @@
         <div class="panel panel-bd">
             <div class="panel-heading">
                 <div class="panel-title">
-                    <h3><?php echo display('debitaccount'); ?> </h3>
+                    <h3>Debit Account</h3>
                 </div>
             </div>
             <div class="panel-body">
