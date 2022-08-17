@@ -140,7 +140,7 @@
     <div class="col-xs-12 no-print">
         <br />
         <a class="btn btn-sm btn-primary pull-right" onclick="printContent('PrintArea')">
-            <span class="fa fa-print"></span>&nbsp;&nbsp;<?php echo display('print'); ?>
+            <span class="fa fa-print"></span>&nbsp;&nbsp;Print
         </a>
     </div>
 
