@@ -79,7 +79,7 @@
                                         <td><?php echo $value->account_name; ?></td>
                                         <td><?php echo $value->amount; ?></td>
                                         <td><?php echo $value->description; ?></td>
-                                        <td><?php echo ($value->status == 1) ? display('active') : display('inactive'); ?></td>
+                                        <td><?php echo ($value->status == 1) ? 'active' : 'inactive'; ?></td>
                                         <?php if ($this->session->userdata('user_type') == 9) : ?>
                                             <td class="no-print">
                                                 <a class="blue" data-toggle="tooltip" title="view" href="<?php echo base_url() . "accounting/outflow/single_view/" . $value->outflow_id ?>">
