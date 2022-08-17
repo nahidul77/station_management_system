@@ -17,7 +17,7 @@
             <div class="panel-body">
                 <?php if (false) : ?>
                     <div class="form-group row">
-                        <label for="v_id" class="col-sm-3 col-form-label"><?php echo display('vehicleregistrationnumber'); ?></label>
+                        <label for="v_id" class="col-sm-3 col-form-label">vehicle registration number</label>
                         <div class="col-sm-9">
                             <?php echo form_dropdown('v_id', $v_id, set_value('v_id', $rates->v_id), 'id="v_id" required="required"  class="col-md-4 col-xs-12 testselect1"'); ?>
                             <?php echo form_error('v_id'); ?>
@@ -34,23 +34,23 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="v_fuel_rate" class="col-sm-3 col-form-label"><?php echo display('fuelrate'); ?></label>
+                    <label for="v_fuel_rate" class="col-sm-3 col-form-label">Fuel Rate</label>
                     <div class="col-sm-9">
-                        <input type="text" name="v_fuel_rate" class="form-control" id="v_fuel_rate" placeholder="<?php echo display('fuel_rate'); ?>" required="required" value="<?php echo set_value('v_fuel_rate', $rates->v_fuel_rate); ?>">
+                        <input type="text" name="v_fuel_rate" class="form-control" id="v_fuel_rate" placeholder="Fuel Rate" required="required" value="<?php echo set_value('v_fuel_rate', $rates->v_fuel_rate); ?>">
                         <div class="help-block" id="title-exists"><?php echo form_error('v_fuel_rate'); ?></div>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="vehicle_type" class="col-sm-3 col-form-label"><?php echo display('isactive'); ?></label>
+                    <label for="vehicle_type" class="col-sm-3 col-form-label">Is Active</label>
                     <div class="col-sm-9">
                         <fieldset>
                             <div class="checkbox-circle">
                                 <input name="active" type="radio" value="1" <?php echo set_radio('active', '1', TRUE); ?>>
-                                <label for="checkbox7"><?php echo display('yes'); ?></label>
+                                <label for="checkbox7">Yes</label>
 
                                 <input name="active" type="radio" value="0" <?php echo set_radio('active', '0'); ?>>
-                                <label for="checkbox8"><?php echo display('no'); ?></label>
+                                <label for="checkbox8">No</label>
                             </div>
 
                         </fieldset>
