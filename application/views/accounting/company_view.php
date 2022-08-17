@@ -33,23 +33,23 @@
                 <table class="table table-striped table-condensed" cellspacing="0" width="100%">
                     <tbody>
                         <tr>
-                            <th width="200"><?php echo display('companyname'); ?></th>
+                            <th width="200">Company Name</th>
                             <td><?php echo $company->name; ?></td>
                         </tr>
                         <tr>
-                            <th><?php echo display('companyaddress'); ?></th>
+                            <th>Company Address</th>
                             <td><?php echo $company->address; ?></td>
                         </tr>
                         <tr>
-                            <th><?php echo display('mobilenumbner'); ?></th>
+                            <th>Mobile Number</th>
                             <td><?php echo $company->mobile_no; ?></td>
                         </tr>
                         <tr>
-                            <th><?php echo display('phonenumber'); ?></th>
+                            <th>Phone Number</th>
                             <td><?php echo $company->phone_no; ?></td>
                         </tr>
                         <tr>
-                            <th><?php echo display('faxnumber'); ?></th>
+                            <th>Fax Number</th>
                             <td><?php echo $company->fax_no; ?></td>
                         </tr>
                         <tr>
@@ -65,7 +65,7 @@
     <div class="col-xs-12 no-print">
         <br />
         <a class="btn btn-sm btn-primary pull-right" onclick="printContent('PrintArea')">
-            <span class="fa fa-print"></span>&nbsp;&nbsp;<?php echo display('print'); ?>
+            <span class="fa fa-print"></span>&nbsp;&nbsp;Print
         </a>
     </div>
 
