@@ -29,8 +29,9 @@ class Fule_rate extends CI_Controller
 	public function create()
 	{
 		$data['m_fuel'] = "active";
-		// $data['v_id'] = $this->fule_rate_model->get_vehicle_model();
-		$data['rates'] = (object) array('v_fuel_id' => '', 'v_fuel_name' => '', 'v_fuel_rate' => '');
+		$data['fuel_types'] = $this->fule_rate_model->fuel_type_dropdown();
+		$data['fuel_units'] = $this->fule_rate_model->fuel_unit_dropdown();
+		$data['rates'] = (object) array('fuel_id' => '', 'fuel_name' => '', 'fuel_type_id' => '', 'unit_id' => '', 'stock' => '', 'buy_price' => '', 'sell_price' => '');
 		$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
 		$this->load->view('wrapper_main', $data);
 	}
@@ -92,7 +93,8 @@ class Fule_rate extends CI_Controller
 		}
 		#
 		$data['m_fuel'] = "active";
-		// $data['v_id'] = $this->fule_rate_model->get_vehicle_model();
+		$data['fuel_types'] = $this->fule_rate_model->fuel_type_dropdown();
+		$data['fuel_units'] = $this->fule_rate_model->fuel_unit_dropdown();
 		$rateList = $this->fule_rate_model->edit_rate($v_fuel_id);
 		$data['rates'] = $rateList[0];
 		$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
