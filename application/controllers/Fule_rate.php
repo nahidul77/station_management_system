@@ -45,31 +45,37 @@ class Fule_rate extends CI_Controller
 	public function save()
 	{
 		$data['m_fuel'] = "active";
-		$v_fuel_id = $this->input->post('v_fuel_id'); //this id for get fule rate id
+		$fuel_id = $this->input->post('fuel_id'); //this id for get fule rate id
 		// $v_id = trim($this->input->post('v_id'));//this name for get vehicle registration no
-		$v_fuel_name = trim($this->input->post('v_fuel_name')); //this name for get fule
-		$v_fuel_rate = trim($this->input->post('v_fuel_rate')); //this name for get fule
-		$is_active = trim($this->input->post('active')); //this name for get fule
+		$fuel_name    = trim($this->input->post('fuel_name')); //this name for get fule
+		$fuel_type_id = trim($this->input->post('fuel_type_id')); //this name for get fule
+		$unit_id      = trim($this->input->post('unit_id')); //this name for get fule
+		$stock        = trim($this->input->post('stock')); //this name for get fule
+		$buy_price    = trim($this->input->post('buy_price')); //this name for get fule
+		$sell_price   = trim($this->input->post('sell_price')); //this name for get fule
+		$is_active    = trim($this->input->post('active')); //this name for get fule
 
 		// $data['v_id'] = $this->fule_rate_model->get_vehicle_model();
-		$data['rates'] = (object) array('v_fuel_id' => $v_fuel_id, 'v_fuel_name' => $v_fuel_name, 'v_fuel_rate' => $v_fuel_rate);
+		$data['rates'] = (object) array('fuel_id' => $fuel_id, 'fuel_name' => $fuel_name, 'fuel_type_id' => $fuel_type_id, 'unit_id' => $unit_id, 'stock' => $stock, 'buy_price' => $buy_price, 'sell_price' => $sell_price);
 		//============================ for form validation (start) ====================//
-		$this->form_validation->set_rules('v_fuel_rate', 'Fuel Rate', 'trim|required');
-		$this->form_validation->set_rules('v_fuel_name', 'Fuel Name', 'required');
+		$this->form_validation->set_rules('fuel_name', 'Fuel Name', 'required');
 		$this->form_validation->set_rules('active', 'Is Active', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
 			$this->load->view('wrapper_main', $data);
 		} else {
 			$saveData = array(
-				'v_fuel_id' => $v_fuel_id,
-				'v_fuel_name' => $v_fuel_name,
-				'v_fuel_rate' => $v_fuel_rate,
-				'posting_id' => $this->session->userdata('user_id'),
+				'fuel_id' => $fuel_id,
+				'fuel_name' => $fuel_name,
+				'fuel_type_id' => $fuel_type_id,
+				'unit_id' => $unit_id,
+				'stock' => $stock,
+				'buy_price' => $buy_price,
+				'sell_price' => $sell_price,
 				'active' => $is_active
 			);
 			$this->fule_rate_model->save($saveData);
-			if (!empty($v_fuel_id)) {
+			if (!empty($fuel_id)) {
 				$this->session->set_flashdata('success', 'Update Successfully');
 			} else {
 				$this->session->set_flashdata('success', 'Save Successfully');
