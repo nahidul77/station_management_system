@@ -9,6 +9,9 @@ $base_url = base_url();
 ?>
 <ul class="nav" id="side-menu">
     <li <?php if ($url == $base_url . "dashboard") : ?> class="active" <?php endif ?>><a href="<?php echo $base_url . "dashboard"; ?>" class="material-ripple"><i class="fa fa-home"></i> Dashboard</a></li>
+
+    <li <?php if ($url == $base_url . "dash") : ?> class="active" <?php endif ?>><a href="<?php echo $base_url . "dashboard"; ?>" class="material-ripple"><i class="fa fa-money"></i> Sales</a></li>
+
     <li <?php if (
             $url == $base_url . 'vehicle/vehicle_type_list' ||
             $url == $base_url . 'vehicle/vehicle_info_list' ||
