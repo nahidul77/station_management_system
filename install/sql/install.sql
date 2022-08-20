@@ -410,6 +410,35 @@ INSERT INTO `user` (`id`, `fullname`, `username`, `password`, `type`, `last_log_
 (1, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 9, '2022-03-15 12:46:51', 1);
 
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sale`
+--
+
+CREATE TABLE `sale` (
+  `sale_id` int(10) UNSIGNED NOT NULL,
+  `invoice_id` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `fuel_id` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `v_type` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `customer_name` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `customer_phone` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `sell_unit` int(11) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `sale`
+--
+
+INSERT INTO `sale` (`sale_id`,`invoice_id`, `fuel_id`, `v_type`, `customer_name`, `customer_phone`, `sell_unit`, `date`) VALUES
+(1,'ST-2001', 1, 2, 'Sajeeb Ahmed', '01303040791', '50','2022-09-23'),
+(2,'ST-2002', 2, 3, 'Kamrul Hasan', '01703040792','20', '2022-09-23');
+
+
+-- --------------------------------------------------------
+
 -- --------------------------------------------------------
 
 --
@@ -629,7 +658,11 @@ ALTER TABLE `setting`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `sale`
+--
+ALTER TABLE `sale`
+  ADD PRIMARY KEY (`sale_id`);
 --
 -- Indexes for table `fuel_rate`
 --
@@ -751,6 +784,12 @@ ALTER TABLE `setting`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `sale`
+--
+ALTER TABLE `sale`
+  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `fuel_rate`
