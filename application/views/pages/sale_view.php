@@ -29,6 +29,9 @@
                                     Invoice
                                 </th>
                                 <th>
+                                    Fuel Name
+                                </th>
+                                <th>
                                     Fuel Type
                                 </th>
                                 <th>
@@ -61,6 +64,7 @@
                                     <tr>
                                         <td class="center"><?php echo $count + 1; ?></td>
                                         <td><?php echo $sale->invoice_id; ?></td>
+                                        <td><?php echo $sale->fuel_name; ?></td>
                                         <td><?php echo $sale->fuel_type_name; ?></td>
                                         <td><?php echo $sale->v_type; ?></td>
                                         <td><?php echo $sale->customer_name; ?></td>
