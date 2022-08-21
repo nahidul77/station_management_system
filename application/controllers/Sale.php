@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Fule_rate extends CI_Controller
+class Sale extends CI_Controller
 {
 
 	public function __construct()
@@ -10,15 +10,15 @@ class Fule_rate extends CI_Controller
 		if ($user_id == NULL) {
 			redirect('admin');
 		}
-		$this->load->model('fule_rate_model');
+		$this->load->model('sale_model');
 	}
 
 	//=================this fubction for view fule rate list(start) ===================//
 	public function index()
 	{
-		$data['m_fuel'] = "active";
-		$data['rates'] = $this->fule_rate_model->fule_rate();
-		$data['content'] = $this->load->view('pages/fule_rate_view', $data, TRUE);
+		$data['m_sale'] = "active";
+		$data['sales'] = $this->sale_model->sale();
+		$data['content'] = $this->load->view('pages/sale_view', $data, TRUE);
 		$this->load->view('wrapper_main', $data);
 	}
 	//=================this fubction for view fule rate list(End) ===================//

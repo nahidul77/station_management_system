@@ -1,16 +1,17 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Fule_rate_model extends CI_Model
+class Sale_model extends CI_Model
 {
 
-	public function fule_rate()
+	public function sale()
 	{
-		return $this->db->select("fuel_rate.*, fuel_type.fuel_type_name, fuel_unit.unit_name")
-			->from("fuel_rate")
-			->join('fuel_type', 'fuel_type.fuel_type_id = fuel_rate.fuel_type_id', 'left')
-			->join('fuel_unit', 'fuel_unit.unit_id = fuel_rate.unit_id', 'left')
-			->where_not_in('fuel_rate.active', 2)
-			->order_by('fuel_rate.fuel_id', 'desc')
+		return $this->db->select("sale.*, fuel_rate.*, vehicle_type.v_type, fuel_type.fuel_type_name")
+			->from("sale")
+			->join('fuel_rate', 'sale.fuel_id = fuel_rate.fuel_id', 'left')
+			->join('vehicle_type', 'sale.v_type = vehicle_type.v_type_id', 'left')
+			->join('fuel_type', 'fuel_rate.fuel_type_id = fuel_type.fuel_type_id', 'left')
+			// ->where_not_in('fuel_rate.active', 2)
+			->order_by('sale.sale_id', 'desc')
 			->get()
 			->result();
 		// $query = "SELECT *

@@ -4,10 +4,10 @@
             <div class="panel-body">
                 <div class="table-header">
                     <i class="fa fa-list"></i>
-                    Vehicle Fuel Rate
+                    Sale
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
-                        <a style="color:white" href="<?php echo base_url() . 'fule_rate/create'; ?>">Add Fuel Rate</a>
+                        <a style="color:white" href="<?php echo base_url() . 'fule_sale/create'; ?>">Add Sale</a>
                     </div>
                 </div>
                 <hr>
@@ -26,25 +26,25 @@
                                     SL No
                                 </th>
                                 <th>
-                                    Fuel Name
+                                    Invoice
                                 </th>
                                 <th>
                                     Fuel Type
                                 </th>
                                 <th>
-                                    Fuel Unit
+                                    Vehicle Type
                                 </th>
                                 <th>
-                                    Stock
+                                    Customer Name
                                 </th>
                                 <th>
-                                    Buying Price
+                                    Customer Phone
                                 </th>
                                 <th>
-                                    Selling Price
+                                    Sell Unit
                                 </th>
                                 <th>
-                                    Status
+                                    Date
                                 </th>
                                 <?php if ($this->session->userdata('user_type') == 9) { ?>
                                     <th class="no-print">Action</th>
@@ -54,30 +54,26 @@
                         </thead>
                         <tbody>
                             <?php
-                            if (!empty($rates)) {
+                            if (!empty($sales)) {
                                 $count = 0;
-                                foreach ($rates as $rate) {
+                                foreach ($sales as $sale) {
                             ?>
                                     <tr>
                                         <td class="center"><?php echo $count + 1; ?></td>
-                                        <td><?php echo $rate->fuel_name; ?></td>
-                                        <td><?php echo $rate->fuel_type_name; ?></td>
-                                        <td><?php echo $rate->unit_name; ?></td>
-                                        <td><?php echo $rate->stock; ?></td>
-                                        <td><?php echo $rate->buy_price; ?></td>
-                                        <td><?php echo $rate->sell_price; ?></td>
-                                        <td><?php if ($rate->active == 1)
-                                                echo "Active";
-                                            else
-                                                echo "Inactive";
-                                            ?></td>
+                                        <td><?php echo $sale->invoice_id; ?></td>
+                                        <td><?php echo $sale->fuel_type_name; ?></td>
+                                        <td><?php echo $sale->v_type; ?></td>
+                                        <td><?php echo $sale->customer_name; ?></td>
+                                        <td><?php echo $sale->customer_phone; ?></td>
+                                        <td><?php echo $sale->sell_unit; ?></td>
+                                        <td><?php echo $sale->date; ?></td>
 
                                         <?php if ($this->session->userdata('user_type') == 9) { ?>
                                             <td class="no-print">
-                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "fule_rate/rate_edit/" . $rate->fuel_id; ?>">
+                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "fule_sale/sale_edit/" . $sale->fuel_id; ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                 </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "fule_rate/delete_rate/" . $rate->fuel_id; ?>">
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "fule_sale/delete_sale/" . $sale->fuel_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
