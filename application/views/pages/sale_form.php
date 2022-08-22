@@ -4,96 +4,138 @@
             <div class="panel-title">
                 <h4>
                     <?php
-                    if (!empty($rates->fuel_id)) {
-                        echo 'Fuel Rate Update';
+                    if (!empty($sales->fuel_id)) {
+                        echo 'Sale Update';
                     } else {
-                        echo 'Fuel Rate Create';
+                        echo 'Sale Create';
                     }
                     ?>
                 </h4>
             </div>
         </div>
-        <form name="notice" class="form-horizontal" id="notice-submit" action="<?php echo base_url() . 'fule_rate/save'; ?>" method="post">
+        <form name="notice" class="form-horizontal" id="notice-submit" action="<?php echo base_url() . 'sale/save'; ?>" method="post">
             <div class="panel-body">
-                <div class="form-group row">
-                    <label for="fuel_name" class="col-sm-3 col-form-label">Fuel Name</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="fuel_name" class="form-control" id="fuel_name" required="required" placeholder="Fuel Name" value="<?php echo set_value('fuel_name', $rates->fuel_name); ?>">
-                        <div class="help-block" id="title-exists"><?php echo form_error('fuel_name'); ?></div>
-                    </div>
-                </div>
+
                 <div class="form-group ">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="company_id">Fuel Type<span class="fa fa-asterisk red" style="color:red;"></span></label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="fuel_id">Fuel Types<span class="fa fa-asterisk red" style="color:red;"></span></label>
 
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
-                            <?php echo form_dropdown('fuel_type_id', $fuel_types, set_value('fuel_type_id', $rates->fuel_type_id), 'class="col-xs-12 col-sm-4 testselect1" id="expense_group"');
+                            <?php echo form_dropdown('fuel_id', $fuel_types, set_value('fuel_id', $sales->fuel_id), 'class="col-xs-12 col-sm-4 testselect1" id="select_fuel_id"');
                             ?>
 
                         </div>
-                        <div class="help-block" id="title-exists"><?php echo form_error('fuel_type_id'); ?></div>
+                        <div class="help-block" id="title-exists"><?php echo form_error('fuel_id'); ?></div>
                     </div>
                 </div>
                 <div class="form-group ">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="company_id">Fuel Unit<span class="fa fa-asterisk red" style="color:red;"></span></label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="v_type">Vehicle Type<span class="fa fa-asterisk red" style="color:red;"></span></label>
 
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
-                            <?php echo form_dropdown('unit_id', $fuel_units, set_value('unit_id', $rates->unit_id), 'class="col-xs-12 col-sm-4 testselect1" id="expense_group"');
+                            <?php echo form_dropdown('v_type', $v_types, set_value('v_type', $sales->v_type), 'class="col-xs-12 col-sm-4 testselect1" id="v_type"');
                             ?>
 
                         </div>
-                        <div class="help-block" id="title-exists"><?php echo form_error('fuel_type_id'); ?></div>
+                        <div class="help-block" id="title-exists"><?php echo form_error('v_type'); ?></div>
                     </div>
                 </div>
+
                 <div class="form-group row">
                     <label for="v_fuel_rate" class="col-sm-3 col-form-label">Stock</label>
                     <div class="col-sm-9">
-                        <input type="text" name="stock" class="form-control" id="stock" placeholder="Fuel stock" required="required" value="<?php echo set_value('stock', $rates->stock); ?>">
-                        <div class="help-block" id="title-exists"><?php echo form_error('stock'); ?></div>
+                        <input type="text" name="stock" class="form-control" id="stock" value="" readonly>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="v_fuel_rate" class="col-sm-3 col-form-label">Price</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="price" class="form-control" id="price" value="" readonly>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="v_fuel_rate" class="col-sm-3 col-form-label">Buying Price</label>
+                    <label for="fuel_name" class="col-sm-3 col-form-label">Sell Units<span class="fa fa-asterisk red" style="color:red;"></span></label>
                     <div class="col-sm-9">
-                        <input type="text" name="buy_price" class="form-control" id="buy_price" placeholder="Buying Price" required="required" value="<?php echo set_value('buy_price', $rates->buy_price); ?>">
+                        <input type="text" name="sell_unit" class="form-control" id="sell_unit" required="required" value="<?php echo set_value('sell_unit', $sales->sell_unit); ?>">
+                        <div class="help-block" id="title-exists"><?php echo form_error('sell_unit'); ?></div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="v_fuel_rate" class="col-sm-3 col-form-label">Total Amount</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="amount" class="form-control" id="amount" required="required" value="<?php echo set_value('amount', $sales->amount); ?>" readonly>
                         <div class="help-block" id="title-exists"><?php echo form_error('buy_price'); ?></div>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="v_fuel_rate" class="col-sm-3 col-form-label">Selling Price</label>
+                    <label for="v_fuel_rate" class="col-sm-3 col-form-label">Customer Name<span class="fa fa-asterisk red" style="color:red;"></span></label>
                     <div class="col-sm-9">
-                        <input type="text" name="sell_price" class="form-control" id="sell_price" placeholder="Selling Price" required="required" value="<?php echo set_value('sell_price', $rates->sell_price); ?>">
-                        <div class="help-block" id="title-exists"><?php echo form_error('v_fuel_rate'); ?></div>
+                        <input type="text" name="customer_name" class="form-control" id="customer_name" placeholder="Customer Name" required="required" value="<?php echo set_value('customer_name', $sales->customer_name); ?>">
+                        <div class="help-block" id="title-exists"><?php echo form_error('customer_name'); ?></div>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="vehicle_type" class="col-sm-3 col-form-label">Is Active</label>
+                    <label for="v_fuel_rate" class="col-sm-3 col-form-label">Customer Phone<span class="fa fa-asterisk red" style="color:red;"></span></label>
                     <div class="col-sm-9">
-                        <fieldset>
-                            <div class="checkbox-circle">
-                                <input name="active" type="radio" value="1" <?php echo set_radio('active', '1', TRUE); ?>>
-                                <label for="checkbox7">Yes</label>
-
-                                <input name="active" type="radio" value="0" <?php echo set_radio('active', '0'); ?>>
-                                <label for="checkbox8">No</label>
-                            </div>
-
-                        </fieldset>
+                        <input type="text" name="customer_phone" class="form-control" id="customer_phone" placeholder="Customer Phone" required="required" value="<?php echo set_value('customer_phone', $sales->customer_phone); ?>">
+                        <div class="help-block" id="title-exists"><?php echo form_error('customer_phone'); ?></div>
                     </div>
-                    <div class="help-block" id="title-exists"><?php echo form_error('active'); ?></div>
                 </div>
-                <input type="hidden" name="fuel_id" id="fuel_id" value="<?php echo set_value('fuel_id', $rates->fuel_id); ?>" />
-                <div class="form-group row">
-                    <div class="col-md-offset-1 col-md-9" style="margin-left: 35%;">
-                        <a href="<?php echo base_url() . 'fule_rate'; ?>" class="btn btn-danger w-md m-b-5">Cancel</a>
-                        <button type="submit" class="btn btn-success w-md m-b-5">Save</button>
-                    </div>
+
+            </div>
+            <input type="hidden" name="sale_id" id="sale_id" value="<?php echo set_value('sale_id', $sales->sale_id); ?>" />
+            <div class="form-group row">
+                <div class="col-md-offset-1 col-md-9" style="margin-left: 35%;">
+                    <a href="<?php echo base_url() . 'sale'; ?>" class="btn btn-danger w-md m-b-5">Cancel</a>
+                    <button type="submit" class="btn btn-success w-md m-b-5">Save</button>
                 </div>
             </div>
-        </form>
     </div>
+    </form>
 </div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+
+        $('#select_fuel_id').change(function() {
+
+            let fuel_id = $(this).val();
+            if (fuel_id) {
+                let url = '<?php echo base_url() . "fule_rate/get_price_by_fuel_id/" ?>' + fuel_id;
+                console.log(url);
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    success: function(data) {
+                        if (data) {
+                            let obj = JSON.parse(data);
+                            // console.log(obj[0].stock);
+                            $('#stock').val(obj[0].stock);
+                            $('#price').val(obj[0].sell_price);
+                        }
+                    },
+                });
+            } else {
+                $('#stock').val('');
+                $('#price').val('');
+            }
+        });
+
+        //_________________________________________
+
+        $('#sell_unit').keyup(function() {
+            let unit = $(this).val();
+            let price = $('#price').val();
+
+            let total = price * unit;
+
+            $('#amount').val(total);
+        });
+    })
+</script>

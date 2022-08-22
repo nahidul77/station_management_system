@@ -39,41 +39,41 @@ class Sale_model extends CI_Model
 
 	public function save($data)
 	{
-		if (!empty($data['fuel_id'])) {
-			$this->db->where('fuel_id', $data['fuel_id']);
-			$this->db->update('fuel_rate', $data);
+		if (!empty($data['sale_id'])) {
+			$this->db->where('sale_id', $data['sale_id']);
+			$this->db->update('sale', $data);
 		} else {
-			$this->db->insert('fuel_rate', $data);
+			$this->db->insert('sale', $data);
 		}
 	}
 
-	public function fuel_type_dropdown()
+	public function fuel_name_dropdown()
 	{
-		$typelist = $this->db->select("fuel_type_id, fuel_type_name")
-			->from('fuel_type')
+		$typelist = $this->db->select("fuel_id, fuel_name")
+			->from('fuel_rate')
 			->where('active', 1)
 			->get()
 			->result();
 		$types[''] = "Select Fuel Type";
 		if (!empty($typelist)) {
 			foreach ($typelist as $type) {
-				$types[$type->fuel_type_id] = $type->fuel_type_name;
+				$types[$type->fuel_id] = $type->fuel_name;
 			} //Foreach
 		}
 		return $types;
 	}
 
-	public function fuel_unit_dropdown()
+	public function v_type_dropdown()
 	{
-		$unitlist = $this->db->select("unit_id, unit_name")
-			->from('fuel_unit')
+		$unitlist = $this->db->select("v_type_id, v_type")
+			->from('vehicle_type')
 			->where('active', 1)
 			->get()
 			->result();
-		$units[''] = "Select Fuel Unit";
+		$units[''] = "Select Vehicle Type";
 		if (!empty($unitlist)) {
 			foreach ($unitlist as $unit) {
-				$units[$unit->unit_id] = $unit->unit_name;
+				$units[$unit->v_type_id] = $unit->v_type;
 			} //Foreach
 		}
 		return $units;

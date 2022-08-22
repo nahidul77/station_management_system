@@ -28,11 +28,11 @@ class Sale extends CI_Controller
 
 	public function create()
 	{
-		$data['m_fuel'] = "active";
-		$data['fuel_types'] = $this->fule_rate_model->fuel_type_dropdown();
-		$data['fuel_units'] = $this->fule_rate_model->fuel_unit_dropdown();
-		$data['rates'] = (object) array('fuel_id' => '', 'fuel_name' => '', 'fuel_type_id' => '', 'unit_id' => '', 'stock' => '', 'buy_price' => '', 'sell_price' => '');
-		$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
+		$data['m_sale'] = "active";
+		$data['fuel_types'] = $this->sale_model->fuel_name_dropdown();
+		$data['v_types'] = $this->sale_model->v_type_dropdown();
+		$data['sales'] = (object) array('sale_id' => '', 'invoice_id' => '', 'fuel_id' => '', 'v_type' => '', 'customer_name' => '', 'customer_phone' => '', 'sell_unit' => '', 'amount' => '', 'date' => '');
+		$data['content'] = $this->load->view('pages/sale_form', $data, TRUE);
 		$this->load->view('wrapper_main', $data);
 	}
 	//=============== This function for create/insert fule rate (Start) =============================//
@@ -44,44 +44,59 @@ class Sale extends CI_Controller
 
 	public function save()
 	{
-		$data['m_fuel'] = "active";
-		$fuel_id = $this->input->post('fuel_id'); //this id for get fule rate id
+		// die(var_dump($this->input->post()));
+		$last_stock = (int) $this->input->post('stock');
+		$sale_id = $this->input->post('sale_id'); //this id for get fule rate id
 		// $v_id = trim($this->input->post('v_id'));//this name for get vehicle registration no
-		$fuel_name    = trim($this->input->post('fuel_name')); //this name for get fule
-		$fuel_type_id = trim($this->input->post('fuel_type_id')); //this name for get fule
-		$unit_id      = trim($this->input->post('unit_id')); //this name for get fule
-		$stock        = trim($this->input->post('stock')); //this name for get fule
-		$buy_price    = trim($this->input->post('buy_price')); //this name for get fule
-		$sell_price   = trim($this->input->post('sell_price')); //this name for get fule
-		$is_active    = trim($this->input->post('active')); //this name for get fule
+		$fuel_id    = trim($this->input->post('fuel_id')); //this name for get fule
+		$v_type     = (int) trim($this->input->post('v_type')); //this name for get fule
+		$amount      = (int) trim($this->input->post('amount')); //this name for get fule
+		$customer_name        = trim($this->input->post('customer_name')); //this name for get fule
+		$customer_phone    = trim($this->input->post('customer_phone')); //this name for get fule
+		$sell_unit   = (int) trim($this->input->post('sell_unit')); //this name for get fule
+		$stock   =  $last_stock - $sell_unit; //this name for get fule
+		$date    = date('Y-m-d'); //this name for get fule
+		$invoice_id    = 'ST-' . random_int(100000, 999999); //this name for get fule
 
+		$data['fuel_types'] = $this->sale_model->fuel_name_dropdown();
+		$data['v_types'] = $this->sale_model->v_type_dropdown();
 		// $data['v_id'] = $this->fule_rate_model->get_vehicle_model();
-		$data['rates'] = (object) array('fuel_id' => $fuel_id, 'fuel_name' => $fuel_name, 'fuel_type_id' => $fuel_type_id, 'unit_id' => $unit_id, 'stock' => $stock, 'buy_price' => $buy_price, 'sell_price' => $sell_price);
+		$data['sales'] = (object) array('fuel_id' => $fuel_id, 'invoice_id' => $invoice_id, 'v_type' => $v_type, 'amount' => $amount, 'customer_name' => $customer_name, 'customer_phone' => $customer_phone, 'sell_unit' => $sell_unit, 'date' => $date);
 		//============================ for form validation (start) ====================//
-		$this->form_validation->set_rules('fuel_name', 'Fuel Name', 'required');
-		$this->form_validation->set_rules('active', 'Is Active', 'required');
+		// $this->form_validation->set_rules('fuel_id', 'Fuel Type', 'required');
+		// $this->form_validation->set_rules('v_type', 'Vehicle Type', 'required');
+		$this->form_validation->set_rules('amount', 'Amount', 'required');
+		$this->form_validation->set_rules('customer_name', 'Customer Name', 'required');
+		$this->form_validation->set_rules('customer_phone', 'Customer Phone', 'required');
+		$this->form_validation->set_rules('sell_unit', 'Sell Unit', 'required');
+
 		if ($this->form_validation->run() == FALSE) {
-			$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
+			$data['content'] = $this->load->view('pages/sale_form', $data, TRUE);
 			$this->load->view('wrapper_main', $data);
 		} else {
 			$saveData = array(
 				'fuel_id' => $fuel_id,
-				'fuel_name' => $fuel_name,
-				'fuel_type_id' => $fuel_type_id,
-				'unit_id' => $unit_id,
-				'stock' => $stock,
-				'buy_price' => $buy_price,
-				'sell_price' => $sell_price,
-				'active' => $is_active
+				'invoice_id' => $invoice_id,
+				'v_type' => $v_type,
+				'amount' => $amount,
+				'customer_name' => $customer_name,
+				'customer_phone' => $customer_phone,
+				'sell_unit' => $sell_unit,
+				'date' => $date
 			);
-			$this->fule_rate_model->save($saveData);
-			if (!empty($fuel_id)) {
+			// die(var_dump($saveData));
+			$this->sale_model->save($saveData);
+			// $stockData['fuel_id'] = $fuel_id;
+			// $stockData['stock'] = $stock;
+			// $this->fule_rate_model->update_stock($stockData);
+
+			if (!empty($sale_id)) {
 				$this->session->set_flashdata('success', 'Update Successfully');
 			} else {
 				$this->session->set_flashdata('success', 'Save Successfully');
 			}
 
-			redirect('fule_rate');
+			redirect('sale');
 		}
 	}
 	//=============== This function for Save Fuel Rate (End) =============================//

@@ -7,7 +7,7 @@
                     Sale
                     <div class="pull-right btn btn-success">
                         <i class="fa fa-plus "></i>
-                        <a style="color:white" href="<?php echo base_url() . 'fule_sale/create'; ?>">Add Sale</a>
+                        <a style="color:white" href="<?php echo base_url() . 'sale/create'; ?>">Add Sale</a>
                     </div>
                 </div>
                 <hr>

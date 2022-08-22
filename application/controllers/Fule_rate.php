@@ -106,6 +106,11 @@ class Fule_rate extends CI_Controller
 		$data['content'] = $this->load->view('pages/fule_rate_form', $data, TRUE);
 		$this->load->view('wrapper_main', $data);
 	}
+
+	public function get_price_by_fuel_id($v_fuel_id = '')
+	{
+		echo json_encode($this->fule_rate_model->edit_rate($v_fuel_id));
+	}
 	//================this Function for edit Fuel Rate(End) ============================//
 	//================this Function for Delete Fuel Rate(Start) ============================//
 
