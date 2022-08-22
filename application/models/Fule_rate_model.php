@@ -46,13 +46,6 @@ class Fule_rate_model extends CI_Model
 		}
 	}
 
-	public function update_stock($data)
-	{
-		if (!empty($data['fuel_id'])) {
-			$this->db->where('fuel_id', $data['fuel_id']);
-			$this->db->update('fuel_rate', $data);
-		}
-	}
 
 	public function fuel_type_dropdown()
 	{

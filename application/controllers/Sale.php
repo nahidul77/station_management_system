@@ -84,15 +84,15 @@ class Sale extends CI_Controller
 				'sell_unit' => $sell_unit,
 				'date' => $date
 			);
-			// die(var_dump($saveData));
 			$this->sale_model->save($saveData);
-			// $stockData['fuel_id'] = $fuel_id;
-			// $stockData['stock'] = $stock;
-			// $this->fule_rate_model->update_stock($stockData);
 
 			if (!empty($sale_id)) {
 				$this->session->set_flashdata('success', 'Update Successfully');
 			} else {
+				$stockData['fuel_id'] = $fuel_id;
+				$stockData['stock'] = $stock;
+				$this->sale_model->update_stock($stockData);
+
 				$this->session->set_flashdata('success', 'Save Successfully');
 			}
 
