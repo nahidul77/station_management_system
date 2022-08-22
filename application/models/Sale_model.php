@@ -21,20 +21,27 @@ class Sale_model extends CI_Model
 		// 	->result();
 	}
 
-	public function edit_rate($fuel_id = '')
+	public function edit_sale($sale_id = '')
 	{
 		return $this->db->select('*')
+			->from('sale')
+			->where('sale_id', $sale_id)
+			->get()
+			->result();
+	}
+
+	public function get_fuel_stock($fuel_id = '')
+	{
+		return $this->db->select('stock')
 			->from('fuel_rate')
 			->where('fuel_id', $fuel_id)
 			->get()
 			->result();
 	}
 
-	public function delete_rate($fuel_id)
+	public function delete_sale($sale_id)
 	{
-		return $this->db->set('active', 2)
-			->where('fuel_id', $fuel_id)
-			->update('fuel_rate');
+		return $this->db->delete('sale', array('sale_id' => $sale_id));
 	}
 
 	public function save($data)

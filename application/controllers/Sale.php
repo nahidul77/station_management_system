@@ -61,7 +61,7 @@ class Sale extends CI_Controller
 		$data['fuel_types'] = $this->sale_model->fuel_name_dropdown();
 		$data['v_types'] = $this->sale_model->v_type_dropdown();
 		// $data['v_id'] = $this->fule_rate_model->get_vehicle_model();
-		$data['sales'] = (object) array('fuel_id' => $fuel_id, 'invoice_id' => $invoice_id, 'v_type' => $v_type, 'amount' => $amount, 'customer_name' => $customer_name, 'customer_phone' => $customer_phone, 'sell_unit' => $sell_unit, 'date' => $date);
+		$data['sales'] = (object) array('fuel_id' => $fuel_id, 'invoice_id' => $invoice_id, 'v_type' => $v_type, 'amount' => $amount, 'customer_name' => $customer_name, 'customer_phone' => $customer_phone, 'sell_unit' => $sell_unit, 'last_stock' => $last_stock, 'date' => $date);
 		//============================ for form validation (start) ====================//
 		// $this->form_validation->set_rules('fuel_id', 'Fuel Type', 'required');
 		// $this->form_validation->set_rules('v_type', 'Vehicle Type', 'required');
@@ -82,6 +82,7 @@ class Sale extends CI_Controller
 				'customer_name' => $customer_name,
 				'customer_phone' => $customer_phone,
 				'sell_unit' => $sell_unit,
+				'last_stock' => $last_stock,
 				'date' => $date
 			);
 			$this->sale_model->save($saveData);
@@ -124,7 +125,7 @@ class Sale extends CI_Controller
 	//================this Function for edit Fuel Rate(End) ============================//
 	//================this Function for Delete Fuel Rate(Start) ============================//
 
-	public function delete_rate($v_fuel_id = '')
+	public function delete_sale($sale_id = '')
 	{
 		if (
 			$this->session->userdata('isLogin') == FALSE
@@ -132,9 +133,21 @@ class Sale extends CI_Controller
 		) {
 			redirect('admin');
 		} else {
-			$this->fule_rate_model->delete_rate($v_fuel_id);
+			$this->sale_model->delete_sale($sale_id);
+
+			$sales = $this->sale_model->edit_sale($sale_id);
+
+			$fuel_id = $sales[0]->fuel_id;
+
+			$stock = $this->sale_model->get_fuel_stock($fuel_id);
+
+			$stockData['fuel_id'] = $fuel_id;
+			$stockData['stock'] = $stock[0]->stock + $sales[0]->sell_unit;
+
+			$this->sale_model->update_stock($stockData);
+
 			$this->session->set_flashdata('success', 'Delete Successfully');
-			redirect('fule_rate');
+			redirect('sale');
 		}
 		#
 

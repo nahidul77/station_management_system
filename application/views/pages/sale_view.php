@@ -73,11 +73,12 @@
                                         <td><?php echo $sale->date; ?></td>
 
                                         <?php if ($this->session->userdata('user_type') == 9) { ?>
-                                            <td class="no-print">
-                                                <a class="green" data-toggle="tooltip" title="Edit" href="<?php echo base_url() . "fule_sale/sale_edit/" . $sale->fuel_id; ?>">
+                                            <td class="no-print text-center">
+                                                <!-- <a class="green" data-toggle="tooltip" title="Edit" href="<?php // echo base_url() . "fule_sale/sale_edit/" . $sale->fuel_id; 
+                                                                                                                ?>">
                                                     <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                                </a>&nbsp;&nbsp;
-                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "fule_sale/delete_sale/" . $sale->fuel_id; ?>">
+                                                </a>&nbsp;&nbsp; -->
+                                                <a class="red delete" data-toggle="tooltip" title="Delete" href="<?php echo base_url() . "sale/delete_sale/" . $sale->sale_id; ?>">
                                                     <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                 </a>
                                             </td>
