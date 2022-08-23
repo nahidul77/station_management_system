@@ -1,4 +1,4 @@
-<div class="col-sm-12">
+<div class="col-xs-12">
     <div class="panel panel-bd">
         <div class="panel-heading">
             <div class="panel-title">
