@@ -133,7 +133,6 @@ class Sale extends CI_Controller
 		) {
 			redirect('admin');
 		} else {
-			$this->sale_model->delete_sale($sale_id);
 
 			$sales = $this->sale_model->edit_sale($sale_id);
 
@@ -143,8 +142,10 @@ class Sale extends CI_Controller
 
 			$stockData['fuel_id'] = $fuel_id;
 			$stockData['stock'] = $stock[0]->stock + $sales[0]->sell_unit;
+			settype($stockData['stock'], 'string');
 
 			$this->sale_model->update_stock($stockData);
+			$this->sale_model->delete_sale($sale_id);
 
 			$this->session->set_flashdata('success', 'Delete Successfully');
 			redirect('sale');
