@@ -30,7 +30,6 @@ $base_url = base_url();
             <li><a href="<?php echo $base_url; ?>fule_rate">Fuel Management</a></li>
         </ul>
     </li>
-
     <li <?php if (
             $url == $base_url . 'vehicle/vehicle_type_list' ||
             $url == $base_url . 'vehicle/vehicle_info_list' ||

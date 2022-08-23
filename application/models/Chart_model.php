@@ -44,10 +44,11 @@ class Chart_model extends CI_Model
                      ->get()
                      ->num_rows();
        }
-       public function fitness()
+       public function vendor()
        {
               return $this->db->select('*')
-                     ->from('vehicle_fitness')
+                     ->from('add_vendor')
+                     ->where('active <> 2')
                      ->get()
                      ->num_rows();
        }
