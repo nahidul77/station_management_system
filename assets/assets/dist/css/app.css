@@ -547,6 +547,9 @@
     .navbar-header {
         background-color: #1c2260;
     }
+    a.dropdown-toggle {
+        font-size: 20px;
+    }
     .navbar-toggle {
         border: 0;
         color: #fff;

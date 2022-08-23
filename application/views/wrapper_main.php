@@ -21,7 +21,7 @@
         <div class=control-sidebar-bg></div>
         <div id="page-wrapper">
             <div class="content" style="margin-left: -5%;">
-                <div class="page-header position-relative">
+                <div class="page-header position-relative" style="border-bottom: 0px;">
 
                 </div>
                 <?php

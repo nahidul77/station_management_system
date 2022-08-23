@@ -1,7 +1,8 @@
 <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <button style="color: white; background-color: black" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
-        <i class="material-icons">apps</i>
+        <!-- <i class="material-icons">apps</i> -->
+        <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
     <?php
     $this->load->helper('new_helper');
