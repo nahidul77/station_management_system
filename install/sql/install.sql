@@ -425,6 +425,8 @@ CREATE TABLE `sale` (
   `customer_name` varchar(255) CHARACTER SET latin1 NOT NULL,
   `customer_phone` varchar(255) CHARACTER SET latin1 NOT NULL,
   `sell_unit` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `last_stock` int(11) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -432,9 +434,9 @@ CREATE TABLE `sale` (
 -- Dumping data for table `sale`
 --
 
-INSERT INTO `sale` (`sale_id`,`invoice_id`, `fuel_id`, `v_type`, `customer_name`, `customer_phone`, `sell_unit`, `date`) VALUES
-(1,'ST-2001', 1, 2, 'Sajeeb Ahmed', '01303040791', '50','2022-09-23'),
-(2,'ST-2002', 2, 3, 'Kamrul Hasan', '01703040792','20', '2022-09-23');
+INSERT INTO `sale` (`sale_id`,`invoice_id`, `fuel_id`, `v_type`, `customer_name`, `customer_phone`, `sell_unit`, `amount`, `last_stock`, `date`) VALUES
+(1,'ST-2001', 1, 2, 'Sajeeb Ahmed', '01303040791', '50', 6000, 1000,'2022-09-23'),
+(2,'ST-2002', 2, 3, 'Kamrul Hasan', '01703040792','20', 2000, 500, '2022-09-23');
 
 
 -- --------------------------------------------------------
