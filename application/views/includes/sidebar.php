@@ -130,17 +130,15 @@ $base_url = base_url();
         </ul>
     </li>
 
-    <?php if (false) : ?>
-        <li>
-            <a href="#" class="material-ripple"><i class="hvr-buzz-out fa fa-leanpub"></i><?php echo display('reports'); ?><span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li><a href="<?php echo $base_url; ?>report_general/view"><?php echo display('generalereports') ?></a></li>
-                <li><a href="<?php echo $base_url; ?>report_expense/view"><?php echo display('expensereports') ?></a></li>
-                <li><a href="<?php echo base_url('report_balancesheet'); ?>"><?php echo display('balancesheet') ?></a></li>
-                <li><a href="<?php echo $base_url; ?>report_company/generate"><?php echo display('companybill'); ?></a></li>
-            </ul>
-        </li>
-    <?php endif ?>
+    <li>
+        <a href="#" class="material-ripple"><i class="fa fa-bar-chart"></i> Reports<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li><a href="<?php echo $base_url; ?>report_general/view">General Reports</a></li>
+            <li><a href="<?php echo $base_url; ?>report_expense/view">Expense Reports</a></li>
+            <li><a href="<?php echo base_url('report_balancesheet'); ?>">Balance Sheet</a></li>
+            <li><a href="<?php echo $base_url; ?>report_company/generate">Company Bill</a></li>
+        </ul>
+    </li>
     <li <?php if (
             $url == $base_url . 'logo' ||
             $url == $base_url . 'admin/app_setting'
