@@ -150,7 +150,7 @@ Quantity
 Amount	
 
 
-# Accounting Management Module (⚠ Pending)
+# Accounting Management Module (✅Completed)
 
 Bank Information  (Create, Read, Update, Delete) 
 User Input
