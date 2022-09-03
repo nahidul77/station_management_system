@@ -62,16 +62,16 @@
                                                 <h4 class="text-center bg-info" style="padding:10px">
                                                     <?php
                                                     $report = array(
-                                                        1 => display('dailyallvehicleperformance'),
-                                                        2 => display('dailysinglevehicleperformance'),
-                                                        3 => display('allvehicleperformance'),
-                                                        4 => display('vehiclewiseperformance'),
-                                                        5 => display('driverwiseperformance'),
-                                                        6 => display('companywiseperformance'),
-                                                        7 => display('datetodatecompanywiseperformance'),
-                                                        8 => display('datetodatedriverwiseperformance'),
-                                                        9 => display('datetodatesinglevehicleperformance'),
-                                                        10 => display('datetodateallvehicleperformance')
+                                                        1 => 'dailyallvehicleperformance',
+                                                        2 => 'dailysinglevehicleperformance',
+                                                        3 => 'allvehicleperformance',
+                                                        4 => 'vehiclewiseperformance',
+                                                        5 => 'driverwiseperformance',
+                                                        6 => 'companywiseperformance',
+                                                        7 => 'datetodatecompanywiseperformance',
+                                                        8 => 'datetodatedriverwiseperformance',
+                                                        9 => 'datetodatesinglevehicleperformance',
+                                                        10 => 'datetodateallvehicleperformance'
                                                     );
                                                     if ($this->input->post('general_report')) {
                                                         echo @$report[$this->input->post('general_report')];

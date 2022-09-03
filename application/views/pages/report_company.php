@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group" id="date">
-                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="others_company">date'); ?></label>
+                                        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="others_company">date</label>
                                         <div class="col-xs-12 col-sm-9">
                                             <div class="clearfix">
 
@@ -71,7 +71,7 @@
                                                     <input type="text" name="date_1" class="datepicker form-control" value="<?php echo date("d-m-Y"); ?>">
                                                 </div>
                                                 <div class="col-xs-12 col-sm-2" style="margin-left:-8%;">
-                                                    <div class=" col-xs-12 col-md-1"><?php echo nbs(3) . display('to') . nbs(3); ?></div>
+                                                    <div class=" col-xs-12 col-md-1"><?php echo nbs(3) . 'to' . nbs(3); ?></div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-5" style="margin-left:-6.4%;">
                                                     <input type="text" name="date_2" class="datepicker form-control" value="<?php echo date("d-m-Y"); ?>">
@@ -198,7 +198,7 @@
 
                                         <tbody>
                                             <?php
-                                            $import_export = array(0 => display('local'), 1 => display('import'), 2 => display('export'), 3 => display('exportimport'));
+                                            $import_export = array(0 => 'local', 1 => 'import', 2 => 'export', 3 => 'exportimport');
                                             $sl = 1;
                                             if (!empty($bill)) {
                                                 foreach ($bill as $value) {
