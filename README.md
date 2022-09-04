@@ -70,12 +70,12 @@ New Password
 Logout Button & Menu
 
 
-# Dashboard Module (⚠ Pending)
+# Dashboard Module (✅Completed)
 Show summary
 Total Number of Vehicles
 Total Number of Customers
 Total Number of Drivers
-Total Number of Trips
+Total Number of Vendors
 
 # Vehicle Management Module (✅Completed)
 	
@@ -150,7 +150,7 @@ Quantity
 Amount	
 
 
-# Accounting Management Module (⚠ Pending)
+# Accounting Management Module (✅Completed)
 
 Bank Information  (Create, Read, Update, Delete) 
 User Input
