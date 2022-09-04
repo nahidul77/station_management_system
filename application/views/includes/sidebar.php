@@ -135,8 +135,10 @@ $base_url = base_url();
         <ul class="nav nav-second-level">
             <li><a href="<?php echo $base_url; ?>report_general/view">General Reports</a></li>
             <li><a href="<?php echo $base_url; ?>report_expense/view">Expense Reports</a></li>
-            <li><a href="<?php echo base_url('report_balancesheet'); ?>">Balance Sheet</a></li>
-            <li><a href="<?php echo $base_url; ?>report_company/generate">Company Bill</a></li>
+            <!-- <li><a href="<?php // echo base_url('report_balancesheet'); 
+                                ?>">Balance Sheet</a></li>
+            <li><a href="<?php // echo $base_url; 
+                            ?>report_company/generate">Company Bill</a></li> -->
         </ul>
     </li>
     <li <?php if (
