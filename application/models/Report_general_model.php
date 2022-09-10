@@ -1,18 +1,18 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Report_expense_model extends CI_Model
+class Report_general_model extends CI_Model
 {
 
     public function report($data = NULL)
     {
-        if (empty($data['expense_report'])) :
-            redirect('report_expense/view');
+        if (empty($data['general_report'])) :
+            redirect('report_general/view');
         else :
             #----------------------------------------#
             #--------starts of date condition -------#
             #----------------------------------------#
             $now = new DateTime();
-            switch ($data['expense_report']):
+            switch ($data['general_report']):
                 case 1:
                     #---LAST ONE MONTH REPORT--#  
                     $lastMonth = $now->sub(new DateInterval('P1M'));
@@ -49,23 +49,21 @@ class Report_expense_model extends CI_Model
 
             #~~~~~~~~~~~~~INFLOW~~~~~~~~~~~~~~#
             $this->db->select("*");
-            $this->db->from("expense_data");
+            $this->db->from("sale");
             $this->db->where("date BETWEEN '$date_1' AND '$date_2'", NULL, FALSE);
-            $this->db->where("active", 1);
             $this->db->order_by("date", 'desc');
-            $expense = $this->db->get()->result();
+            $general = $this->db->get()->result();
             #~~~~~~~~~~~~~INFLOW~~~~~~~~~~~~~~#
 
             #~~~~~~~~~~~~~OUTFLOW~~~~~~~~~~~~~#
-            $this->db->select("expense_data.*, expense_list.expense_name");
-            $this->db->from("expense_data");
-            $this->db->join("expense_list", 'expense_list.expense_id = expense_data.expense_id');
+            $this->db->select("sale.*, vehicle_type.v_type");
+            $this->db->from("sale");
+            $this->db->join("vehicle_type", 'vehicle_type.v_type_id = sale.v_type');
             $this->db->where("date BETWEEN '$date_1' AND '$date_2'", NULL, FALSE);
-            $this->db->where("expense_data.active", 1);
             $this->db->order_by("date", 'desc');
-            $expense_list = $this->db->get()->result();
+            $vehicle_list = $this->db->get()->result();
             #~~~~~~~~~~~~~OUTFLOW~~~~~~~~~~~~~#
-            return array('expense' => $expense, 'expense_list' => $expense_list);
+            return array('general' => $general, 'vehicle_list' => $vehicle_list);
         endif;
     }
 }
