@@ -50,18 +50,30 @@ class Report_general_model extends CI_Model
             #~~~~~~~~~~~~~INFLOW~~~~~~~~~~~~~~#
             $this->db->select("*");
             $this->db->from("sale");
-            $this->db->where("date BETWEEN '$date_1' AND '$date_2'", NULL, FALSE);
+            // $this->db->where("date BETWEEN '$date_1' AND '$date_2'", NULL, FALSE);
             $this->db->order_by("date", 'desc');
             $general = $this->db->get()->result();
             #~~~~~~~~~~~~~INFLOW~~~~~~~~~~~~~~#
 
             #~~~~~~~~~~~~~OUTFLOW~~~~~~~~~~~~~#
-            $this->db->select("sale.*, vehicle_type.v_type");
+            $this->db->select("count(sale.v_type) as total, vehicle_type.v_type as vehicle_name");
             $this->db->from("sale");
             $this->db->join("vehicle_type", 'vehicle_type.v_type_id = sale.v_type');
-            $this->db->where("date BETWEEN '$date_1' AND '$date_2'", NULL, FALSE);
-            $this->db->order_by("date", 'desc');
+            // $this->db->where('date <=', $date_2);
+            // $this->db->where('date >=', $date_1);
+            // $this->db->where("date BETWEEN '$date_1' AND '$date_2'", NULL, FALSE);
+            $this->db->group_by('sale.v_type');
             $vehicle_list = $this->db->get()->result();
+
+            // $this->db->select("sale.*, vehicle_type.v_type");
+            // $this->db->from("sale");
+            // $this->db->join("vehicle_type", 'vehicle_type.v_type_id = sale.v_type');
+            // $this->db->where("date BETWEEN '$date_1' AND '$date_2'", NULL, FALSE);
+            // $this->db->order_by("date", 'desc');
+            // $vehicle_list = $this->db->get()->result();
+
+            // $vehicle_list = [];
+            // $general = ["$date_1", "$date_2"];
             #~~~~~~~~~~~~~OUTFLOW~~~~~~~~~~~~~#
             return array('general' => $general, 'vehicle_list' => $vehicle_list);
         endif;

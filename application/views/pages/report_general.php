@@ -3,14 +3,14 @@
         <div class="panel-body">
             <div class="table-header">
                 <i class="fa fa-list"></i>
-                Expense Reports
+                Sale Reports
             </div>
         </div>
 
         <div class="col-md-12 well no-print">
-            <form class="form-horizontal" id="notice-submit" action="<?php echo base_url() . 'report_expense/generate/'; ?>" method="post">
+            <form class="form-horizontal" id="notice-submit" action="<?php echo base_url() . 'report_general/generate/'; ?>" method="post">
                 <div class="form-group">
-                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="expense_report">Select an option</label>
+                    <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="general_report">Select an option</label>
                     <div class="col-xs-12 col-sm-9">
                         <div class="clearfix">
                             <?php
@@ -22,10 +22,10 @@
                                 '4' => "last one year",
                                 '5' => "date to date",
                             );
-                            echo form_dropdown('expense_report', $report_types, $report->expense_report, 'class="col-sm-6 col-xs-12 testselect1" id="expense_report"');
+                            echo form_dropdown('general_report', $report_types, $report->general_report, 'class="col-sm-6 col-xs-12 testselect1" id="general_report"');
                             ?>
                         </div>
-                        <div class="help-block" id="title-exists"><?php echo form_error('expense_report'); ?></div>
+                        <div class="help-block" id="title-exists"><?php echo form_error('general_report'); ?></div>
                     </div>
                 </div>
                 <div class="form-group" id="date" style="display:none">
@@ -63,39 +63,42 @@
         <div class="clearfix"></div>
         <?php if (isset($result)) : ?>
             <div class="table-responsive">
-                <h3>Expense</h3>
+                <h3>Sales</h3>
                 <table id="dataTableExample3" class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
                             <th>SL No</th>
                             <th>Date</th>
-                            <th>Transaction ID</th>
-                            <th>Quantity</th>
+                            <th>Invoice ID</th>
+                            <th>Customer Name</th>
+                            <th>Customer Phone</th>
+                            <th>Sell Unit</th>
                             <th>Amount</th>
-                            <th>Total</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th colspan="5" class="text-right">Grand Total : </th>
+                            <th colspan="6" class="text-right">Grand Total : </th>
                             <th></th>
                         </tr>
                     </tfoot>
                     <tbody>
                         <?php
-                        if (isset($result) && isset($result['expense'])) :
+                        // print_r($result['general']);
+                        if (isset($result) && isset($result['general'])) :
                             $searial = 1;
                             $grand_total = 0;
-                            foreach ($result['expense'] as $value) :
+                            foreach ($result['general'] as $value) :
                                 $grand_total = $grand_total + $value->amount;
                         ?>
                                 <tr>
                                     <td><?php echo $searial++; ?></td>
                                     <td><?php echo date("d-m-Y", strtotime($value->date)); ?></td>
-                                    <td><?php echo $value->transection_id; ?></td>
-                                    <td><?php echo $value->quantity; ?></td>
+                                    <td><?php echo $value->invoice_id; ?></td>
+                                    <td><?php echo $value->customer_name; ?></td>
+                                    <td><?php echo $value->customer_phone; ?></td>
+                                    <td><?php echo $value->sell_unit; ?></td>
                                     <td><?php echo $value->amount; ?></td>
-                                    <td><?php echo $value->amount * $value->quantity; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -104,56 +107,25 @@
             </div>
 
             <div class="table-responsive">
-                <h3>Expense List</h3>
+                <h3>Vehicle List</h3>
                 <table id="dataTableExample4" class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
                             <th>SL No</th>
-                            <th>Expense Name</th>
-                            <th>Quantity</th>
-                            <th>Total Amount</th>
+                            <th>Vehicle Name</th>
+                            <th>Appearance</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        if (isset($result) && isset($result['expense_list'])) :
-
+                        if (isset($result) && isset($result['vehicle_list'])) :
                             $searial = 1;
-
-                            $expense_list = [];
-
-
-
-                            foreach ($result['expense_list'] as $arr) {
-
-                                if (!array_key_exists($arr->expense_name, $expense_list)) {
-
-                                    $expense_list[$arr->expense_name]['quantity'] = 0;
-                                    $expense_list[$arr->expense_name]['amount'] = 0;
-                                }
-                            }
-
-
-                            foreach ($result['expense_list'] as $arr) {
-
-                                foreach (array_keys($expense_list) as $key) {
-
-                                    if ($key == $arr->expense_name) {
-                                        $expense_list[$arr->expense_name]['quantity'] += $arr->quantity;
-                                        $expense_list[$arr->expense_name]['amount'] += ($arr->quantity * $arr->amount);
-                                    }
-                                }
-                            }
-
-                            foreach ($expense_list as $key => $value) :
-
-
+                            foreach ($result['vehicle_list'] as $value) :
                         ?>
                                 <tr>
                                     <td><?php echo $searial++; ?></td>
-                                    <td><?php echo $key; ?></td>
-                                    <td><?php echo $value['quantity']; ?></td>
-                                    <td><?php echo $value['amount']; ?></td>
+                                    <td><?php echo $value->vehicle_name; ?></td>
+                                    <td><?php echo $value->total; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php endif; ?>
