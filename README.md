@@ -213,9 +213,9 @@ Deposit Bank Name
 
 # Reports Module (⚠ Pending)
 
+General Reports
 Expense Reports
-Customer Bill
-Balance Sheet
+
 
 
 # Settings Module (✅ Completed)
