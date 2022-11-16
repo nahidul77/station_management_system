@@ -1,4 +1,4 @@
-# Station and Vehical Management System
+# Station Management System
 
 # Server Requirements
 
