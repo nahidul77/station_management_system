@@ -2,7 +2,7 @@
 
 # Server Requirements
 
-PHP ( Version >= 7.2 ) 
+PHP ( Version >= 7 ) 
 Mysql ( Version >= 5 )
 
 
