@@ -13,7 +13,7 @@ class Fule_rate extends CI_Controller
 		$this->load->model('fule_rate_model');
 	}
 
-	//=================this fubction for view fule rate list(start) ===================//
+	//=================this fubction for view fule rate list(start) =====================//
 	public function index()
 	{
 		$data['m_fuel'] = "active";
