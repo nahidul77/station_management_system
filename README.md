@@ -28,7 +28,7 @@ Project Modules
 Header
 Footer
 Sidebar
-Content Holder
+Content
 NavBar
 
 # Installation Module (✅Completed)
