@@ -1,5 +1,3 @@
-# Station Management System
-
 # Server Requirements
 
 PHP ( Version >= 7 ) 
